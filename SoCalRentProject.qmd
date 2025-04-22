@@ -1,0 +1,105 @@
+---
+title: "NatsPortfolio"
+---
+
+# Before Getting Started
+
+Load in packages and data
+
+```{r}
+here::i_am("NatsPortfolio/SoCalRentProject.qmd")
+```
+
+```{r}
+#| label: import data 
+library(readr)
+library(dplyr)
+library(stringr)
+library(tidyverse)
+SoCalRent <- read_csv(here::here("NatsPortfolio/ProjectData/SoCalDataRaw_2025.csv"))
+```
+
+# Getting the Raw Data
+
+Trying to get a clean form of public data was surprisingly difficult. I ended up going on RedFin and extracting data with Excel tools that auto generated tables from website URL's. I grabbed data from 3 Southern California Countys– Orange County, Riverside, and Los Angeles. For each county I then grabbed data for 3 types of listings– House, Condo, Apartment. The raw data formed was pretty decent but a lil unclear.
+
+```{r}
+head(SoCalRent)
+```
+
+# Data Wrangling
+
+There were a few listings that had no data in certain columns. So for the sake of sanity, I just removed them.
+
+Starting from Left to Right, Price was set in different formats (ie \$3,185/mo, \$1940+/mo) So I removed any dollar signs, commas, and plus signs. Then set Price to a numeric variable.
+
+For both beds and baths the different formats included (1 bed, 3 beds, and 2-4 beds) which meant i had to remove the word "bed/beds" and took the smallest number in any of the range formats. Then set Beds to a numeric variable.
+
+Price, Beds, Baths and SqFt are all considered character variables. Pricing had different formats throughout as well as Beds, Baths, and SqFt. Some listings didn't even have an address. Some listings (mostlt apartments) had a range for beds/baths. I decided to pick the lowest number considering the price for the listings was always \$Price+ meaning its a starting price. any listings with a 0 for beds and baths i just removed. I can only assume those are studio type of apartments. Then i took the address and extracted the cities.
+
+```{r}
+Rent_Clean <- SoCalRent |>
+  #cleaning out any listings that have any empty data for the sake of my sanity
+  filter(!is.na(Price), !is.na(Beds), !is.na(Baths), !is.na(SqFt), !is.na(Address)) |>
+  # Remove rows where SqFt starts with an en dash (—)
+  filter(!str_starts(SqFt, "—")) |>
+  mutate(
+    # Price column: remove any $, +, /mo and change it to a numeric variable
+    Price = str_remove_all(Price, "\\$|,|/mo|\\+"),
+    Price = as.numeric(Price),
+
+    # Beds column: take the smallest number of beds and change it to a numeric variable
+    Beds = str_extract(Beds, "^\\d+"),
+    Beds = as.numeric(Beds),
+
+    # Baths column: take the smallest number of baths and change it to a numeric variable
+    Baths = str_extract(Baths, "^\\d+(\\.\\d+)?"),
+    Baths = as.numeric(Baths),
+
+    # SqFt column: takeing the first number from ranges, removes and commas or dashes and change it to a numeric variable
+    SqFt = str_remove_all(SqFt, ","),  # Remove commas
+    SqFt = case_when(
+      str_detect(SqFt, "-") ~ as.numeric(str_extract(SqFt, "^[0-9]+")),
+      TRUE ~ as.numeric(SqFt)
+    ),
+    # City Column: I decided to just make a new column "titled city" that was the address column is still there but I have just the city in a seperate column
+    City = str_split_fixed(Address, ",", 3)[, 2]
+  ) |>
+  # If beds or baths is 0, remove the row
+  filter(Beds != 0, Baths != 0)
+head(Rent_Clean)
+
+```
+
+# Numerical Summaries (sorted by county)
+
+```{r}
+Rent_Clean|>
+  group_by(County, Type)|>
+  summarize(
+    mean.price= mean(Price),
+    mean.SqFt= mean(SqFt),
+    mean.beds= mean(Beds),
+    mean.baths=mean(Baths),
+    round(mean.beds)
+      )
+
+```
+
+# Looking at Price/SqFt
+
+```{r}
+
+```
+
+# Creating a Value Score
+
+```{r}
+
+```
+
+# Comparing Numerical Summaries
+
+```{r}
+
+```
