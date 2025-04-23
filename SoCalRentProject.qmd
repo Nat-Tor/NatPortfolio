@@ -16,12 +16,13 @@ library(readr)
 library(dplyr)
 library(stringr)
 library(tidyverse)
-SoCalRent <- read_csv(here::here("NatsPortfolio/ProjectData/SoCalDataRaw_2025.csv"))
+library(janitor)
+SoCalRent <- read_csv(here::here("ProjectData/SoCalDataRaw_2025.csv"))
 ```
 
 # Getting the Raw Data
 
-Trying to get a clean form of public data was surprisingly difficult. I ended up going on RedFin and extracting data with Excel tools that auto generated tables from website URL's. I grabbed data from 3 Southern California Countys– Orange County, Riverside, and Los Angeles. For each county I then grabbed data for 3 types of listings– House, Condo, Apartment. The raw data formed was pretty decent but a lil unclear.
+Trying to get a clean version of public data was surprisingly difficult. I ended up using Redfin and Excel's web tools to auto-generate tables from URLs. I pulled data from three Southern California counties — Orange County, Riverside County, and Los Angeles County. For each county, I collected data on three types of listings: House, Condo, and Apartment. The raw data I gathered was fairly decent, but it needed some cleaning and clarification.
 
 ```{r}
 head(SoCalRent)
@@ -29,13 +30,19 @@ head(SoCalRent)
 
 # Data Wrangling
 
-There were a few listings that had no data in certain columns. So for the sake of sanity, I just removed them.
+There were a few listings with missing data in certain columns, so for the sake of sanity, I just removed them.
 
-Starting from Left to Right, Price was set in different formats (ie \$3,185/mo, \$1940+/mo) So I removed any dollar signs, commas, and plus signs. Then set Price to a numeric variable.
+**Price** came in various formats (e.g., `$3,185/mo`, `$1940+/mo`), so I removed dollar signs, commas, and plus signs, then converted the column to numeric.
 
-For both beds and baths the different formats included (1 bed, 3 beds, and 2-4 beds) which meant i had to remove the word "bed/beds" and took the smallest number in any of the range formats. Then set Beds to a numeric variable.
+**Beds** and **Baths** also had inconsistent formats like `1 bed`, `3 beds`, or even ranges like `2–4 beds`. I stripped out the words "bed(s)" and "bath(s)", and for ranges, I took the smallest number. Both columns were then converted to numeric.
 
-Price, Beds, Baths and SqFt are all considered character variables. Pricing had different formats throughout as well as Beds, Baths, and SqFt. Some listings didn't even have an address. Some listings (mostlt apartments) had a range for beds/baths. I decided to pick the lowest number considering the price for the listings was always \$Price+ meaning its a starting price. any listings with a 0 for beds and baths i just removed. I can only assume those are studio type of apartments. Then i took the address and extracted the cities.
+**SqFt** was the messiest. It appeared as `1668.00`, `1,970`, or ranges like `410–480`. I removed commas and decimal points (since I didn’t need the `.00`), and again, for ranges, I used the lower bound. This column was also converted to numeric.
+
+For the **address** column, I kept it in case I wanted to refer to the full address later. But I also extracted just the **city** name into a separate column to analyze trends across cities.
+
+Lastly, I removed any listings where either **Beds** or **Baths** were equal to zero.
+
+After cleaning, I was left with **278 observations** out of the original **333**.
 
 ```{r}
 Rent_Clean <- SoCalRent |>
@@ -71,20 +78,93 @@ head(Rent_Clean)
 
 ```
 
-# Numerical Summaries (sorted by county)
+# Numerical & Categorical Summaries
+
+I decided to look at the data by grouping by County and housing Type. As shown below, the number of observations are not equally proportioned to each other and must be taken into account later when creating models.
 
 ```{r}
 Rent_Clean|>
-  group_by(County, Type)|>
-  summarize(
-    mean.price= mean(Price),
-    mean.SqFt= mean(SqFt),
-    mean.beds= mean(Beds),
-    mean.baths=mean(Baths),
-    round(mean.beds)
-      )
+  tabyl(County,Type)|>
+    adorn_totals(c("row", "col"))
+```
+
+Showing the different between mean and median and i can clearly see that there is one or two outliers within LA and OC
+
+```{r}
+Rent_Clean |>
+  group_by(County)|>
+  summarize(mean_price = mean(Price, na.rm = TRUE), 
+            median_price = median(Price, na.rm = TRUE))
 
 ```
+
+```{r}
+outliers <- Rent_Clean |>
+  group_by(County) |>
+  mutate(
+    Q1 = quantile(Price, 0.25),
+    Q3 = quantile(Price, 0.75),
+    IQR = Q3 - Q1,
+    lower_bound = Q1 - 2 * IQR,
+    upper_bound = Q3 + 2 * IQR
+  ) |>
+  filter(Price < lower_bound | Price > upper_bound)
+print(outliers)
+```
+
+```{r}
+Summary_table <- Rent_Clean|>
+  group_by(County, Type)|>
+  mutate(price_per_sqft = Price / SqFt) |>
+  summarize(
+    mean.price= round(mean(Price)),
+    mean.SqFt= round(mean(SqFt)),
+    mean.beds= round(mean(Beds)),
+    mean.baths=round(mean(Baths)),
+    mean_price_per_sqft = mean(price_per_sqft),
+    .groups = "drop"  )
+print(Summary_table)
+```
+
+```{r}
+#looking at a ggplot of numerical analysis
+summary_table <- Rent_Clean |>
+  group_by(County, Type) |>
+  summarize(
+    mean.price = round(mean(Price, na.rm = TRUE)),
+    .groups = "drop"
+  )
+
+ggplot(summary_table, aes(x = interaction(County, Type), y = mean.price, fill = County)) +
+  geom_col() +
+  scale_fill_manual(values=c("RIV"="#084B83","OC"="#FF66B3","LA"="#42BFDD"))+
+  labs(
+    title = "Average Rent Price by County and Type",
+    x = "County & Type",
+    y = "Average Rent Price"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+```{r}
+# correlation analysis between price and beds
+Rent_Clean|>
+  group_by(County)|>
+  summarise(
+Bed_cor=cor(Price, Beds), 
+Baths_cor=cor(Price, Baths), 
+SqFt_cor=cor(Price, SqFt))
+
+```
+
+# Whats the question I'm trying to answer?
+
+One day I or someone else is going to have to rent out a place. I am going to try to figure out what should i buy where to get the most out of the price. What type of housing should should I buy and where?
+
+One of the main problems is being what do i value more: Space, baths, beds.
 
 # Looking at Price/SqFt
 
