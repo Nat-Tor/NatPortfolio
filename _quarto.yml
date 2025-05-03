@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
   render:
     - index.qmd
     - SoCalRentProject.qmd
@@ -12,6 +13,7 @@ website:
         text: Home
       - href: SoCalRentProject.qmd
         text: "Rent Project"
+  theme: minty
 
 format:
   html:
