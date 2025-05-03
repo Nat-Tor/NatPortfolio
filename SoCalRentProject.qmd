@@ -82,62 +82,28 @@ head(Rent_Clean)
 
 # Numerical & Categorical Summaries
 
-I decided to look at the data by grouping by County and housing Type. As shown below, the number of observations are not equally proportioned to each other and must be taken into account later when creating models.
+I decided to look at the data by grouping by County and housing Type. In general the most type of housing was "House (114)". LA have fewer apartment listings even though its more of an urban location. Riverside (tied with LA) with the most house listings fitting the suburban expectation. The listing size for each county is about 90 for each county, which is good for comparison. Looking through the listings its important to take into consideration that some of the cheaper house/condo listings are renting a ROOM within the place.
 
 ```{r}
 Rent_Clean|>
   tabyl(County,Type)|>
     adorn_totals(c("row", "col"))
+Rent_Clean |>
+  count(County,Type)|>
+ggplot(aes(x = County, y = n, fill = Type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Distribution of Housing Types by County",
+       x = "County", y = "Number of Listings")
 ```
 
-Showing the different between mean and median and i can clearly see that there is one or two outliers within LA and OC ( spolier it was more then 1 or two)
+Showing the average and median rent prices by county and housing type. OC houses are more expensive. As expected apartments are the cheapest/afforable option for each county with riverside being the most affordable. Condo prices vary accross the board which could mean newer luxury built condos (think irvine a newer built area) in certain areas and older smaller condos in others(smaller older cities in riverside). The median is less than the mean (specifically in LA and OC). This means that there is a few expensive outlier listings that drive the average up.
 
 ```{r}
 Rent_Clean |>
-  group_by(County)|>
-  summarize(mean_price = mean(Price, na.rm = TRUE), 
-            median_price = median(Price, na.rm = TRUE))
-
-```
-
-Using quartiles (top 25% and bottom 75%) I was able to choose a lower bound and upper bound to then find the outliers. As seen the table below– the outliers are way outside of usually rent price. (One of wich you can see is an address near disneyland and that may e a reason why its nots neccessairyl near the price of what is the normal)\
-(may deal with map plotting using ggplot)\
-I may make the decisison to completely remove these outlier due to the fact that they are practically relvant to my overall research question.
-
-```{r}
-outliers <- Rent_Clean |>
-  group_by(County) |>
-  mutate(
-    Q1 = quantile(Price, 0.25),
-    Q3 = quantile(Price, 0.75),
-    IQR = Q3 - Q1,
-    lower_bound = Q1 - 2 * IQR,
-    upper_bound = Q3 + 2 * IQR
-  ) |>
-  filter(Price < lower_bound | Price > upper_bound)
-print(outliers)
-```
-
-Now making a summarized table of all the prices and SqFtoage. I made sure to group by County and housing type so that was were observign a total of 9 variables.
-
-```{r}
-Summary_table <- Rent_Clean|>
   group_by(County, Type)|>
-  mutate(price_per_sqft = Price / SqFt) |>
-  summarize(
-    mean.price= round(mean(Price)),
-    mean.SqFt= round(mean(SqFt)),
-    mean.beds= round(mean(Beds)),
-    mean.baths=round(mean(Baths)),
-    mean_price_per_sqft = mean(price_per_sqft),
-    .groups = "drop"  )
-print(Summary_table)
-```
-
-giving a bargrpah just for a visual of average price grouped by county and housing type
-
-```{r}
-#looking at a ggplot of numerical analysis
+  summarize(mean_price = round(mean(Price, na.rm = TRUE)), 
+            median_price = median(Price, na.rm = TRUE),
+            .groups = "drop")
 summary_table <- Rent_Clean |>
   group_by(County, Type) |>
   summarize(
@@ -153,13 +119,55 @@ ggplot(summary_table, aes(x = interaction(County, Type), y = mean.price, fill = 
     x = "County & Type",
     y = "Average Rent Price"
   ) +
-  theme_minimal() +
+  theme_light() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-
 ```
 
-Finding correlation between Price and beds/baths/SqFt. NOTE: correlation doesn't totally explain causation. but this code chunk does go over the fact that beds, baths, and sqft does in fact increase the price in a posistive proportion.
+Using quartiles (top 25% and bottom 75%) I was able to choose a lower bound and upper bound to then find the outliers. As seen the table below– the outliers are way outside of usually rent price.
+
+```{r}
+outliers <- Rent_Clean |>
+  group_by(County) |>
+  mutate(
+    Q1 = quantile(Price, 0.25),
+    Q3 = quantile(Price, 0.75),
+    IQR = Q3 - Q1,
+    lower_bound = Q1 - 2 * IQR,
+    upper_bound = Q3 + 2 * IQR
+  ) |>
+  filter(Price < lower_bound | Price > upper_bound)
+print(outliers)
+
+ggplot(Rent_Clean, aes(x = County, y = Price, fill = Type)) +
+  geom_boxplot(outlier.shape = 16, outlier.colour = "red", outlier.size = 3) +
+  labs(title = "Rent Price Distribution by County and Housing Type",
+       x = "County", y = "Rent Price ($)") +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+Looking at a summary table of mean price, average size, and average beds and baths by housing type and county. I've inclused price per SqFt to compare efficency costs. LA has the highest average SqFt, its also just the most expensive meaning its the least effecient. WHich could mean its high in demand. Riverside has smaller places but cheaper prices so an efficeint price per SqFt. OC has the biggest space.
+
+For apartment prices, they are coonsidered smaller but doesnt necessarily mean the cheapest. for the OC area the average SqFt is 764 with the average price being \$3.42/SqFt. The higher cost mihgt be for convience, ammenities or location..
+
+```{r}
+Summary_table <- Rent_Clean|>
+  group_by(County, Type)|>
+  mutate(price_per_sqft = Price / SqFt) |>
+  summarize(
+    mean.price= round(mean(Price)),
+    mean.SqFt= round(mean(SqFt)),
+    mean.beds= round(mean(Beds)),
+    mean.baths=round(mean(Baths)),
+    mean_price_per_sqft = round(mean(price_per_sqft)),
+    .groups = "drop"  )|>
+  select(County, Type, mean_price_per_sqft)
+print(Summary_table)
+```
+
+Finding correlation between Price and beds/baths/SqFt.
+
+Riverside: has a strong relaionship across beds, baths, and sqft. Meaning a pretty uniform housing market. LA: has the strongest corrrelation with SqFt meaning the market is driven by space then the commoditys. OC has medocre correlation meaning some other factors outside of beds, baths, sqft may be influencing the rent. (think schools, neighborhoods etc)
 
 ```{r}
 # correlation analysis between price and beds
@@ -169,6 +177,25 @@ Rent_Clean|>
 Bed_cor=cor(Price, Beds), 
 Baths_cor=cor(Price, Baths), 
 SqFt_cor=cor(Price, SqFt))
+```
+
+```{r}
+Rent_Clean |>
+  filter(Price < 10000) |>
+  mutate(County = as.character(County)) |>
+  bind_rows(
+    Rent_Clean |>
+      filter(Price < 10000) |>
+      mutate(County = "All Counties")
+  )|>
+ggplot(aes(x = Price, fill = County)) +
+  geom_histogram(binwidth = 800, color = "black") +
+  facet_wrap(~ County, scales = "free_y") +
+  labs(
+    title = "Rent Price Distribution: Overall and by County",
+    x = "Rent Price ($)",
+    y = "Number of Listings"
+  )
 ```
 
 # Whats the question I'm trying to answer?
@@ -203,11 +230,11 @@ Rent_Clean_Affordable|>
 arrange(desc(sqft_per_dollar))
 ```
 
-# Investigating Listings
+# Investigating Listing
 
 even after all my data cleaning... this listing got thru. I decided to investigate it for the heck of it.
 
-**217 E 29th St Unit 217 And 217 1 2, Los Angeles, CA 90011:** Upon further investigation. This is a listing for 2 units with a total of 4 beds and 4 baths. Meaning each unit has 2 beds and 2 baths. Then the listing explains how each bedroom can house 2-3 people meaning acording to my code, rent cost would only be about \$187 a month give or take a roomate or two. As GREAT of a rent price this seems. the listing is just all sorts of sketchy and im unfortunately, not interested.
+**217 E 29th St Unit 217 And 217 1 2, Los Angeles, CA 90011:** Upon further investigation. This is a listing for 2 units with a total of 4 beds and 4 baths. Meaning each unit has 2 beds and 2 baths. Then the listing explains how each bedroom can house 2-3 people meaning acording to my code, rent cost would only be about \$187 a month give or take a roomate or two. As GREAT of a rent price this seems. On the bright side-the listing seems to be a affordable housing option for someone who really needs it. On the more weary side- the listing seems sketchy and im unfortunately, not interested.
 
 **Rental Description:** Our brand new, all-inclusive shared rooms are move-in ready just bring your bag and settle into comfort, convenience, and community in the heart of the city. All-inclusive rates starting at just \$700/month only 2-3 person per room ! Move in today stay as long or as little as you need All utilities Wi-Fi included Weekly cleaning of shared spaces Private ensuite bathrooms in most rooms On-site laundry for easy living Street & paid parking available On-site manager for support when you need it No credit checks. No deposits. No SSN. Just a valid ID from any country.Spots are limited and going fast message now and claim your bed today!"
 
