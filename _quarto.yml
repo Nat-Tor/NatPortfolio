@@ -13,7 +13,6 @@ website:
         text: Home
       - href: SoCalRentProject.qmd
         text: "Rent Project"
-  theme: minty
 
 format:
   html:
