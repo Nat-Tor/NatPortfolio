@@ -1,0 +1,23 @@
+project:
+  type: website
+  render:
+    - index.qmd
+    - SoCalRentProject.qmd
+
+website:
+  title: "NatsPortfolio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: SoCalRentProject.qmd
+        text: "Rent Project"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
