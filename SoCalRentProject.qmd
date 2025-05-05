@@ -102,6 +102,7 @@ Rent_Clean <- SoCalRent |>
 ```
 
 ```{r}
+#| label: Sample of Clean Data
 Rent_Clean |>
   slice_head(n = 6) |>
   gt() |>
@@ -200,6 +201,7 @@ summary_table |>
 ```
 
 ```{r}
+#| label: Boxplot to show Outliers
 Rent_Clean |> 
   ggplot(aes(x = Type, y = Price, fill = County)) +
   geom_boxplot(outlier.shape = 16, outlier.colour = "#e74c3c", outlier.size = 3)+
@@ -219,6 +221,7 @@ For this project, I want to approach rental affordability from a personal angle,
 To make the analysis more flexible, especially for listings with multiple bedrooms, I’m assuming that shared housing is an option. That means I’ll consider a unit affordable if the **rent per bedroom** is within 30% of a person’s monthly income. This way, I can include multi-bedroom apartments that might be affordable when split among roommates.
 
 ```{r}
+#| label: Using Salary to Filter
 salary <- 60000  # yearly salary
 monthly_income <- salary / 12 #calculating monthly paycheck assuming monthly rent payments
 max_rent_per_room <- (monthly_income * 0.30) #allowing only 30% of income to be sued for rent
@@ -268,11 +271,76 @@ We developed a multiple linear regression model to analyze how rent prices in So
 
 ```{r}
 #| label: Multiple Regression Model
+#| message: false
+#| warning: false
 rent_model <- lm(Price ~ County + Type + SqFt + Beds + Baths, 
                  data = Rent_Clean_Affordable)
-rent_model_table <- rent_model |>
-  tidy(
+
+rent_model_table <- rent_model |> tidy()
+
+rent_model_table <- rent_model_table |> 
+  mutate(p.value = case_when(
+    p.value < 0.001 ~ "< 0.001",    # Highly significant
+    p.value < 0.05 ~ "< 0.05",      # Significant
+    p.value >= 0.05 ~ "> 0.05",     # Non-significant
+    TRUE ~ as.character(p.value)   # Keep the original p-value (if needed)
+  ),
+  Change_Price = case_when(
+    estimate > 0 ~ "increase",  # Positive coefficient (increase)
+    estimate < 0 ~ "decrease",  # Negative coefficient (decrease)
+    TRUE ~ "neutral"            # Neutral or zero coefficient
+  ))
+
+rent_model_table |>
+  gt() |>
+  tab_header(
+    title = "Regression Results for Rent Model"
+  ) |>
+  cols_label(
+    term = "Variable",
+    estimate = "Estimate",
+    std.error = "Standard Error",
+    statistic = "t-Statistic",
+    p.value = "p-Value",
+    Change_Price = "Change in Price"
+  ) |>
+  tab_spanner(
+    label = "Coefficients",
+    columns = c(estimate, std.error, statistic, p.value)
+  ) |>
+  tab_style(
+    style = cell_text(color = "#2ecc71"),
+    locations = cells_body(columns = vars(estimate), 
+                           rows = Change_Price == "increase")
+  ) |>
+  tab_style(
+    style = cell_text(color = "#e74c3c"),
+    locations = cells_body(columns = vars(estimate), 
+                           rows = Change_Price == "decrease")
+  ) |>
+    tab_style(
+    style = cell_text(color = "#e74c3c"),
+    locations = cells_body(columns = vars(p.value), 
+                           rows = p.value == "< 0.001")
+  ) |>
+  tab_style(
+    style = cell_text(color = "#2ecc71"),
+    locations = cells_body(columns = vars(p.value), 
+                           rows = p.value == "> 0.05")
+  ) |>
+  tab_style(
+    style = cell_text(color = "#f1c40f"),
+    locations = cells_body(columns = vars(p.value), 
+                           rows = p.value == "< 0.05")
+  ) |>
+  opt_stylize(style = 6, color = "cyan") |>
+  tab_options(
+    table.font.size = px(12),
+    heading.title.font.size = px(16),
+    heading.subtitle.font.size = px(12),
+    data_row.padding = px(5)
   )
+
 ```
 
 The number of **bedrooms** had the strongest and most statistically significant association with rent: **each additional bedroom increases rent by approximately \$844** on average, holding other factors constant (`p < 0.001`). **Location also matters** — rental units in **Riverside County** tend to cost **\$718 less** than those in Los Angeles County, a difference that is statistically significant (`p < 0.001`). In contrast, rents in **Orange County** are slightly higher than in LA (by about \$189), but this difference is **not statistically significant**.
@@ -287,7 +355,7 @@ Prediction <- rent_model|>
   augment( newdata= Rent_Clean_Affordable)
 # Plot the residuals
 ggplot(data = Prediction, aes(x = .resid)) +
-  geom_histogram(bins = 20, fill = "#8be9fd", color = "black", alpha = 0.8) +
+  geom_histogram(bins = 10, fill = "#005596", color = "black", alpha = 0.8) +
   labs(title = "Histogram of Residuals",
        x = "Residuals",
        y = "Frequency") +
@@ -296,14 +364,48 @@ ggplot(data = Prediction, aes(x = .resid)) +
 
 This histogram visualizes the distribution of residuals from the multiple linear regression model. The residuals are mostly centered around zero, indicating that the model generally makes accurate predictions. However, there is a slight skew to the left, suggesting that the model tends to overestimate rent prices for a number of listings. This imbalance could point to specific property types or counties where the model's assumptions don't hold as well. Overall, the residuals do not show extreme deviation from normality, supporting the model’s reasonable fit, but there may still be room for improvement by exploring interaction terms or non-linear relationships.
 
+# Conclusion
+
+**Los Angeles (LA)**: As expected, LA is densely populated and has higher prices. The correlation analysis confirms that the population density likely drives up demand and, consequently, the cost of living.
+
+**Square Footage (SqFt)**: SqFt is a key factor influencing price. Larger homes or apartments are consistently more expensive, which aligns with the correlation findings.
+
+**Riverside**: Riverside, being older and smaller, has relatively lower prices. The correlation table highlights the inverse relationship between age/size and price, explaining Riverside's affordability.
+
+**Orange County (OC)**: OC shows a diverse range of prices, influenced by factors beyond just the number of bedrooms, bathrooms, and SqFt. The data suggests other external factors (possibly location within OC, amenities, etc.) significantly affect pricing, as seen in both the correlation table and price distributions.
+
 ```{r}
-# correlation analysis between price and beds
-Rent_Clean|>
-  group_by(County)|>
+correlation_table <- Rent_Clean |>
+  group_by(County) |>
   summarise(
-Bed_cor=cor(Price, Beds), 
-Baths_cor=cor(Price, Baths), 
-SqFt_cor=cor(Price, SqFt))
+    Bed_cor = cor(Price, Beds), 
+    Baths_cor = cor(Price, Baths), 
+    SqFt_cor = cor(Price, SqFt)
+  )
+
+correlation_table |>
+  gt() |>
+  tab_header(
+    title = "Correlation of Rent Price with Features by County"
+  ) |>
+  cols_label(
+    County = "County",
+    Bed_cor = "Price vs Beds",
+    Baths_cor = "Price vs Baths",
+    SqFt_cor = "Price vs SqFt"
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(columns = everything())
+  ) |>
+  opt_stylize(style = 6, color = "cyan") |>
+  tab_options(
+    table.font.size = px(12),
+    heading.title.font.size = px(16),
+    heading.subtitle.font.size = px(12),
+    data_row.padding = px(5)
+  )
+
 ```
 
 ```{r}
@@ -314,15 +416,24 @@ Rent_Clean |>
     Rent_Clean |>
       filter(Price < 10000) |>
       mutate(County = "All Counties")
-  )|>
-ggplot(aes(x = Price, fill = County)) +
+  ) |>
+  ggplot(aes(x = Price, fill = County)) +
   geom_histogram(binwidth = 800, color = "black") +
   facet_wrap(~ County, scales = "free_y") +
   labs(
     title = "Rent Price Distribution: Overall and by County",
     x = "Rent Price ($)",
     y = "Number of Listings"
-  )
+  ) +
+  scale_fill_manual(
+    values = c(
+      "LA" = "#005596",      # Customize color for LA
+      "RIV" = "#FFB81C",       # Customize color for Riverside
+      "OC" = "#FF6720",  # Customize color for Orange County
+      "All Counties" = "gray"     # Customize color for "All Counties"
+    )
+  ) +
+  theme_light()
 ```
 
 # EXTRA: take a peak at some listings
