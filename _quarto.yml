@@ -18,8 +18,8 @@ format:
   html:
     theme: minty
     toc: true
-    code-fold: true
-    code-summary: "Show code"
+    code-fold: false
+   # code-summary: "Show code"
     code-tools: true
     highlight-style: dracula
 
