@@ -2,10 +2,16 @@
 title: "Rent in Southern California"
 ---
 
-# Before Getting Started
+# Objective
+
+My goal is to take a broad look at the rental market across these Southern California counties. I want to explore what each county offers in terms of rent and identify any trends that emerge from the listings. Specifically, **I’m interested in how different priorities (square footage, number of bedrooms and bathrooms, or overall price) affect where someone might choose to rent.**
+
+For example, if someone values space, which county offers the most square footage for the price? If they prioritize more bedrooms or bathrooms, where might they get the best deal? I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.
+
+# Packages Used and Data Import
 
 ```{r}
-#| label: telling doc where i am and import data 
+#| label: Where am I and data import
 #| message: false
 #| warning: false
 library(readr)
@@ -20,16 +26,14 @@ here::i_am("NatsPortfolio/SoCalRentProject.qmd")
 SoCalRent <- read_csv(here::here("NatsPortfolio/ProjectData/SoCalDataRaw_2025.csv"))
 ```
 
-# Getting the Raw Data
+# Data Collection
 
-Finding clean and usable public data turned out to be more challenging than expected. After exploring several sources, I decided to use **Redfin** as my main platform, and relied on **Excel’s web tools** to auto-generate tables directly from listing URLs. I focused on three Southern California counties: **Orange County, Riverside County, and Los Angeles County**.
-
-For each county, I gathered data on three different property types: **houses, condos, and apartments**. While the raw data I pulled was relatively structured, it still required some cleaning.
+Finding clean and usable public data turned out to be more challenging than expected. After exploring several sites, I've decided to use **Redfin**. I then relied on **Excel’s web tools** to auto-generate tables directly from listing URLs. I focused on three Southern California counties: **Orange County, Riverside County, and Los Angeles County**. Across the three counties, I gathered data on three different property types: **houses, condos, and apartments**. While the raw data I pulled was relatively structured, it still required some cleaning.
 
 ```{r}
 #| label: Sample of Messy Data
 SoCalRent |>
-  slice_head(n = 6) |>
+  head() |>
   gt() |>
   tab_header(
     title = "Sample of Rent Listings Data"
@@ -38,16 +42,15 @@ SoCalRent |>
     Price = "Rent ($)",
     Beds = "Bedrooms",
     Baths = "Bathrooms",
-    SqFt = "Square Feet",
+    SqFt = "Square Footage",
     Address = "Address",
     Type = "Housing Type",
     County = "County"
   ) |>
-  fmt_currency(columns = c(Price), currency = "USD") |>
 opt_stylize(style = 6, color = "cyan") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16))
+    table.font.size = px(16),
+    heading.title.font.size = px(18))
 ```
 
 # Data Wrangling
@@ -72,30 +75,22 @@ After cleaning, I was left with **278 observations** out of the original **333**
 #| warning: false
 Rent_Clean <- SoCalRent |>
   #cleaning out any listings that have any empty data for the sake of my sanity
-  filter(!is.na(Price), !is.na(Beds), !is.na(Baths), !is.na(SqFt), !is.na(Address)) |>
-  # Remove rows where SqFt starts with an en dash (—)
-  filter(!str_starts(SqFt, "—")) |>
+  filter(!is.na(Price), !is.na(Beds), !is.na(Baths), !is.na(SqFt), !is.na(Address), !str_starts(SqFt, "—")) |>
   mutate(
-    # Price column: remove any $, +, /mo and change it to a numeric variable
-    Price = str_remove_all(Price, "\\$|,|/mo|\\+"),
-    Price = as.numeric(Price),
-
-    # Beds column: take the smallest number of beds and change it to a numeric variable
-    Beds = str_extract(Beds, "^\\d+"),
-    Beds = as.numeric(Beds),
-
-    # Baths column: take the smallest number of baths and change it to a numeric variable
-    Baths = str_extract(Baths, "^\\d+(\\.\\d+)?"),
-    Baths = as.numeric(Baths),
-
-    # SqFt column: takeing the first number from ranges, removes and commas or dashes and change it to a numeric variable
-    SqFt = str_remove_all(SqFt, ","),  # Remove commas
-    SqFt = case_when(
-      str_detect(SqFt, "-") ~ as.numeric(str_extract(SqFt, "^[0-9]+")),
-      TRUE ~ as.numeric(SqFt)
-    ),
-    # City Column: I decided to just make a new column "titled city" that was the address column is still there but I have just the city in a seperate column
-    City = str_split_fixed(Address, ",", 3)[, 2]
+  # Price column: remove any $, +, /mo and change it to a numeric variable
+  Price = str_remove_all(Price, "\\$|,|/mo|\\+"),
+  Price = as.numeric(Price),
+  # Beds column: take the smallest number of beds and change it to a numeric variable
+  Beds = str_extract(Beds, "^\\d+"),
+  Beds = as.numeric(Beds),
+  # Baths column: take the smallest number of baths and change it to a numeric variable
+  Baths = str_extract(Baths, "^\\d+(\\.\\d+)?"),
+  Baths = as.numeric(Baths),
+  # SqFt column: takeing the first number from ranges, removes and commas or dashes and change it to a numeric variable
+  SqFt = str_remove_all(SqFt, ","),  # Remove commas
+  SqFt = case_when(str_detect(SqFt, "-") ~ as.numeric(str_extract(SqFt, "^[0-9]+")), TRUE ~ as.numeric(SqFt)),
+  # City Column: I decided to just make a new column "City"
+  City = str_split_fixed(Address, ",", 3)[, 2]
   ) |>
   # If beds or baths is 0, remove the row
   filter(Beds != 0, Baths != 0)
@@ -104,7 +99,7 @@ Rent_Clean <- SoCalRent |>
 ```{r}
 #| label: Sample of Clean Data
 Rent_Clean |>
-  slice_head(n = 6) |>
+  head() |>
   gt() |>
   tab_header(
     title = "Sample of Clean Rent Listings Data"
@@ -119,22 +114,15 @@ Rent_Clean |>
     County = "County",
     City = "City"
   ) |>
-  fmt_currency(columns = c(Price), currency = "USD") |>
 opt_stylize(style = 6, color = "cyan") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16))
+    table.font.size = px(16),
+    heading.title.font.size = px(18))
 ```
-
-# Objective
-
-My goal is to take a broad look at the rental market across these Southern California counties. I want to explore what each county offers in terms of rent and identify any trends that emerge from the listings. Specifically, **I’m interested in how different priorities (square footage, number of bedrooms and bathrooms, or overall price) affect where someone might choose to rent.**
-
-For example, if someone values space, which county offers the most square footage for the price? If they prioritize more bedrooms or bathrooms, where might they get the best deal? I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.
 
 # Exploratory Data Analysis
 
-I decided to look at the data by grouping by County and housing Type. In general the most type of housing was "House (114)". LA have fewer apartment listings even though its more of an urban location. Riverside (tied with LA) with the most house listings fitting the suburban expectation. The listing size for each county is about 90 for each county, which is good for comparison. Looking through the listings its important to take into consideration that some of the cheaper house/condo listings are renting a ROOM within the place.
+I analyzed the data by grouping listings by **County** and **Housing Type**. Overall, most listings were houses. **Riverside County** had the highest number of apartment listings, while **Orange County** had the most condo listings. When it comes to house listings, **Riverside and Los Angeles counties were tied** for the highest count.
 
 ```{r}
 #| label: Housing Type by County
@@ -155,12 +143,19 @@ Rent_Clean |>
   ) +
   theme_light() +
   theme(
-    plot.title = element_text(hjust = 0.5),
-    legend.position = "top"
+    legend.position = "top",
+    text = element_text(size = 16),             
+    axis.title = element_text(size = 18),        
+    axis.text = element_text(size = 14),         
+    plot.title = element_text(size = 18, face = "bold"),
+    legend.title = element_text(size = 16),     
+    legend.text = element_text(size = 14)   
   )
 ```
 
-Showing the average and median rent prices by county and housing type. OC houses are more expensive. As expected apartments are the cheapest/afforable option for each county with riverside being the most affordable. Condo prices vary accross the board which could mean newer luxury built condos (think irvine a newer built area) in certain areas and older smaller condos in others(smaller older cities in riverside). The median is less than the mean (specifically in LA and OC). This means that there is a few expensive outlier listings that drive the average up.
+Next, I made a table showing the **average and median rent prices** by **county** and **housing type**. As expected, **apartments were the most affordable option** across all counties, with **Riverside having the lowest average price**. On the other end, **houses in Orange County stood out as the most expensive**, with an **average rent of \$7,388**. **Condo prices varied widely**, suggesting a mix of both luxury and more affordable units across different areas.
+
+It was important to notice the **difference between average and median values**. This indicates that there exists **high-priced outliers** that are skewing the averages. Median values offer a better sense of typical rent prices.
 
 ```{r}
 #| label: Visual of Average Rent Price
@@ -178,7 +173,8 @@ summary_table |>
     title = "Average Rent Price by County and Type") |>
   fmt_currency(
     columns = c(mean.price, median.price),
-    currency = "USD") |>
+    currency = "USD",
+    decimals = 0) |>
   cols_label(
     County = "County",
     Type = "Housing Type",
@@ -193,26 +189,47 @@ summary_table |>
   ) |>
   opt_stylize(style = 6, color = "gray") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16),
-    heading.subtitle.font.size = px(12),
-    data_row.padding = px(5))
+    table.font.size = px(16),
+    heading.title.font.size = px(20),
+    heading.subtitle.font.size = px(14),
+    data_row.padding = px(3))
 
 ```
+
+To better visualize the distribution of rent prices and identify outliers, I created a **boxplot grouped by County and Housing Type**. The red dots represent outlier listings, which are values that fall significantly above the average rent range.
+
+This visualization shows that **Orange County and Los Angeles have several high-priced outliers**, particularly for houses and condos. These extreme values help explain why the **average rent is much higher than the median** in those areas.
 
 ```{r}
 #| label: Boxplot to show Outliers
 Rent_Clean |> 
   ggplot(aes(x = Type, y = Price, fill = County)) +
-  geom_boxplot(outlier.shape = 16, outlier.colour = "#e74c3c", outlier.size = 3)+
-  labs(title = "Rent Price Distribution by County and Housing Type",
-       x = "County", y = "Rent Price ($)") +
+  geom_boxplot(outlier.shape = 16, outlier.colour = "#e74c3c", outlier.size = 3) +
+  labs(
+    title = "Rent Price Distribution by County and Housing Type",
+    x = "County",
+    y = "Rent Price ($)"
+  ) +
   scale_fill_manual(
-  values = c("LA" = "#005596", "OC" = "#FF6720", "RIV" = "#FFB81C"))+
-  scale_y_continuous(trans = "log10") +  # Log scale transformation to make it not so squished
+    values = c("LA" = "#005596", "OC" = "#FF6720", "RIV" = "#FFB81C")
+  ) +
+  scale_y_continuous(trans = "log10") +  # Log scale to reduce skew
   theme_light() +
-  theme(legend.position = "top")
+  theme(
+    legend.position = "top",
+    text = element_text(size = 16),             
+    axis.title = element_text(size = 18),        
+    axis.text = element_text(size = 14),         
+    plot.title = element_text(size = 16, face = "bold"),
+    legend.title = element_text(size = 16),     
+    legend.text = element_text(size = 14)   
+  )
+
 ```
+
+These patterns in the number of listings and rent prices reveal the differences in the housing market across Southern California. **Riverside’s high number of apartment listings** and lower average rents point to its role as a **more affordable and accessible housing market**. Riverside has few outliers, suggesting **more consistency in pricing** and older/cheaper properties.
+
+In contrast, **Los Angeles and Orange County show multiple high-end outliers**, especially for houses and condos, which **increase the average prices**. These outliers hint at the presence of **luxury markets or high-demand neighborhoods**.
 
 # How to define what gets filtered
 
@@ -222,28 +239,29 @@ To make the analysis more flexible, especially for listings with multiple bedroo
 
 ```{r}
 #| label: Using Salary to Filter
-salary <- 60000  # yearly salary
+salary <- 60000  # random yearly salary
 monthly_income <- salary / 12 #calculating monthly paycheck assuming monthly rent payments
-max_rent_per_room <- (monthly_income * 0.30) #allowing only 30% of income to be sued for rent
-Rent_Clean_Affordable <- Rent_Clean |>
+max_rent <- (monthly_income * 0.30) #only 30% of income to be used for rent
+Rent_Clean_Affordable <- Rent_Clean |> #filter out to only include the affordable listings
   mutate(
-    rent_per_room = Price / Beds,
-    affordable = rent_per_room <= max_rent_per_room
+    rent_per_room = Price / Beds, #allowing for roomates
+    affordable = rent_per_room <= max_rent #makes logical
   )|>
-  filter(affordable== TRUE)
-summary_affordable <- Rent_Clean_Affordable |>
+  filter(affordable== TRUE) #filter
+summary_affordable <- Rent_Clean_Affordable |> #making a new mean/median table but consider affordability
   group_by(County, Type)|>
   summarize(mean.price = round(mean(Price, na.rm = TRUE)), 
             median.price = median(Price, na.rm = TRUE),
             .groups = "drop")
-summary_affordable |>
+summary_affordable |> #make a new visually appealing table
   arrange(desc(mean.price))|>
   gt() |>
   tab_header(
     title = "Average Rent Price by County and Type") |>
   fmt_currency(
     columns = c(mean.price, median.price),
-    currency = "USD") |>
+    currency = "USD",
+    decimals = 0) |>
   cols_label(
     County = "County",
     Type = "Housing Type",
@@ -258,40 +276,41 @@ summary_affordable |>
   ) |>
   opt_stylize(style = 6, color = "gray") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16),
-    heading.subtitle.font.size = px(12),
-    data_row.padding = px(5))
+    table.font.size = px(16),
+    heading.title.font.size = px(20),
+    heading.subtitle.font.size = px(14),
+    data_row.padding = px(3))
 ```
+
+After adding the salary variable, I was able to realistically **filter out the extreme outliers**. After removing these high rent listings the **average rent moved closer to the median**. This suggests that the original averages were **heavily influenced** by a small number of expensive listings.
+
+This adjustment is especially important for **model building**. By filtering out outliers, we create a dataset that **better represents the usual trends**, making our model more reliable.
 
 # Multiple Linear Regression Model
 
-\
-We developed a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including **county**, **housing type**, **number of bedrooms**, **bathrooms**, and **square footage**. The model reveals several important relationships while controlling for these variables.
+I made a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including **county**, **housing type**, **number of bedrooms**, **bathrooms**, and **square footage**. The model reveals several important relationships while controlling for these variables.
 
 ```{r}
 #| label: Multiple Regression Model
 #| message: false
 #| warning: false
 rent_model <- lm(Price ~ County + Type + SqFt + Beds + Baths, 
-                 data = Rent_Clean_Affordable)
+                 data = Rent_Clean_Affordable) #the model :D
+rent_model_table <- rent_model |> tidy() #the model into table
 
-rent_model_table <- rent_model |> tidy()
-
-rent_model_table <- rent_model_table |> 
+rent_model_table <- rent_model_table |> #mutate p.val to highlight significance
   mutate(p.value = case_when(
-    p.value < 0.001 ~ "< 0.001",    # Highly significant
-    p.value < 0.05 ~ "< 0.05",      # Significant
-    p.value >= 0.05 ~ "> 0.05",     # Non-significant
-    TRUE ~ as.character(p.value)   # Keep the original p-value (if needed)
+    p.value <= 0.05 ~ "≤ 0.05",    # Highly significant
+    p.value > 0.05 ~ "> 0.05",     # Non-significant
+    TRUE ~ as.character(p.value)
   ),
-  Change_Price = case_when(
+  Change_Price = case_when( #highlight changes in price
     estimate > 0 ~ "increase",  # Positive coefficient (increase)
     estimate < 0 ~ "decrease",  # Negative coefficient (decrease)
-    TRUE ~ "neutral"            # Neutral or zero coefficient
+    TRUE ~ "neutral"            # Neutral
   ))
 
-rent_model_table |>
+rent_model_table |> #make pretty table
   gt() |>
   tab_header(
     title = "Regression Results for Rent Model"
@@ -321,33 +340,30 @@ rent_model_table |>
     tab_style(
     style = cell_text(color = "#e74c3c"),
     locations = cells_body(columns = vars(p.value), 
-                           rows = p.value == "< 0.001")
+                           rows = p.value == "> 0.05") #heavy sig
   ) |>
   tab_style(
     style = cell_text(color = "#2ecc71"),
-    locations = cells_body(columns = vars(p.value), 
-                           rows = p.value == "> 0.05")
-  ) |>
-  tab_style(
-    style = cell_text(color = "#f1c40f"),
-    locations = cells_body(columns = vars(p.value), 
-                           rows = p.value == "< 0.05")
+    locations = cells_body(columns = vars(p.value),  #non sig
+                           rows = p.value == "≤ 0.05")
   ) |>
   opt_stylize(style = 6, color = "cyan") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16),
+    table.font.size = px(16),
+    heading.title.font.size = px(20),
     heading.subtitle.font.size = px(12),
-    data_row.padding = px(5)
+    data_row.padding = px(3)
   )
 
 ```
 
-The number of **bedrooms** had the strongest and most statistically significant association with rent: **each additional bedroom increases rent by approximately \$844** on average, holding other factors constant (`p < 0.001`). **Location also matters** — rental units in **Riverside County** tend to cost **\$718 less** than those in Los Angeles County, a difference that is statistically significant (`p < 0.001`). In contrast, rents in **Orange County** are slightly higher than in LA (by about \$189), but this difference is **not statistically significant**.
+**An apartment in LA is our baseline.** Listings in the OC area are higher than LA (by \$189) but it is **not statistically significant.** Listing in the Riverside ara tend to cost less than in Los Angeles, this difference is statistically significant.
 
-Among housing types, **houses rent for approximately \$401 more than apartments** (`p ≈ 0.035`), suggesting a premium for standalone homes. **Condos, bathrooms, and square footage** did **not show significant effects** on rent in this model, meaning their estimated influence may be due to chance or confounded by other variables.
+The number of **bedrooms had the strongest and most statistically significant association with rent**. Each additional bedroom increases rent by approximately \$844 on average. **Baths are not as statistically significant** only increasing rent by \$70.
 
-In summary, the model suggests that **bedroom count, housing type (house vs. apartment), and county location** are the strongest predictors of rent, while **square footage and bathrooms** did not contribute meaningfully after accounting for other variables.
+**Houses rent for approximately** \$401 more than apartments but shown by the model, doesn't have. Condos are not statistically significant, only increasing rent by \$73**.**
+
+Although **Square Footage** is often expected to impact rent, **in this model it is not statistically significant.** Suggesting other factors may play a bigger role (i.e. bedrooms). This model can indicate that the number of bedrooms may play a more important role in rent pricing than square footage, possibly because people value how many individuals a space can house more than the size itself.
 
 ```{r}
 #| label: Model Residual Histogram
@@ -359,20 +375,32 @@ ggplot(data = Prediction, aes(x = .resid)) +
   labs(title = "Histogram of Residuals",
        x = "Residuals",
        y = "Frequency") +
-  theme_light()
+  theme_light() +
+  theme(
+    legend.position = "top",
+    text = element_text(size = 16),             
+    axis.title = element_text(size = 18),        
+    axis.text = element_text(size = 14),         
+    plot.title = element_text(size = 16, face = "bold"),
+    legend.title = element_text(size = 16),     
+    legend.text = element_text(size = 14)   
+  )
 ```
 
-This histogram visualizes the distribution of residuals from the multiple linear regression model. The residuals are mostly centered around zero, indicating that the model generally makes accurate predictions. However, there is a slight skew to the left, suggesting that the model tends to overestimate rent prices for a number of listings. This imbalance could point to specific property types or counties where the model's assumptions don't hold as well. Overall, the residuals do not show extreme deviation from normality, supporting the model’s reasonable fit, but there may still be room for improvement by exploring interaction terms or non-linear relationships.
+This histogram visualizes the distribution of residuals from the multiple linear regression model. The residuals are mostly centered around zero, indicating that the model generally makes accurate predictions. However, there is a slight skew to the left, suggesting that **the model tends to overestimate rent prices** for a number of listings.
 
 # Conclusion
 
-**Los Angeles (LA)**: As expected, LA is densely populated and has higher prices. The correlation analysis confirms that the population density likely drives up demand and, consequently, the cost of living.
+After exploring the data using multiple methods, I was able to uncover key housing trends across each of the Southern California counties. As someone who has lived here for over 20 years, many of these patterns align with my lived experience but it's pretty cool to see data analytics prove what me and other locals often see.
 
-**Square Footage (SqFt)**: SqFt is a key factor influencing price. Larger homes or apartments are consistently more expensive, which aligns with the correlation findings.
+**Los Angeles (LA):**\
+As expected, LA is a heavily populated area and has some of the highest rent prices. The correlation analysis shows that square footage has a stronger impact on rent in LA, likely due to the high demand and limited space (many people, not much room). The histogram also reveals a right-skewed distribution, with prices trailing into the more expensive range, reinforcing the idea of LA as a competitive and costly housing market.
 
-**Riverside**: Riverside, being older and smaller, has relatively lower prices. The correlation table highlights the inverse relationship between age/size and price, explaining Riverside's affordability.
+**Riverside (RIV):**\
+Riverside’s histogram displays lower rent values. Its status as an older, more suburban region contributes to its relative affordability. The correlation table shows a balanced influence from the number of beds, baths, and square footage on pricing. This suggests that Riverside follows more predictable pricing patterns. It reflects a suburban area offering more consistent and accessible housing options.
 
-**Orange County (OC)**: OC shows a diverse range of prices, influenced by factors beyond just the number of bedrooms, bathrooms, and SqFt. The data suggests other external factors (possibly location within OC, amenities, etc.) significantly affect pricing, as seen in both the correlation table and price distributions.
+**Orange County (OC):**\
+Unlike LA and Riverside, Orange County's histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in OC.
 
 ```{r}
 correlation_table <- Rent_Clean |>
@@ -400,10 +428,10 @@ correlation_table |>
   ) |>
   opt_stylize(style = 6, color = "cyan") |>
   tab_options(
-    table.font.size = px(12),
-    heading.title.font.size = px(16),
+    table.font.size = px(18),
+    heading.title.font.size = px(20),
     heading.subtitle.font.size = px(12),
-    data_row.padding = px(5)
+    data_row.padding = px(4)
   )
 
 ```
@@ -433,15 +461,49 @@ Rent_Clean |>
       "All Counties" = "gray"     # Customize color for "All Counties"
     )
   ) +
-  theme_light()
+  theme_light() +
+  theme(
+    text = element_text(size = 16),             
+    axis.title = element_text(size = 18),        
+    axis.text = element_text(size = 14),         
+    plot.title = element_text(size = 16, face = "bold"),
+    legend.title = element_text(size = 16),     
+    legend.text = element_text(size = 14)   
+  )
 ```
 
-# EXTRA: take a peak at some listings
+Which brings me back to my objective: **Where should someone rent?** As mentioned earlier, the answer depends on individual priorities. If you're looking for consistent affordability, Riverside is a solid choice with its more predictable and accessible pricing. However, (speaking from experience) don’t forget to consider commute times, as traffic in this region can be a significant factor. The LA area, while expensive, is driven by the vibeof the city, the job opportunities, and the cultural significance (think Hollywood). So, while rents are steep, they reflect the appeal and allure of the area beyond just housing. As for Orange County, it's great for those seeking a balance between affordability and amenities. It offers a mix of options for people who value a comfortable lifestyle with access to good schools, parks, and community features. (I think the parks there are great)
 
-I've decided to look at the most expensive and the cheapest listing throughly. even after all my data cleaning... this listing got thru. I decided to investigate it for the heck of it.
+Ultimately, there’s no one-size-fits-all answer. Renters must weigh their priorities, whether it’s budget, space, amenities, or proximity to work and culture, in order to find the right fit for them.
 
-**217 E 29th St Unit 217 And 217 1 2, Los Angeles, CA 90011:** Upon further investigation. This is a listing for 2 units with a total of 4 beds and 4 baths. Meaning each unit has 2 beds and 2 baths. Then the listing explains how each bedroom can house 2-3 people meaning acording to my code, rent cost would only be about \$187 a month give or take a roomate or two. As GREAT of a rent price this seems. On the bright side-the listing seems to be a affordable housing option for someone who really needs it. On the more weary side- the listing seems sketchy and im unfortunately, not interested.
+# Limitations
+
+Even though this project helped uncover some cool insights about rent trends in Southern California, there were a few limitations worth mentioning.
+
+**Data Source:**\
+The data I used was based on the rental listings available during this time (APR 2025) and like most online listings, they change fast. Some of the ones I pulled were already taken down a couple of weeks later. On top of that, there were some missing or weird values in the dataset. For example, some listings had `0` bedrooms, which probably meant they were studios. But the way the data was structured (and for simplicity as a beginner), I chose to remove them. I remember that decision actually cut out a decent number of apartment listings from LA, which probably skewed the overall picture there a bit.
+
+**Modeling Assumptions:**\
+I used a linear regression model, which assumes a straight-line relationship between things like square footage, beds, and baths, and the rent price. But let’s be real, housing markets are way more complicated than that. There are tons of other factors that influence rent like location, neighborhood vibe, schools, commute times and those things are hard to capture with the dataset I had. So while the model gives us a starting point, it definitely doesn’t tell the whole story.
+
+# Reflection
+
+This project was genuinely a lot of fun. Working with real housing data pushed me to practice key skills like data cleaning and wrangling. I felt way more confident in organizing messy data and turning it into something meaningful. I especially enjoyed creating the visuals and being able to actually see the trends and share them in a clear way.
+
+I also connected with this project on a personal level. I’ve lived in Southern California my whole life, so it was really interesting to analyze an everyday topic like rent through the lens of a data analyst. It helped me understand how prices vary and what factors play a role in shaping the housing landscape across different counties.
+
+There were definitely a few more things I would’ve liked to explore or experiment with, but I decided to focus on cleaning and improving the work I already had. Honestly, just being able to turn data into visuals and insights was exciting enough.
+
+# EXTRA: my favorite weird listings
+
+**217 E 29th St Unit 217 And 217 1 2, Los Angeles, CA 90011:** Upon further investigation. This is a listing for 2 units with a total of 4 beds and 4 baths. Meaning each unit has 2 beds and 2 baths. Then the listing explains how each bedroom can house 2-3 people meaning according to my code, rent cost would only be about \$187 a month give or take a roommate or two. As GREAT of a rent price this seems. On the bright side-the listing seems to be a affordable housing option for someone who really needs it. On the more weary side- the listing seems sketchy and im unfortunately, not interested.
 
 **Rental Description:** Our brand new, all-inclusive shared rooms are move-in ready just bring your bag and settle into comfort, convenience, and community in the heart of the city. All-inclusive rates starting at just \$700/month only 2-3 person per room ! Move in today stay as long or as little as you need All utilities Wi-Fi included Weekly cleaning of shared spaces Private ensuite bathrooms in most rooms On-site laundry for easy living Street & paid parking available On-site manager for support when you need it No credit checks. No deposits. No SSN. Just a valid ID from any country.Spots are limited and going fast message now and claim your bed today!"
 
-![bedroom](images/bedroom.jpg)
+![](images/bedroom.jpg)
+
+**1313 Disneyland Dr. Anaheim, CA 92802:** this listing was up for rent for 30,000/month. This was the listing that skewed my OC rental price mean. I looked into it thinking it was a some condo near disneyland. Looking intot he listing it was actually IN disneyland. Weird. Knowing Disneyland lovers out there may have an answer I looked into reddit only to find 1313 Disneyland Dr is the official disneyland address (M is the 13th letter of the alphabet and Mickey Mouse is 1313). I literally could not find any other info on what exactly is this listings. The listing has been up for a year and wasnt until recently (APR 30th 2025) that the listing was taken down. My only guesses is that Walt Disney apartment above the fire station. But more relaistically, maybe its something for a private entertainment for disneyland. I do find it rather odd that the listing got taken down 2 weeks after i got the data.
+
+**Rental Description:** This property is available. Please inquire on this site to schedule a showing. Im sorry, I cant provide a description of this property.Available NOWHeating ForcedAirCooling EvaporativeAppliances Refrigerator, Range Oven, Microwave, DishwasherLaundry In UnitParking Detached Garage, 2 spacesPets Dogs Allowed, Cats AllowedSecurity deposit 30,000.00Included Utilities Garbage, Sewage, LandscapingAdditional DepositPet 500.00This property has a home security system.Disclaimer Ziprent is acting as the agent for the owner. Information Deemed Reliable but not Guaranteed. All information should be independently verified by renter.
+
+![](images/DisneylandAdress.png)
