@@ -4,14 +4,14 @@ format: html
 ---
 
 # Welcome!
+
 ## About Me
+
 Hi, I'm Natalie Torres — a statistics major at Cal State Fullerton. This portfolio showcases my projects. Currently a work in progress :D
 
-- GitHub: [@Nat-Tor](https://github.com/Nat-Tor)
-- LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)
+-   GitHub: [\@Nat-Tor](https://github.com/Nat-Tor)
+-   LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)
 
 ## Projects
-- [SoCalRent Analysis](https://nat-tor.github.io/NatPortfolio/SoCalRentProject.html)
 
-
-
+-   [SoCalRent Analysis](https://nat-tor.github.io/NatPortfolio/SoCalRentProject.html)

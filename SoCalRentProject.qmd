@@ -50,7 +50,8 @@ SoCalRent |>
 opt_stylize(style = 6, color = "cyan") |>
   tab_options(
     table.font.size = px(16),
-    heading.title.font.size = px(18))
+    heading.title.font.size = px(18),
+    table.width = pct(100))
 ```
 
 # Data Wrangling
@@ -117,7 +118,8 @@ Rent_Clean |>
 opt_stylize(style = 6, color = "cyan") |>
   tab_options(
     table.font.size = px(16),
-    heading.title.font.size = px(18))
+    heading.title.font.size = px(18),
+    table.width = pct(100))
 ```
 
 # Exploratory Data Analysis
@@ -187,12 +189,14 @@ summary_table |>
       domain = NULL
     )
   ) |>
+  cols_align(align = c("left"))|>
   opt_stylize(style = 6, color = "gray") |>
   tab_options(
     table.font.size = px(16),
     heading.title.font.size = px(20),
     heading.subtitle.font.size = px(14),
-    data_row.padding = px(3))
+    data_row.padding = px(3),
+    table.width = pct(100))
 
 ```
 
@@ -274,12 +278,14 @@ summary_affordable |> #make a new visually appealing table
       domain = NULL
     )
   ) |>
+  cols_align(align = c("left"))|>
   opt_stylize(style = 6, color = "gray") |>
   tab_options(
     table.font.size = px(16),
     heading.title.font.size = px(20),
     heading.subtitle.font.size = px(14),
-    data_row.padding = px(3))
+    data_row.padding = px(3),
+    table.width = pct(100))
 ```
 
 After adding the salary variable, I was able to realistically **filter out the extreme outliers**. After removing these high rent listings the **average rent moved closer to the median**. This suggests that the original averages were **heavily influenced** by a small number of expensive listings.
@@ -347,13 +353,12 @@ rent_model_table |> #make pretty table
     locations = cells_body(columns = vars(p.value),  #non sig
                            rows = p.value == "≤ 0.05")
   ) |>
-  opt_stylize(style = 6, color = "cyan") |>
+   cols_align(align = c("left"))|>
+opt_stylize(style = 6, color = "gray") |>
   tab_options(
     table.font.size = px(16),
-    heading.title.font.size = px(20),
-    heading.subtitle.font.size = px(12),
-    data_row.padding = px(3)
-  )
+    heading.title.font.size = px(18),
+    table.width = pct(100))
 
 ```
 
@@ -403,7 +408,7 @@ Riverside’s histogram displays lower rent values. Its status as an older, more
 Unlike LA and Riverside, Orange County's histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in OC.
 
 ```{r}
-correlation_table <- Rent_Clean |>
+correlation_table <- Rent_Clean_Affordable |>
   group_by(County) |>
   summarise(
     Bed_cor = cor(Price, Beds), 
@@ -426,23 +431,19 @@ correlation_table |>
     style = cell_text(weight = "bold"),
     locations = cells_column_labels(columns = everything())
   ) |>
-  opt_stylize(style = 6, color = "cyan") |>
+   cols_align(align = c("left"))|>
+opt_stylize(style = 6, color = "cyan") |>
   tab_options(
-    table.font.size = px(18),
-    heading.title.font.size = px(20),
-    heading.subtitle.font.size = px(12),
-    data_row.padding = px(4)
-  )
-
+    table.font.size = px(16),
+    heading.title.font.size = px(18),
+    table.width = pct(100))
 ```
 
 ```{r}
-Rent_Clean |>
-  filter(Price < 10000) |>
+Rent_Clean_Affordable |>
   mutate(County = as.character(County)) |>
   bind_rows(
-    Rent_Clean |>
-      filter(Price < 10000) |>
+    Rent_Clean_Affordable |>
       mutate(County = "All Counties")
   ) |>
   ggplot(aes(x = Price, fill = County)) +
@@ -454,11 +455,8 @@ Rent_Clean |>
     y = "Number of Listings"
   ) +
   scale_fill_manual(
-    values = c(
-      "LA" = "#005596",      # Customize color for LA
-      "RIV" = "#FFB81C",       # Customize color for Riverside
-      "OC" = "#FF6720",  # Customize color for Orange County
-      "All Counties" = "gray"     # Customize color for "All Counties"
+    values = c("LA" = "#005596", "RIV" = "#FFB81C","OC" = "#FF6720", 
+      "All Counties" = "gray" 
     )
   ) +
   theme_light() +
