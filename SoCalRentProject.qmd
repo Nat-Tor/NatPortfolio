@@ -6,12 +6,12 @@ title: "Rent in Southern California"
 
 My goal is to take a broad look at the rental market across these Southern California counties. I want to explore what each county offers in terms of rent and identify any trends that emerge from the listings. Specifically, **I’m interested in how different priorities (square footage, number of bedrooms and bathrooms, or overall price) affect where someone might choose to rent.**
 
-For example, if someone values space, which county offers the most square footage for the price? If they prioritize more bedrooms or bathrooms, where might they get the best deal? I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.
+I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.
 
 # Packages Used and Data Import
 
 ```{r}
-#| label: Where am I and data import
+#| label: Where am I, packages used and data import
 #| message: false
 #| warning: false
 library(readr)
@@ -28,7 +28,7 @@ SoCalRent <- read_csv(here::here("NatsPortfolio/ProjectData/SoCalDataRaw_2025.cs
 
 # Data Collection
 
-Finding clean and usable public data turned out to be more challenging than expected. After exploring several sites, I've decided to use **Redfin**. I then relied on **Excel’s web tools** to auto-generate tables directly from listing URLs. I focused on three Southern California counties: **Orange County, Riverside County, and Los Angeles County**. Across the three counties, I gathered data on three different property types: **houses, condos, and apartments**. While the raw data I pulled was relatively structured, it still required some cleaning.
+Finding clean and usable public data turned out to be more challenging than expected. After exploring several sites, I've decided to use **Redfin**. I then relied on **Excel’s web tools** to auto-generate tables directly from listing URLs. For each listing, I've included the **Price(\$), Numbers of Bathrooms and Bedrooms, Square Footage, Address, Housing Type, and County.** I focused on three Southern California counties: **Orange County(OC), Riverside County(RIV), and Los Angeles County(LA)**. Across the three counties, I gathered data on three different property types: **houses, condos, and apartments**. While the raw data I pulled was relatively structured, it still required some cleaning.
 
 ```{r}
 #| label: Sample of Messy Data
@@ -124,10 +124,12 @@ opt_stylize(style = 6, color = "cyan") |>
 
 # Exploratory Data Analysis
 
-I analyzed the data by grouping listings by **County** and **Housing Type**. Overall, most listings were houses. **Riverside County** had the highest number of apartment listings, while **Orange County** had the most condo listings. When it comes to house listings, **Riverside and Los Angeles counties were tied** for the highest count.
+I analyzed the data by grouping listings by **County** and **Housing Type**.
+
+Overall, most listings were houses. **Riverside County** had the highest number of apartment listings, while **Orange County** had the most condo listings. When it comes to house listings, **Riverside and Los Angeles counties were tied** for the highest count.
 
 ```{r}
-#| label: Housing Type by County
+#| label: Housing Type by County Histogram
 Rent_Clean |>
   count(Type, County) |>
   ggplot(aes(x = Type, y = n, fill = County)) +
@@ -160,7 +162,7 @@ Next, I made a table showing the **average and median rent prices** by **county*
 It was important to notice the **difference between average and median values**. This indicates that there exists **high-priced outliers** that are skewing the averages. Median values offer a better sense of typical rent prices.
 
 ```{r}
-#| label: Visual of Average Rent Price
+#| label: Visual Table of Average Rent Price
 #| message: false
 #| warning: false
 summary_table <- Rent_Clean |>
@@ -239,7 +241,7 @@ In contrast, **Los Angeles and Orange County show multiple high-end outliers**, 
 
 For this project, I want to approach rental affordability from a personal angle, while keeping it general enough that others could adapt it to their own situations. A common rule of thumb is that individuals shouldn’t spend more than 30% of their income on rent. Based on this, I’ll introduce a **salary** variable to simulate what someone can realistically afford. This variable will help filter out listings that exceed that 30% income threshold.
 
-To make the analysis more flexible, especially for listings with multiple bedrooms, I’m assuming that shared housing is an option. That means I’ll consider a unit affordable if the **rent per bedroom** is within 30% of a person’s monthly income. This way, I can include multi-bedroom apartments that might be affordable when split among roommates.
+To make the analysis more flexible, especially for listings with multiple bedrooms, I’m assuming that shared housing is an option. That means I’ll consider a unit affordable if the **rent per bedroom** is within 30% of a person’s monthly income. This way, I can include multi-bedroom housing options that might be affordable when split among roommates.
 
 ```{r}
 #| label: Using Salary to Filter
@@ -294,10 +296,10 @@ This adjustment is especially important for **model building**. By filtering out
 
 # Multiple Linear Regression Model
 
-I made a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including **county**, **housing type**, **number of bedrooms**, **bathrooms**, and **square footage**. The model reveals several important relationships while controlling for these variables.
+I made a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including **county**, **housing type**, **number of bedrooms**, **bathrooms**, and **square footage**. The model reveals several important relationships.
 
 ```{r}
-#| label: Multiple Regression Model
+#| label: Multiple Linear Regression Model and Table
 #| message: false
 #| warning: false
 rent_model <- lm(Price ~ County + Type + SqFt + Beds + Baths, 
@@ -362,13 +364,13 @@ opt_stylize(style = 6, color = "gray") |>
 
 ```
 
-**An apartment in LA is our baseline.** Listings in the OC area are higher than LA (by \$189) but it is **not statistically significant.** Listing in the Riverside ara tend to cost less than in Los Angeles, this difference is statistically significant.
+**An apartment in LA is our baseline.** Listings in the OC area are higher than LA (by \$189) but it is **not statistically significant.** Listing in the Riverside area tend to cost less than in Los Angeles, this difference is statistically significant.
 
 The number of **bedrooms had the strongest and most statistically significant association with rent**. Each additional bedroom increases rent by approximately \$844 on average. **Baths are not as statistically significant** only increasing rent by \$70.
 
 **Houses rent for approximately** \$401 more than apartments but shown by the model, doesn't have. Condos are not statistically significant, only increasing rent by \$73**.**
 
-Although **Square Footage** is often expected to impact rent, **in this model it is not statistically significant.** Suggesting other factors may play a bigger role (i.e. bedrooms). This model can indicate that the number of bedrooms may play a more important role in rent pricing than square footage, possibly because people value how many individuals a space can house more than the size itself.
+Although **Square Footage** is often expected to impact rent, **in this model it is not accurate.** Suggesting other factors may play a bigger role (i.e. bedrooms). This model can indicate that the number of bedrooms may play a more important role in rent pricing than square footage, possibly because people value how many individuals a space can house more than the size itself.
 
 ```{r}
 #| label: Model Residual Histogram
@@ -405,17 +407,16 @@ As expected, LA is a heavily populated area and has some of the highest rent pri
 Riverside’s histogram displays lower rent values. Its status as an older, more suburban region contributes to its relative affordability. The correlation table shows a balanced influence from the number of beds, baths, and square footage on pricing. This suggests that Riverside follows more predictable pricing patterns. It reflects a suburban area offering more consistent and accessible housing options.
 
 **Orange County (OC):**\
-Unlike LA and Riverside, Orange County's histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in OC.
+Unlike LA and Riverside, Orange County's histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in Orange County.
 
 ```{r}
-correlation_table <- Rent_Clean_Affordable |>
+correlation_table <- Rent_Clean |>
   group_by(County) |>
   summarise(
     Bed_cor = cor(Price, Beds), 
     Baths_cor = cor(Price, Baths), 
     SqFt_cor = cor(Price, SqFt)
   )
-
 correlation_table |>
   gt() |>
   tab_header(
@@ -440,7 +441,9 @@ opt_stylize(style = 6, color = "cyan") |>
 ```
 
 ```{r}
-Rent_Clean_Affordable |>
+#| label: Histogram of overall price by County (with filtered outliers)
+Rent_Clean |>
+  filter(Price < 10000)|>
   mutate(County = as.character(County)) |>
   bind_rows(
     Rent_Clean_Affordable |>
@@ -470,7 +473,7 @@ Rent_Clean_Affordable |>
   )
 ```
 
-Which brings me back to my objective: **Where should someone rent?** As mentioned earlier, the answer depends on individual priorities. If you're looking for consistent affordability, Riverside is a solid choice with its more predictable and accessible pricing. However, (speaking from experience) don’t forget to consider commute times, as traffic in this region can be a significant factor. The LA area, while expensive, is driven by the vibeof the city, the job opportunities, and the cultural significance (think Hollywood). So, while rents are steep, they reflect the appeal and allure of the area beyond just housing. As for Orange County, it's great for those seeking a balance between affordability and amenities. It offers a mix of options for people who value a comfortable lifestyle with access to good schools, parks, and community features. (I think the parks there are great)
+Which brings me back to my objective: **Where should someone rent?** As mentioned earlier, the answer depends on individual priorities. If you're looking for consistent affordability, Riverside is a solid choice with its more predictable and accessible pricing. The LA area, while expensive, reflects the appeal and allure of the area beyond just housing. As for Orange County, it's great for those seeking a balance between affordability and amenities. It offers a mix of options for people who value a comfortable lifestyle with access to good schools, parks, and community features.
 
 Ultimately, there’s no one-size-fits-all answer. Renters must weigh their priorities, whether it’s budget, space, amenities, or proximity to work and culture, in order to find the right fit for them.
 

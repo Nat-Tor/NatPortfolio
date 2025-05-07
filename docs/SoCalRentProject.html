@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objective" class="level1">
 <h1>Objective</h1>
 <p>My goal is to take a broad look at the rental market across these Southern California counties. I want to explore what each county offers in terms of rent and identify any trends that emerge from the listings. Specifically, <strong>I’m interested in how different priorities (square footage, number of bedrooms and bathrooms, or overall price) affect where someone might choose to rent.</strong></p>
-<p>For example, if someone values space, which county offers the most square footage for the price? If they prioritize more bedrooms or bathrooms, where might they get the best deal? I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.</p>
+<p>I understand that preferences vary, so rather than claiming one county is “best,” my goal is to highlight the trends I observe in each area and offer insights into what renters might expect based on their needs.</p>
 </section>
 <section id="packages-used-and-data-import" class="level1">
 <h1>Packages Used and Data Import</h1>
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-collection" class="level1">
 <h1>Data Collection</h1>
-<p>Finding clean and usable public data turned out to be more challenging than expected. After exploring several sites, I’ve decided to use <strong>Redfin</strong>. I then relied on <strong>Excel’s web tools</strong> to auto-generate tables directly from listing URLs. I focused on three Southern California counties: <strong>Orange County, Riverside County, and Los Angeles County</strong>. Across the three counties, I gathered data on three different property types: <strong>houses, condos, and apartments</strong>. While the raw data I pulled was relatively structured, it still required some cleaning.</p>
+<p>Finding clean and usable public data turned out to be more challenging than expected. After exploring several sites, I’ve decided to use <strong>Redfin</strong>. I then relied on <strong>Excel’s web tools</strong> to auto-generate tables directly from listing URLs. For each listing, I’ve included the <strong>Price($), Numbers of Bathrooms and Bedrooms, Square Footage, Address, Housing Type, and County.</strong> I focused on three Southern California counties: <strong>Orange County(OC), Riverside County(RIV), and Los Angeles County(LA)</strong>. Across the three counties, I gathered data on three different property types: <strong>houses, condos, and apartments</strong>. While the raw data I pulled was relatively structured, it still required some cleaning.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -232,23 +232,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fnedgmmygj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fnedgmmygj table {
+<div id="zttkfdlzig" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zttkfdlzig table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fnedgmmygj thead, #fnedgmmygj tbody, #fnedgmmygj tfoot, #fnedgmmygj tr, #fnedgmmygj td, #fnedgmmygj th {
+#zttkfdlzig thead, #zttkfdlzig tbody, #zttkfdlzig tfoot, #zttkfdlzig tr, #zttkfdlzig td, #zttkfdlzig th {
   border-style: none;
 }
 
-#fnedgmmygj p {
+#zttkfdlzig p {
   margin: 0;
   padding: 0;
 }
 
-#fnedgmmygj .gt_table {
+#zttkfdlzig .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -274,12 +274,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#fnedgmmygj .gt_caption {
+#zttkfdlzig .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fnedgmmygj .gt_title {
+#zttkfdlzig .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#fnedgmmygj .gt_subtitle {
+#zttkfdlzig .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -303,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#fnedgmmygj .gt_heading {
+#zttkfdlzig .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -315,13 +315,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fnedgmmygj .gt_bottom_border {
+#zttkfdlzig .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_col_headings {
+#zttkfdlzig .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -336,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fnedgmmygj .gt_col_heading {
+#zttkfdlzig .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -356,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fnedgmmygj .gt_column_spanner_outer {
+#zttkfdlzig .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -368,15 +368,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#fnedgmmygj .gt_column_spanner_outer:first-child {
+#zttkfdlzig .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fnedgmmygj .gt_column_spanner_outer:last-child {
+#zttkfdlzig .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fnedgmmygj .gt_column_spanner {
+#zttkfdlzig .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -388,11 +388,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#fnedgmmygj .gt_spanner_row {
+#zttkfdlzig .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fnedgmmygj .gt_group_heading {
+#zttkfdlzig .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#fnedgmmygj .gt_empty_group_heading {
+#zttkfdlzig .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -433,15 +433,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#fnedgmmygj .gt_from_md > :first-child {
+#zttkfdlzig .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fnedgmmygj .gt_from_md > :last-child {
+#zttkfdlzig .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fnedgmmygj .gt_row {
+#zttkfdlzig .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -460,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fnedgmmygj .gt_stub {
+#zttkfdlzig .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -473,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fnedgmmygj .gt_stub_row_group {
+#zttkfdlzig .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -487,15 +487,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#fnedgmmygj .gt_row_group_first td {
+#zttkfdlzig .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fnedgmmygj .gt_row_group_first th {
+#zttkfdlzig .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fnedgmmygj .gt_summary_row {
+#zttkfdlzig .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -505,16 +505,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fnedgmmygj .gt_first_summary_row {
+#zttkfdlzig .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_first_summary_row.thick {
+#zttkfdlzig .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fnedgmmygj .gt_last_summary_row {
+#zttkfdlzig .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -524,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_grand_summary_row {
+#zttkfdlzig .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -534,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fnedgmmygj .gt_first_grand_summary_row {
+#zttkfdlzig .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_last_grand_summary_row_top {
+#zttkfdlzig .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -554,11 +554,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_striped {
+#zttkfdlzig .gt_striped {
   background-color: #EBFBF9;
 }
 
-#fnedgmmygj .gt_table_body {
+#zttkfdlzig .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fnedgmmygj .gt_footnotes {
+#zttkfdlzig .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -581,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fnedgmmygj .gt_footnote {
+#zttkfdlzig .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -590,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fnedgmmygj .gt_sourcenotes {
+#zttkfdlzig .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -604,7 +604,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fnedgmmygj .gt_sourcenote {
+#zttkfdlzig .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -612,72 +612,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fnedgmmygj .gt_left {
+#zttkfdlzig .gt_left {
   text-align: left;
 }
 
-#fnedgmmygj .gt_center {
+#zttkfdlzig .gt_center {
   text-align: center;
 }
 
-#fnedgmmygj .gt_right {
+#zttkfdlzig .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fnedgmmygj .gt_font_normal {
+#zttkfdlzig .gt_font_normal {
   font-weight: normal;
 }
 
-#fnedgmmygj .gt_font_bold {
+#zttkfdlzig .gt_font_bold {
   font-weight: bold;
 }
 
-#fnedgmmygj .gt_font_italic {
+#zttkfdlzig .gt_font_italic {
   font-style: italic;
 }
 
-#fnedgmmygj .gt_super {
+#zttkfdlzig .gt_super {
   font-size: 65%;
 }
 
-#fnedgmmygj .gt_footnote_marks {
+#zttkfdlzig .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fnedgmmygj .gt_asterisk {
+#zttkfdlzig .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fnedgmmygj .gt_indent_1 {
+#zttkfdlzig .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fnedgmmygj .gt_indent_2 {
+#zttkfdlzig .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fnedgmmygj .gt_indent_3 {
+#zttkfdlzig .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fnedgmmygj .gt_indent_4 {
+#zttkfdlzig .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fnedgmmygj .gt_indent_5 {
+#zttkfdlzig .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fnedgmmygj .katex-display {
+#zttkfdlzig .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fnedgmmygj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zttkfdlzig div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -820,23 +820,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="zglgazjbur" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zglgazjbur table {
+<div id="eqfekkvrwb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eqfekkvrwb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zglgazjbur thead, #zglgazjbur tbody, #zglgazjbur tfoot, #zglgazjbur tr, #zglgazjbur td, #zglgazjbur th {
+#eqfekkvrwb thead, #eqfekkvrwb tbody, #eqfekkvrwb tfoot, #eqfekkvrwb tr, #eqfekkvrwb td, #eqfekkvrwb th {
   border-style: none;
 }
 
-#zglgazjbur p {
+#eqfekkvrwb p {
   margin: 0;
   padding: 0;
 }
 
-#zglgazjbur .gt_table {
+#eqfekkvrwb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -862,12 +862,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#zglgazjbur .gt_caption {
+#eqfekkvrwb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zglgazjbur .gt_title {
+#eqfekkvrwb .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -879,7 +879,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#zglgazjbur .gt_subtitle {
+#eqfekkvrwb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -891,7 +891,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#zglgazjbur .gt_heading {
+#eqfekkvrwb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -903,13 +903,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#zglgazjbur .gt_bottom_border {
+#eqfekkvrwb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_col_headings {
+#eqfekkvrwb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -924,7 +924,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#zglgazjbur .gt_col_heading {
+#eqfekkvrwb .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -944,7 +944,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#zglgazjbur .gt_column_spanner_outer {
+#eqfekkvrwb .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -956,15 +956,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#zglgazjbur .gt_column_spanner_outer:first-child {
+#eqfekkvrwb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zglgazjbur .gt_column_spanner_outer:last-child {
+#eqfekkvrwb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zglgazjbur .gt_column_spanner {
+#eqfekkvrwb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -976,11 +976,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#zglgazjbur .gt_spanner_row {
+#eqfekkvrwb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zglgazjbur .gt_group_heading {
+#eqfekkvrwb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1006,7 +1006,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#zglgazjbur .gt_empty_group_heading {
+#eqfekkvrwb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1021,15 +1021,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#zglgazjbur .gt_from_md > :first-child {
+#eqfekkvrwb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zglgazjbur .gt_from_md > :last-child {
+#eqfekkvrwb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zglgazjbur .gt_row {
+#eqfekkvrwb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1048,7 +1048,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#zglgazjbur .gt_stub {
+#eqfekkvrwb .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -1061,7 +1061,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#zglgazjbur .gt_stub_row_group {
+#eqfekkvrwb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1075,15 +1075,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#zglgazjbur .gt_row_group_first td {
+#eqfekkvrwb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zglgazjbur .gt_row_group_first th {
+#eqfekkvrwb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zglgazjbur .gt_summary_row {
+#eqfekkvrwb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1093,16 +1093,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#zglgazjbur .gt_first_summary_row {
+#eqfekkvrwb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_first_summary_row.thick {
+#eqfekkvrwb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zglgazjbur .gt_last_summary_row {
+#eqfekkvrwb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1112,7 +1112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_grand_summary_row {
+#eqfekkvrwb .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1122,7 +1122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#zglgazjbur .gt_first_grand_summary_row {
+#eqfekkvrwb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1132,7 +1132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_last_grand_summary_row_top {
+#eqfekkvrwb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1142,11 +1142,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_striped {
+#eqfekkvrwb .gt_striped {
   background-color: #EBFBF9;
 }
 
-#zglgazjbur .gt_table_body {
+#eqfekkvrwb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1155,7 +1155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#zglgazjbur .gt_footnotes {
+#eqfekkvrwb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1169,7 +1169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#zglgazjbur .gt_footnote {
+#eqfekkvrwb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1178,7 +1178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#zglgazjbur .gt_sourcenotes {
+#eqfekkvrwb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1192,7 +1192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#zglgazjbur .gt_sourcenote {
+#eqfekkvrwb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1200,72 +1200,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#zglgazjbur .gt_left {
+#eqfekkvrwb .gt_left {
   text-align: left;
 }
 
-#zglgazjbur .gt_center {
+#eqfekkvrwb .gt_center {
   text-align: center;
 }
 
-#zglgazjbur .gt_right {
+#eqfekkvrwb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zglgazjbur .gt_font_normal {
+#eqfekkvrwb .gt_font_normal {
   font-weight: normal;
 }
 
-#zglgazjbur .gt_font_bold {
+#eqfekkvrwb .gt_font_bold {
   font-weight: bold;
 }
 
-#zglgazjbur .gt_font_italic {
+#eqfekkvrwb .gt_font_italic {
   font-style: italic;
 }
 
-#zglgazjbur .gt_super {
+#eqfekkvrwb .gt_super {
   font-size: 65%;
 }
 
-#zglgazjbur .gt_footnote_marks {
+#eqfekkvrwb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zglgazjbur .gt_asterisk {
+#eqfekkvrwb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zglgazjbur .gt_indent_1 {
+#eqfekkvrwb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zglgazjbur .gt_indent_2 {
+#eqfekkvrwb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zglgazjbur .gt_indent_3 {
+#eqfekkvrwb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zglgazjbur .gt_indent_4 {
+#eqfekkvrwb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zglgazjbur .gt_indent_5 {
+#eqfekkvrwb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zglgazjbur .katex-display {
+#eqfekkvrwb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zglgazjbur div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eqfekkvrwb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1356,7 +1356,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exploratory-data-analysis" class="level1">
 <h1>Exploratory Data Analysis</h1>
-<p>I analyzed the data by grouping listings by <strong>County</strong> and <strong>Housing Type</strong>. Overall, most listings were houses. <strong>Riverside County</strong> had the highest number of apartment listings, while <strong>Orange County</strong> had the most condo listings. When it comes to house listings, <strong>Riverside and Los Angeles counties were tied</strong> for the highest count.</p>
+<p>I analyzed the data by grouping listings by <strong>County</strong> and <strong>Housing Type</strong>.</p>
+<p>Overall, most listings were houses. <strong>Riverside County</strong> had the highest number of apartment listings, while <strong>Orange County</strong> had the most condo listings. When it comes to house listings, <strong>Riverside and Los Angeles counties were tied</strong> for the highest count.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -1389,7 +1390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="SoCalRentProject_files/figure-html/Housing Type by County-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="SoCalRentProject_files/figure-html/Housing Type by County Histogram-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1435,23 +1436,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="xqgzurxqxj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xqgzurxqxj table {
+<div id="vzswodccfg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vzswodccfg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xqgzurxqxj thead, #xqgzurxqxj tbody, #xqgzurxqxj tfoot, #xqgzurxqxj tr, #xqgzurxqxj td, #xqgzurxqxj th {
+#vzswodccfg thead, #vzswodccfg tbody, #vzswodccfg tfoot, #vzswodccfg tr, #vzswodccfg td, #vzswodccfg th {
   border-style: none;
 }
 
-#xqgzurxqxj p {
+#vzswodccfg p {
   margin: 0;
   padding: 0;
 }
 
-#xqgzurxqxj .gt_table {
+#vzswodccfg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1477,12 +1478,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#xqgzurxqxj .gt_caption {
+#vzswodccfg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xqgzurxqxj .gt_title {
+#vzswodccfg .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -1494,7 +1495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#xqgzurxqxj .gt_subtitle {
+#vzswodccfg .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -1506,7 +1507,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#xqgzurxqxj .gt_heading {
+#vzswodccfg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1518,13 +1519,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xqgzurxqxj .gt_bottom_border {
+#vzswodccfg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_col_headings {
+#vzswodccfg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1539,7 +1540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xqgzurxqxj .gt_col_heading {
+#vzswodccfg .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1559,7 +1560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xqgzurxqxj .gt_column_spanner_outer {
+#vzswodccfg .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1571,15 +1572,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#xqgzurxqxj .gt_column_spanner_outer:first-child {
+#vzswodccfg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xqgzurxqxj .gt_column_spanner_outer:last-child {
+#vzswodccfg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xqgzurxqxj .gt_column_spanner {
+#vzswodccfg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1591,11 +1592,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#xqgzurxqxj .gt_spanner_row {
+#vzswodccfg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xqgzurxqxj .gt_group_heading {
+#vzswodccfg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1621,7 +1622,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#xqgzurxqxj .gt_empty_group_heading {
+#vzswodccfg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1636,15 +1637,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#xqgzurxqxj .gt_from_md > :first-child {
+#vzswodccfg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xqgzurxqxj .gt_from_md > :last-child {
+#vzswodccfg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xqgzurxqxj .gt_row {
+#vzswodccfg .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -1663,7 +1664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xqgzurxqxj .gt_stub {
+#vzswodccfg .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1676,7 +1677,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xqgzurxqxj .gt_stub_row_group {
+#vzswodccfg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1690,15 +1691,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#xqgzurxqxj .gt_row_group_first td {
+#vzswodccfg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xqgzurxqxj .gt_row_group_first th {
+#vzswodccfg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xqgzurxqxj .gt_summary_row {
+#vzswodccfg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1708,16 +1709,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xqgzurxqxj .gt_first_summary_row {
+#vzswodccfg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_first_summary_row.thick {
+#vzswodccfg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xqgzurxqxj .gt_last_summary_row {
+#vzswodccfg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1727,7 +1728,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_grand_summary_row {
+#vzswodccfg .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1737,7 +1738,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xqgzurxqxj .gt_first_grand_summary_row {
+#vzswodccfg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1747,7 +1748,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_last_grand_summary_row_top {
+#vzswodccfg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1757,11 +1758,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_striped {
+#vzswodccfg .gt_striped {
   background-color: #F4F4F4;
 }
 
-#xqgzurxqxj .gt_table_body {
+#vzswodccfg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1770,7 +1771,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xqgzurxqxj .gt_footnotes {
+#vzswodccfg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1784,7 +1785,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xqgzurxqxj .gt_footnote {
+#vzswodccfg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1793,7 +1794,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xqgzurxqxj .gt_sourcenotes {
+#vzswodccfg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1807,7 +1808,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xqgzurxqxj .gt_sourcenote {
+#vzswodccfg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1815,72 +1816,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xqgzurxqxj .gt_left {
+#vzswodccfg .gt_left {
   text-align: left;
 }
 
-#xqgzurxqxj .gt_center {
+#vzswodccfg .gt_center {
   text-align: center;
 }
 
-#xqgzurxqxj .gt_right {
+#vzswodccfg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xqgzurxqxj .gt_font_normal {
+#vzswodccfg .gt_font_normal {
   font-weight: normal;
 }
 
-#xqgzurxqxj .gt_font_bold {
+#vzswodccfg .gt_font_bold {
   font-weight: bold;
 }
 
-#xqgzurxqxj .gt_font_italic {
+#vzswodccfg .gt_font_italic {
   font-style: italic;
 }
 
-#xqgzurxqxj .gt_super {
+#vzswodccfg .gt_super {
   font-size: 65%;
 }
 
-#xqgzurxqxj .gt_footnote_marks {
+#vzswodccfg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xqgzurxqxj .gt_asterisk {
+#vzswodccfg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xqgzurxqxj .gt_indent_1 {
+#vzswodccfg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xqgzurxqxj .gt_indent_2 {
+#vzswodccfg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xqgzurxqxj .gt_indent_3 {
+#vzswodccfg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xqgzurxqxj .gt_indent_4 {
+#vzswodccfg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xqgzurxqxj .gt_indent_5 {
+#vzswodccfg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xqgzurxqxj .katex-display {
+#vzswodccfg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xqgzurxqxj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vzswodccfg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2000,7 +2001,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="how-to-define-what-gets-filtered" class="level1">
 <h1>How to define what gets filtered</h1>
 <p>For this project, I want to approach rental affordability from a personal angle, while keeping it general enough that others could adapt it to their own situations. A common rule of thumb is that individuals shouldn’t spend more than 30% of their income on rent. Based on this, I’ll introduce a <strong>salary</strong> variable to simulate what someone can realistically afford. This variable will help filter out listings that exceed that 30% income threshold.</p>
-<p>To make the analysis more flexible, especially for listings with multiple bedrooms, I’m assuming that shared housing is an option. That means I’ll consider a unit affordable if the <strong>rent per bedroom</strong> is within 30% of a person’s monthly income. This way, I can include multi-bedroom apartments that might be affordable when split among roommates.</p>
+<p>To make the analysis more flexible, especially for listings with multiple bedrooms, I’m assuming that shared housing is an option. That means I’ll consider a unit affordable if the <strong>rent per bedroom</strong> is within 30% of a person’s monthly income. This way, I can include multi-bedroom housing options that might be affordable when split among roommates.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -2049,23 +2050,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="qysxxulypy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qysxxulypy table {
+<div id="mcbwnhriac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mcbwnhriac table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qysxxulypy thead, #qysxxulypy tbody, #qysxxulypy tfoot, #qysxxulypy tr, #qysxxulypy td, #qysxxulypy th {
+#mcbwnhriac thead, #mcbwnhriac tbody, #mcbwnhriac tfoot, #mcbwnhriac tr, #mcbwnhriac td, #mcbwnhriac th {
   border-style: none;
 }
 
-#qysxxulypy p {
+#mcbwnhriac p {
   margin: 0;
   padding: 0;
 }
 
-#qysxxulypy .gt_table {
+#mcbwnhriac .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2091,12 +2092,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#qysxxulypy .gt_caption {
+#mcbwnhriac .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qysxxulypy .gt_title {
+#mcbwnhriac .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -2108,7 +2109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#qysxxulypy .gt_subtitle {
+#mcbwnhriac .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -2120,7 +2121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#qysxxulypy .gt_heading {
+#mcbwnhriac .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2132,13 +2133,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qysxxulypy .gt_bottom_border {
+#mcbwnhriac .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_col_headings {
+#mcbwnhriac .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2153,7 +2154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qysxxulypy .gt_col_heading {
+#mcbwnhriac .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2173,7 +2174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qysxxulypy .gt_column_spanner_outer {
+#mcbwnhriac .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2185,15 +2186,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#qysxxulypy .gt_column_spanner_outer:first-child {
+#mcbwnhriac .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qysxxulypy .gt_column_spanner_outer:last-child {
+#mcbwnhriac .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qysxxulypy .gt_column_spanner {
+#mcbwnhriac .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -2205,11 +2206,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#qysxxulypy .gt_spanner_row {
+#mcbwnhriac .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qysxxulypy .gt_group_heading {
+#mcbwnhriac .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2235,7 +2236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#qysxxulypy .gt_empty_group_heading {
+#mcbwnhriac .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2250,15 +2251,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#qysxxulypy .gt_from_md > :first-child {
+#mcbwnhriac .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qysxxulypy .gt_from_md > :last-child {
+#mcbwnhriac .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qysxxulypy .gt_row {
+#mcbwnhriac .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -2277,7 +2278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qysxxulypy .gt_stub {
+#mcbwnhriac .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -2290,7 +2291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qysxxulypy .gt_stub_row_group {
+#mcbwnhriac .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2304,15 +2305,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#qysxxulypy .gt_row_group_first td {
+#mcbwnhriac .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qysxxulypy .gt_row_group_first th {
+#mcbwnhriac .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qysxxulypy .gt_summary_row {
+#mcbwnhriac .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2322,16 +2323,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qysxxulypy .gt_first_summary_row {
+#mcbwnhriac .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_first_summary_row.thick {
+#mcbwnhriac .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qysxxulypy .gt_last_summary_row {
+#mcbwnhriac .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2341,7 +2342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_grand_summary_row {
+#mcbwnhriac .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2351,7 +2352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qysxxulypy .gt_first_grand_summary_row {
+#mcbwnhriac .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2361,7 +2362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_last_grand_summary_row_top {
+#mcbwnhriac .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2371,11 +2372,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_striped {
+#mcbwnhriac .gt_striped {
   background-color: #F4F4F4;
 }
 
-#qysxxulypy .gt_table_body {
+#mcbwnhriac .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2384,7 +2385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#qysxxulypy .gt_footnotes {
+#mcbwnhriac .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2398,7 +2399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qysxxulypy .gt_footnote {
+#mcbwnhriac .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2407,7 +2408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qysxxulypy .gt_sourcenotes {
+#mcbwnhriac .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2421,7 +2422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qysxxulypy .gt_sourcenote {
+#mcbwnhriac .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2429,72 +2430,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qysxxulypy .gt_left {
+#mcbwnhriac .gt_left {
   text-align: left;
 }
 
-#qysxxulypy .gt_center {
+#mcbwnhriac .gt_center {
   text-align: center;
 }
 
-#qysxxulypy .gt_right {
+#mcbwnhriac .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qysxxulypy .gt_font_normal {
+#mcbwnhriac .gt_font_normal {
   font-weight: normal;
 }
 
-#qysxxulypy .gt_font_bold {
+#mcbwnhriac .gt_font_bold {
   font-weight: bold;
 }
 
-#qysxxulypy .gt_font_italic {
+#mcbwnhriac .gt_font_italic {
   font-style: italic;
 }
 
-#qysxxulypy .gt_super {
+#mcbwnhriac .gt_super {
   font-size: 65%;
 }
 
-#qysxxulypy .gt_footnote_marks {
+#mcbwnhriac .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qysxxulypy .gt_asterisk {
+#mcbwnhriac .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qysxxulypy .gt_indent_1 {
+#mcbwnhriac .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qysxxulypy .gt_indent_2 {
+#mcbwnhriac .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qysxxulypy .gt_indent_3 {
+#mcbwnhriac .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qysxxulypy .gt_indent_4 {
+#mcbwnhriac .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qysxxulypy .gt_indent_5 {
+#mcbwnhriac .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qysxxulypy .katex-display {
+#mcbwnhriac .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qysxxulypy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mcbwnhriac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2577,7 +2578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="multiple-linear-regression-model" class="level1">
 <h1>Multiple Linear Regression Model</h1>
-<p>I made a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including <strong>county</strong>, <strong>housing type</strong>, <strong>number of bedrooms</strong>, <strong>bathrooms</strong>, and <strong>square footage</strong>. The model reveals several important relationships while controlling for these variables.</p>
+<p>I made a multiple linear regression model to analyze how rent prices in Southern California are influenced by factors including <strong>county</strong>, <strong>housing type</strong>, <strong>number of bedrooms</strong>, <strong>bathrooms</strong>, and <strong>square footage</strong>. The model reveals several important relationships.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -2642,23 +2643,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="nbevyfbujx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nbevyfbujx table {
+<div id="ruvivkoopq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ruvivkoopq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nbevyfbujx thead, #nbevyfbujx tbody, #nbevyfbujx tfoot, #nbevyfbujx tr, #nbevyfbujx td, #nbevyfbujx th {
+#ruvivkoopq thead, #ruvivkoopq tbody, #ruvivkoopq tfoot, #ruvivkoopq tr, #ruvivkoopq td, #ruvivkoopq th {
   border-style: none;
 }
 
-#nbevyfbujx p {
+#ruvivkoopq p {
   margin: 0;
   padding: 0;
 }
 
-#nbevyfbujx .gt_table {
+#ruvivkoopq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2684,12 +2685,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#nbevyfbujx .gt_caption {
+#ruvivkoopq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nbevyfbujx .gt_title {
+#ruvivkoopq .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -2701,7 +2702,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#nbevyfbujx .gt_subtitle {
+#ruvivkoopq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2713,7 +2714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#nbevyfbujx .gt_heading {
+#ruvivkoopq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2725,13 +2726,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nbevyfbujx .gt_bottom_border {
+#ruvivkoopq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_col_headings {
+#ruvivkoopq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2746,7 +2747,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nbevyfbujx .gt_col_heading {
+#ruvivkoopq .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2766,7 +2767,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nbevyfbujx .gt_column_spanner_outer {
+#ruvivkoopq .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2778,15 +2779,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#nbevyfbujx .gt_column_spanner_outer:first-child {
+#ruvivkoopq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nbevyfbujx .gt_column_spanner_outer:last-child {
+#ruvivkoopq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nbevyfbujx .gt_column_spanner {
+#ruvivkoopq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -2798,11 +2799,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#nbevyfbujx .gt_spanner_row {
+#ruvivkoopq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nbevyfbujx .gt_group_heading {
+#ruvivkoopq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2828,7 +2829,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#nbevyfbujx .gt_empty_group_heading {
+#ruvivkoopq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2843,15 +2844,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#nbevyfbujx .gt_from_md > :first-child {
+#ruvivkoopq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nbevyfbujx .gt_from_md > :last-child {
+#ruvivkoopq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nbevyfbujx .gt_row {
+#ruvivkoopq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2870,7 +2871,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nbevyfbujx .gt_stub {
+#ruvivkoopq .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -2883,7 +2884,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nbevyfbujx .gt_stub_row_group {
+#ruvivkoopq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2897,15 +2898,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#nbevyfbujx .gt_row_group_first td {
+#ruvivkoopq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nbevyfbujx .gt_row_group_first th {
+#ruvivkoopq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nbevyfbujx .gt_summary_row {
+#ruvivkoopq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2915,16 +2916,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nbevyfbujx .gt_first_summary_row {
+#ruvivkoopq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_first_summary_row.thick {
+#ruvivkoopq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nbevyfbujx .gt_last_summary_row {
+#ruvivkoopq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2934,7 +2935,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_grand_summary_row {
+#ruvivkoopq .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2944,7 +2945,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nbevyfbujx .gt_first_grand_summary_row {
+#ruvivkoopq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2954,7 +2955,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_last_grand_summary_row_top {
+#ruvivkoopq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2964,11 +2965,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_striped {
+#ruvivkoopq .gt_striped {
   background-color: #F4F4F4;
 }
 
-#nbevyfbujx .gt_table_body {
+#ruvivkoopq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2977,7 +2978,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#nbevyfbujx .gt_footnotes {
+#ruvivkoopq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2991,7 +2992,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nbevyfbujx .gt_footnote {
+#ruvivkoopq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3000,7 +3001,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nbevyfbujx .gt_sourcenotes {
+#ruvivkoopq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3014,7 +3015,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nbevyfbujx .gt_sourcenote {
+#ruvivkoopq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3022,72 +3023,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nbevyfbujx .gt_left {
+#ruvivkoopq .gt_left {
   text-align: left;
 }
 
-#nbevyfbujx .gt_center {
+#ruvivkoopq .gt_center {
   text-align: center;
 }
 
-#nbevyfbujx .gt_right {
+#ruvivkoopq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nbevyfbujx .gt_font_normal {
+#ruvivkoopq .gt_font_normal {
   font-weight: normal;
 }
 
-#nbevyfbujx .gt_font_bold {
+#ruvivkoopq .gt_font_bold {
   font-weight: bold;
 }
 
-#nbevyfbujx .gt_font_italic {
+#ruvivkoopq .gt_font_italic {
   font-style: italic;
 }
 
-#nbevyfbujx .gt_super {
+#ruvivkoopq .gt_super {
   font-size: 65%;
 }
 
-#nbevyfbujx .gt_footnote_marks {
+#ruvivkoopq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nbevyfbujx .gt_asterisk {
+#ruvivkoopq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nbevyfbujx .gt_indent_1 {
+#ruvivkoopq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nbevyfbujx .gt_indent_2 {
+#ruvivkoopq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nbevyfbujx .gt_indent_3 {
+#ruvivkoopq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nbevyfbujx .gt_indent_4 {
+#ruvivkoopq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nbevyfbujx .gt_indent_5 {
+#ruvivkoopq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nbevyfbujx .katex-display {
+#ruvivkoopq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nbevyfbujx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ruvivkoopq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3190,10 +3191,10 @@ Coefficients
 </div>
 </div>
 </div>
-<p><strong>An apartment in LA is our baseline.</strong> Listings in the OC area are higher than LA (by $189) but it is <strong>not statistically significant.</strong> Listing in the Riverside ara tend to cost less than in Los Angeles, this difference is statistically significant.</p>
+<p><strong>An apartment in LA is our baseline.</strong> Listings in the OC area are higher than LA (by $189) but it is <strong>not statistically significant.</strong> Listing in the Riverside area tend to cost less than in Los Angeles, this difference is statistically significant.</p>
 <p>The number of <strong>bedrooms had the strongest and most statistically significant association with rent</strong>. Each additional bedroom increases rent by approximately $844 on average. <strong>Baths are not as statistically significant</strong> only increasing rent by $70.</p>
 <p><strong>Houses rent for approximately</strong> $401 more than apartments but shown by the model, doesn’t have. Condos are not statistically significant, only increasing rent by $73<strong>.</strong></p>
-<p>Although <strong>Square Footage</strong> is often expected to impact rent, <strong>in this model it is not statistically significant.</strong> Suggesting other factors may play a bigger role (i.e.&nbsp;bedrooms). This model can indicate that the number of bedrooms may play a more important role in rent pricing than square footage, possibly because people value how many individuals a space can house more than the size itself.</p>
+<p>Although <strong>Square Footage</strong> is often expected to impact rent, <strong>in this model it is not accurate.</strong> Suggesting other factors may play a bigger role (i.e.&nbsp;bedrooms). This model can indicate that the number of bedrooms may play a more important role in rent pricing than square footage, possibly because people value how many individuals a space can house more than the size itself.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -3234,58 +3235,57 @@ As expected, LA is a heavily populated area and has some of the highest rent pri
 <p><strong>Riverside (RIV):</strong><br>
 Riverside’s histogram displays lower rent values. Its status as an older, more suburban region contributes to its relative affordability. The correlation table shows a balanced influence from the number of beds, baths, and square footage on pricing. This suggests that Riverside follows more predictable pricing patterns. It reflects a suburban area offering more consistent and accessible housing options.</p>
 <p><strong>Orange County (OC):</strong><br>
-Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in OC.</p>
+Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew, indicating a wide spread of rent prices. This suggests a mix of older, more affordable homes and newer, high-end properties. The weaker correlation between basic housing features and rent price implies that other external factors (school quality, neighborhood amenities, community in general) may play a more important role in determining rent in Orange County.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="ot">&lt;-</span> Rent_Clean_Affordable <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(County) <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bed_cor =</span> <span class="fu">cor</span>(Price, Beds), </span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Baths_cor =</span> <span class="fu">cor</span>(Price, Baths), </span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">SqFt_cor =</span> <span class="fu">cor</span>(Price, SqFt)</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="sc">|&gt;</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Correlation of Rent Price with Features by County"</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">County =</span> <span class="st">"County"</span>,</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bed_cor =</span> <span class="st">"Price vs Beds"</span>,</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Baths_cor =</span> <span class="st">"Price vs Baths"</span>,</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">SqFt_cor =</span> <span class="st">"Price vs SqFt"</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>())</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="fu">c</span>(<span class="st">"left"</span>))<span class="sc">|&gt;</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"cyan"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="sc">|&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Correlation of Rent Price with Features by County"</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">County =</span> <span class="st">"County"</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bed_cor =</span> <span class="st">"Price vs Beds"</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Baths_cor =</span> <span class="st">"Price vs Baths"</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">SqFt_cor =</span> <span class="st">"Price vs SqFt"</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>())</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="fu">c</span>(<span class="st">"left"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"cyan"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fqplyqgwwm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fqplyqgwwm table {
+<div id="wdongfsnvm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wdongfsnvm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fqplyqgwwm thead, #fqplyqgwwm tbody, #fqplyqgwwm tfoot, #fqplyqgwwm tr, #fqplyqgwwm td, #fqplyqgwwm th {
+#wdongfsnvm thead, #wdongfsnvm tbody, #wdongfsnvm tfoot, #wdongfsnvm tr, #wdongfsnvm td, #wdongfsnvm th {
   border-style: none;
 }
 
-#fqplyqgwwm p {
+#wdongfsnvm p {
   margin: 0;
   padding: 0;
 }
 
-#fqplyqgwwm .gt_table {
+#wdongfsnvm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3311,12 +3311,12 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-left-color: #D3D3D3;
 }
 
-#fqplyqgwwm .gt_caption {
+#wdongfsnvm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fqplyqgwwm .gt_title {
+#wdongfsnvm .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -3328,7 +3328,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-width: 0;
 }
 
-#fqplyqgwwm .gt_subtitle {
+#wdongfsnvm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3340,7 +3340,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-top-width: 0;
 }
 
-#fqplyqgwwm .gt_heading {
+#wdongfsnvm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3352,13 +3352,13 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fqplyqgwwm .gt_bottom_border {
+#wdongfsnvm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_col_headings {
+#wdongfsnvm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -3373,7 +3373,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fqplyqgwwm .gt_col_heading {
+#wdongfsnvm .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -3393,7 +3393,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   overflow-x: hidden;
 }
 
-#fqplyqgwwm .gt_column_spanner_outer {
+#wdongfsnvm .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -3405,15 +3405,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 4px;
 }
 
-#fqplyqgwwm .gt_column_spanner_outer:first-child {
+#wdongfsnvm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fqplyqgwwm .gt_column_spanner_outer:last-child {
+#wdongfsnvm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fqplyqgwwm .gt_column_spanner {
+#wdongfsnvm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -3425,11 +3425,11 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   width: 100%;
 }
 
-#fqplyqgwwm .gt_spanner_row {
+#wdongfsnvm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fqplyqgwwm .gt_group_heading {
+#wdongfsnvm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3455,7 +3455,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   text-align: left;
 }
 
-#fqplyqgwwm .gt_empty_group_heading {
+#wdongfsnvm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3470,15 +3470,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   vertical-align: middle;
 }
 
-#fqplyqgwwm .gt_from_md > :first-child {
+#wdongfsnvm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fqplyqgwwm .gt_from_md > :last-child {
+#wdongfsnvm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fqplyqgwwm .gt_row {
+#wdongfsnvm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3497,7 +3497,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   overflow-x: hidden;
 }
 
-#fqplyqgwwm .gt_stub {
+#wdongfsnvm .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -3510,7 +3510,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fqplyqgwwm .gt_stub_row_group {
+#wdongfsnvm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3524,15 +3524,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   vertical-align: top;
 }
 
-#fqplyqgwwm .gt_row_group_first td {
+#wdongfsnvm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fqplyqgwwm .gt_row_group_first th {
+#wdongfsnvm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fqplyqgwwm .gt_summary_row {
+#wdongfsnvm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3542,16 +3542,16 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fqplyqgwwm .gt_first_summary_row {
+#wdongfsnvm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_first_summary_row.thick {
+#wdongfsnvm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fqplyqgwwm .gt_last_summary_row {
+#wdongfsnvm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3561,7 +3561,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_grand_summary_row {
+#wdongfsnvm .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -3571,7 +3571,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fqplyqgwwm .gt_first_grand_summary_row {
+#wdongfsnvm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3581,7 +3581,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-top-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_last_grand_summary_row_top {
+#wdongfsnvm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3591,11 +3591,11 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_striped {
+#wdongfsnvm .gt_striped {
   background-color: #EBFBF9;
 }
 
-#fqplyqgwwm .gt_table_body {
+#wdongfsnvm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -3604,7 +3604,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fqplyqgwwm .gt_footnotes {
+#wdongfsnvm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3618,7 +3618,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fqplyqgwwm .gt_footnote {
+#wdongfsnvm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3627,7 +3627,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fqplyqgwwm .gt_sourcenotes {
+#wdongfsnvm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3641,7 +3641,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fqplyqgwwm .gt_sourcenote {
+#wdongfsnvm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3649,72 +3649,72 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fqplyqgwwm .gt_left {
+#wdongfsnvm .gt_left {
   text-align: left;
 }
 
-#fqplyqgwwm .gt_center {
+#wdongfsnvm .gt_center {
   text-align: center;
 }
 
-#fqplyqgwwm .gt_right {
+#wdongfsnvm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fqplyqgwwm .gt_font_normal {
+#wdongfsnvm .gt_font_normal {
   font-weight: normal;
 }
 
-#fqplyqgwwm .gt_font_bold {
+#wdongfsnvm .gt_font_bold {
   font-weight: bold;
 }
 
-#fqplyqgwwm .gt_font_italic {
+#wdongfsnvm .gt_font_italic {
   font-style: italic;
 }
 
-#fqplyqgwwm .gt_super {
+#wdongfsnvm .gt_super {
   font-size: 65%;
 }
 
-#fqplyqgwwm .gt_footnote_marks {
+#wdongfsnvm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fqplyqgwwm .gt_asterisk {
+#wdongfsnvm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fqplyqgwwm .gt_indent_1 {
+#wdongfsnvm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fqplyqgwwm .gt_indent_2 {
+#wdongfsnvm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fqplyqgwwm .gt_indent_3 {
+#wdongfsnvm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fqplyqgwwm .gt_indent_4 {
+#wdongfsnvm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fqplyqgwwm .gt_indent_5 {
+#wdongfsnvm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fqplyqgwwm .katex-display {
+#wdongfsnvm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fqplyqgwwm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wdongfsnvm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3734,21 +3734,21 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="County">LA</td>
-<td class="gt_row gt_left" headers="Bed_cor">0.7519003</td>
-<td class="gt_row gt_left" headers="Baths_cor">0.3306676</td>
-<td class="gt_row gt_left" headers="SqFt_cor">0.5236722</td>
+<td class="gt_row gt_left" headers="Bed_cor">0.5704509</td>
+<td class="gt_row gt_left" headers="Baths_cor">0.4944130</td>
+<td class="gt_row gt_left" headers="SqFt_cor">0.7294382</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="County">OC</td>
-<td class="gt_row gt_left gt_striped" headers="Bed_cor">0.9346954</td>
-<td class="gt_row gt_left gt_striped" headers="Baths_cor">0.7721862</td>
-<td class="gt_row gt_left gt_striped" headers="SqFt_cor">0.8768128</td>
+<td class="gt_row gt_left gt_striped" headers="Bed_cor">0.4496779</td>
+<td class="gt_row gt_left gt_striped" headers="Baths_cor">0.5389367</td>
+<td class="gt_row gt_left gt_striped" headers="SqFt_cor">0.5983870</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="County">RIV</td>
-<td class="gt_row gt_left" headers="Bed_cor">0.8807635</td>
-<td class="gt_row gt_left" headers="Baths_cor">0.6743717</td>
-<td class="gt_row gt_left" headers="SqFt_cor">0.7075100</td>
+<td class="gt_row gt_left" headers="Bed_cor">0.9013643</td>
+<td class="gt_row gt_left" headers="Baths_cor">0.7824197</td>
+<td class="gt_row gt_left" headers="SqFt_cor">0.7990179</td>
 </tr>
 </tbody>
 </table>
@@ -3759,44 +3759,45 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean_Affordable <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">County =</span> <span class="fu">as.character</span>(County)) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    Rent_Clean_Affordable <span class="sc">|&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">County =</span> <span class="st">"All Counties"</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Price, <span class="at">fill =</span> County)) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">800</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> County, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Rent Price Distribution: Overall and by County"</span>,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Rent Price ($)"</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Listings"</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"LA"</span> <span class="ot">=</span> <span class="st">"#005596"</span>, <span class="st">"RIV"</span> <span class="ot">=</span> <span class="st">"#FFB81C"</span>,<span class="st">"OC"</span> <span class="ot">=</span> <span class="st">"#FF6720"</span>, </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"All Counties"</span> <span class="ot">=</span> <span class="st">"gray"</span> </span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),             </span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),        </span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),         </span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Price <span class="sc">&lt;</span> <span class="dv">10000</span>)<span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">County =</span> <span class="fu">as.character</span>(County)) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    Rent_Clean_Affordable <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">County =</span> <span class="st">"All Counties"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Price, <span class="at">fill =</span> County)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">800</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> County, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Rent Price Distribution: Overall and by County"</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Rent Price ($)"</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Listings"</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"LA"</span> <span class="ot">=</span> <span class="st">"#005596"</span>, <span class="st">"RIV"</span> <span class="ot">=</span> <span class="st">"#FFB81C"</span>,<span class="st">"OC"</span> <span class="ot">=</span> <span class="st">"#FF6720"</span>, </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"All Counties"</span> <span class="ot">=</span> <span class="st">"gray"</span> </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),             </span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),        </span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),         </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="SoCalRentProject_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="SoCalRentProject_files/figure-html/Histogram of overall price by County (with filtered outliers)-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Which brings me back to my objective: <strong>Where should someone rent?</strong> As mentioned earlier, the answer depends on individual priorities. If you’re looking for consistent affordability, Riverside is a solid choice with its more predictable and accessible pricing. However, (speaking from experience) don’t forget to consider commute times, as traffic in this region can be a significant factor. The LA area, while expensive, is driven by the vibeof the city, the job opportunities, and the cultural significance (think Hollywood). So, while rents are steep, they reflect the appeal and allure of the area beyond just housing. As for Orange County, it’s great for those seeking a balance between affordability and amenities. It offers a mix of options for people who value a comfortable lifestyle with access to good schools, parks, and community features. (I think the parks there are great)</p>
+<p>Which brings me back to my objective: <strong>Where should someone rent?</strong> As mentioned earlier, the answer depends on individual priorities. If you’re looking for consistent affordability, Riverside is a solid choice with its more predictable and accessible pricing. The LA area, while expensive, reflects the appeal and allure of the area beyond just housing. As for Orange County, it’s great for those seeking a balance between affordability and amenities. It offers a mix of options for people who value a comfortable lifestyle with access to good schools, parks, and community features.</p>
 <p>Ultimately, there’s no one-size-fits-all answer. Renters must weigh their priorities, whether it’s budget, space, amenities, or proximity to work and culture, in order to find the right fit for them.</p>
 </section>
 <section id="limitations" class="level1">
