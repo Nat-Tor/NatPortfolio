@@ -497,13 +497,21 @@ There were definitely a few more things I would’ve liked to explore or experim
 
 # EXTRA: my favorite weird listings
 
-**217 E 29th St Unit 217 And 217 1 2, Los Angeles, CA 90011:** Upon further investigation. This is a listing for 2 units with a total of 4 beds and 4 baths. Meaning each unit has 2 beds and 2 baths. Then the listing explains how each bedroom can house 2-3 people meaning according to my code, rent cost would only be about \$187 a month give or take a roommate or two. As GREAT of a rent price this seems. On the bright side-the listing seems to be a affordable housing option for someone who really needs it. On the more weary side- the listing seems sketchy and im unfortunately, not interested.
+**217 E 29th St Unit 217 and 217 1/2, Los Angeles, CA 90011**: Upon further investigation, this is actually a listing for two units with a total of 4 beds and 4 baths—so 2 beds and 2 baths per unit. The listing also mentions that each bedroom can house 2–3 people. Based on how my code calculates rent per person, that would come out to around \$187/month, give or take a roommate or two.
+
+As amazing as that rent price sounds, it definitely raises some eyebrows. On the bright side, it could be a legit affordable housing option for someone who really needs it. But on the more skeptical side... the listing gives off some sketchy vibes. Personally, I’m not interested.
 
 **Rental Description:** Our brand new, all-inclusive shared rooms are move-in ready just bring your bag and settle into comfort, convenience, and community in the heart of the city. All-inclusive rates starting at just \$700/month only 2-3 person per room ! Move in today stay as long or as little as you need All utilities Wi-Fi included Weekly cleaning of shared spaces Private ensuite bathrooms in most rooms On-site laundry for easy living Street & paid parking available On-site manager for support when you need it No credit checks. No deposits. No SSN. Just a valid ID from any country.Spots are limited and going fast message now and claim your bed today!"
 
 ![](images/bedroom.jpg)
 
-**1313 Disneyland Dr. Anaheim, CA 92802:** this listing was up for rent for 30,000/month. This was the listing that skewed my OC rental price mean. I looked into it thinking it was a some condo near disneyland. Looking intot he listing it was actually IN disneyland. Weird. Knowing Disneyland lovers out there may have an answer I looked into reddit only to find 1313 Disneyland Dr is the official disneyland address (M is the 13th letter of the alphabet and Mickey Mouse is 1313). I literally could not find any other info on what exactly is this listings. The listing has been up for a year and wasnt until recently (APR 30th 2025) that the listing was taken down. My only guesses is that Walt Disney apartment above the fire station. But more relaistically, maybe its something for a private entertainment for disneyland. I do find it rather odd that the listing got taken down 2 weeks after i got the data.
+**1313 Disneyland Dr., Anaheim, CA 92802**: This listing was up for rent at \$30,000/month and completely skewed my average rental price for Orange County. At first, I assumed it was just a fancy condo near Disneyland. But when I looked into it, I realized it was actually *inside* Disneyland. Weird.
+
+Curious (and knowing there are plenty of Disneyland superfans out there), I searched Reddit and sure enough, 1313 Disneyland Dr. is the park’s official address. Fun fact: M is the 13th letter of the alphabet, so 1313 = MM = Mickey Mouse. I couldn’t find much else about what this listing actually was.
+
+The listing had been up for nearly a year and only got taken down recently on April 30th, 2025. My best guess? Maybe it was the apartment above the fire station that Walt Disney supposedly used. But more realistically, it could’ve been something related to private entertainment or internal use within Disneyland.
+
+Still, kind of strange that the listing disappeared just two weeks after I pulled the data.
 
 **Rental Description:** This property is available. Please inquire on this site to schedule a showing. Im sorry, I cant provide a description of this property.Available NOWHeating ForcedAirCooling EvaporativeAppliances Refrigerator, Range Oven, Microwave, DishwasherLaundry In UnitParking Detached Garage, 2 spacesPets Dogs Allowed, Cats AllowedSecurity deposit 30,000.00Included Utilities Garbage, Sewage, LandscapingAdditional DepositPet 500.00This property has a home security system.Disclaimer Ziprent is acting as the agent for the owner. Information Deemed Reliable but not Guaranteed. All information should be independently verified by renter.
 
