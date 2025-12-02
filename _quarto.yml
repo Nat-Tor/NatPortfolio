@@ -3,19 +3,36 @@ project:
   output-dir: docs
   render:
     - index.qmd
+    - EAGER.qmd
+    - Projects/EAGER/blog.qmd  
+    - UC_Berkeley.qmd
     - SoCalRentProject.qmd
     - FlowerProject.qmd
+    - Projects/CompStats/Fornite_MicroTransactions.qmd
+    - Projects/CompStats/Baseball.qmd
+    - Projects/CompStats/LongCOVID.qmd
+    - Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd
+    - Projects/IntDataAnalysis/COVID/COVID.qmd
+    - Projects/IntDataAnalysis/Earthquakes/Earthquake.qmd
 
 website:
-  title: "NatsPortfolio"
+  title: "Natalie Torres Portfolio"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: EAGER.qmd
+        text: EAGER
+      - href: UC_Berkeley.qmd
+        text: "UC Berkeley"
       - href: SoCalRentProject.qmd
-        text: "Rent Project"
+        text: "Data Science"
       - href: FlowerProject.qmd
-        text: "Encelia Project"
+        text: "Data Science"
+      - href: Projects/CompStats/Fornite_MicroTransactions.qmd
+        text: "Comp Stats"
+      - href: Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd
+        text: "Intermediate Data Analysis"
 
 format:
   html:
@@ -24,6 +41,3 @@ format:
     code-fold: true
     code-summary: "Show code"
     highlight-style: dracula
-
-editor: visual
-
