@@ -1,0 +1,48 @@
+---
+title: "Modeling the Role of Selfing Plants in Assisted Gene Flow"
+format: html
+---
+
+# Modeling the Role of Selfing Plants in Assisted Gene Flow
+
+This ongoing research project, conducted during my Summer 2025 appointment at UC Berkeley, explores how self-fertilizing plant populations respond to assisted gene flow (AGF) interventions under climate-driven selection pressures. I work with the [MOI Lab](https://www.moisesexpositoalonso.org/) at UC Berkeley, and this page documents the project’s motivation, modeling framework, early visuals, and research communication materials. Here, you can find my poster, conceptual diagrams, and links to presentations. The modeling workflow is ongoing, and outputs will be updated as simulations and analyses are completed.
+
+## Background & Motivation
+
+Assisted gene flow (AGF) is a conservation strategy that introduces beneficial genetic variation into populations threatened by climate change. While AGF has been widely explored in outcrossing species, the dynamics in self-fertilizing (selfing) plants remain less understood.
+
+Because climate change is rapidly altering environmental conditions, understanding whether AGF can realistically provide adaptive benefits to selfing populations is an urgent question. Modeling provides a cost-effective and flexible way to explore these evolutionary outcomes before field testing.
+
+## Research Questions
+
+This project focuses on the following key questions:
+
+-   How does selfing rate influence the spread of introduced adaptive alleles?
+-   Under what demographic and environmental conditions does AGF improve long-term population persistence?
+-   How do selection strength, migration input, and selfing rates interact?
+-   What is the potential for outbreeding depression to limit the success of AGF?
+
+## Methods & Modeling Approach
+
+I used **SLiM**, a population genetics simulation program, to model how self-fertilizing plants respond to assisted gene flow. The simulations look at:
+
+-   How climate affects the original population
+-   Introducing new, beneficial alleles into the population
+-   Different rates of self-fertilization versus outcrossing
+-   Possible negative effects from mixing populations (outbreeding depression)
+
+### Planned Components
+
+-   Measure **fitness**
+-   Adjust **selfing rates** from fully outcrossing to fully selfing
+-   Control how many individuals are added via assisted gene flow
+-   Set **population size**, either constant or density-dependent
+-   Run the simulation for **100–300 generations**
+
+SLiM outputs data that I then analyze in R. This includes things like how allele frequencies change over time and summaries of the population, which help me understand how selfing and assisted gene flow affect these plants.
+
+## Poster & Lightning Talk
+
+A PDF of my research poster will be inserted here. [Download Poster](Projects/UC_Berkeley/poster.pdf)
+
+Add short slides linked here: [Lightning Talk – Google Slides](https://docs.google.com/presentation/d/1IpeqF3SY2DGTSTJqpQtYLLeX-Teg9d4Gq7EnUfrYb6Q/edit?usp=sharing)

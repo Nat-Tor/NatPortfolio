@@ -1,0 +1,25 @@
+---
+title: "CompStats"
+format: html
+---
+
+# Computational Statistics (Math 337)
+
+Math 337 serves as a bridge between introductory data science and advanced applied statistics courses. The class focuses on computational and conceptual tools used in modern statistics, including simulation, bootstrap methods, Bayesian inference, confidence intervals, and hypothesis testing. We also explored optimization techniques and reviewed the mathematical properties of random variables, skills that support more advanced modeling work in later courses.
+
+## Projects
+
+### Fortnite Microtransactions Project (Confidence Intervals)
+
+In this project, I used bootstrap simulation and computational methods to construct and interpret confidence intervals related to Fortnite player microtransaction behavior.\
+➡[View Project](../Projects/CompStats/ForniteMicroTransactions/Fornite_MicroTransactions.qmd)
+
+### Baseball Project (Bayesian Inference)
+
+This project applied Bayesian methods to baseball performance data, exploring how prior beliefs combine with observed data to produce posterior distributions and predictions.\
+➡ [View Project](../Projects/CompStats/Baseball/Baseball.qmd)
+
+### Long COVID Project (Hypothesis Testing)
+
+In this analysis, I conducted hypothesis testing using permutation and bootstrap-based methods to investigate questions related to Long COVID and differences across groups.\
+➡[View Project](../Projects/CompStats/LongCOVID/LongCOVID.qmd)

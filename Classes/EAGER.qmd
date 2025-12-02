@@ -1,0 +1,24 @@
+---
+title: "EAGER"
+format: html
+---
+# EAGER Research Program
+
+The NIH-funded **Project EAGER** at CSU Fullerton provides undergraduate students with hands-on experience in genomics, bioinformatics, and research communication. Through workshops, seminars, and mentored research, we explored how computational tools can be used to study biological systems and big data in modern biology.
+
+Learn more about the program here:  
+🔗 https://sites.google.com/view/projecteager/about
+
+As part of this program, I conducted summer research at **UC Berkeley**, where I worked with genomic data and developed bioinformatics workflows.  
+➡[UC Berkeley Research Page](../UC_Berkeley.qmd)
+
+
+## Projects
+
+### Heat Stress & Cancer Cells — Research Blog
+This blog post summarizes my exploration of how heat stress influences protein expression pathways in cancer cells. I reviewed findings from transcriptomic studies and discussed the biological mechanisms linking heat shock responses to cancer progression.  
+➡[View Blog](../Projects/EAGER/blog.qmd)
+
+### RNA-seq Pipeline (Work in Progress)
+I am currently developing an R-based pipeline to reproduce the analysis used to examine protein and gene expression under heat stress conditions. This pipeline includes data preprocessing, quality control, normalization, and exploratory analysis steps, and will be updated as I complete more of the workflow.
+➡*(Page coming soon!)*

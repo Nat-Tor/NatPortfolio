@@ -1,0 +1,214 @@
+---
+title: "Helping Frank & Tron Price Cars (Without Crashing the Dealership)"
+format: html
+---
+
+```{r}
+#| label: load packages
+#| message: false
+#| warning: false
+library(readr)
+```
+
+```{r}
+#| label: prep the models
+#read in data
+Cars <- read_csv("Cars.csv")
+
+#making linear model based on ALL the variables
+model <- lm(SuggestedRetailPrice ~ 
+            Hybrid + EngineSize + Cylinders + Horsepower + HighwayMPG + Weight + WheelBase, 
+            data = Cars)
+#remvoing outlier
+  #removed because it was only electric so it was expensive
+  #only engine with 3 cylinders
+Cars = Cars[-67,] 
+#renaming got it from Ashley
+x1 = Cars$Hybrid
+x2 = Cars$EngineSize
+x3 = Cars$Cylinders
+x4 = Cars$Horsepower
+x5 = Cars$HighwayMPG
+x6 = Cars$Weight
+x7 = Cars$WheelBase
+y = Cars$SuggestedRetailPrice
+
+X = data.frame(x1,x2,x3,x4,x5,x6,x7)
+Y = y
+YX = data.frame(y,x1,x2,x3,x4,x5,x6,x7)
+
+power.trans = function(lambda){
+  Y.trans = (Y^lambda - 1)/(lambda)
+  Y.hat = lm(YX)$fit	
+  RSS.lambda = sum(lm(Y.hat~Y.trans)$residuals^2)
+  RSS.lambda
+}
+
+
+optim(1,power.trans)
+lambda = optim(1,power.trans)$par
+lambda
+
+# checking transformation
+
+Y.trans = (Y^lambda - 1)/(lambda)
+Y.hat = lm(YX)$fit	
+
+model3 = lm(Y.trans~x1+x2+x3+x4+x5+x6+x7)
+
+#put transformed model into step function
+  #to remove any variables that arent significant
+model_new = step(model3, direction = "backward")
+
+#part b stuff
+new_car <- data.frame(
+  x2 = 3.6,
+  x3 = 6,
+  x4 = 225,
+  x5 = 24,
+  x6 = 3237
+)
+
+#bootstrap for normality
+
+car.m3 <- data.frame(
+  x1 = x1,
+  x2 = x2,
+  x3 = x3,
+  x4 = x4,
+  x5 = x5,
+  x6 = x6,
+  x7 = x7
+)
+
+#Step 2, BS sample x and residuals (BSx, BSres)
+set.seed(123)  # for reproducibility
+n <- nrow(car.m3)
+B <- 10000  # number of bootstrap iterations
+
+# Store bootstrap predictions
+BS.ystar <- numeric(B)
+orig.res <- residuals(model_new)
+
+for(i in 1:B){ 
+  # Step 1: Resample x and residuals 
+  BS.index=sample(1:n,n,replace =TRUE) 
+  BS.x=car.m3[BS.index,] 
+  BS.res <- sample(orig.res, n, replace = TRUE) 
+  # Step 2: Predicted gy for bootstrap x 
+  BS.yhat <- predict(model_new, newdata = data.frame(x = BS.x)) 
+  # Step 3: Generate BS transformed y
+  BS.y <- BS.yhat + BS.res
+  
+  BS.data = Cars
+  BS.data[,3] = BS.y
+  BS.data[,c(2,4,5,6,7,8,9)] = BS.x
+  Y.trans = BS.y
+  BS_new_car <- data.frame(
+    x2 = x2,
+    x3 = x3,
+    x4 = x4,
+    x5 = x5,
+    x6 = x6,
+    Y.trans = Y.trans)
+  
+  # Step 4: Fit bootstrap model
+  BS.model3 = lm(Y.trans~x2+x3+x4+x5+x6,data=BS_new_car)
+  
+  # Step 5: Predict transformed y for 80th percentile
+  BS.ystar[i] <- predict(BS.model3, newdata = new_car) + sample(orig.res, 1)
+  
+}
+
+pred_trans <- quantile(BS.ystar, 0.80)
+  pred_price <- ((pred_trans * lambda) + 1)^(1 / lambda)
+
+```
+
+Hey Frank and Tron,
+
+So, full disclosure...I don’t know much about cars. But since I’ve got numbers on the brain and you’ve got customers, I thought I’d help out with **pricing your cars without making you guess**.
+
+## Part A: Predicting the “Normal” Price
+
+Your family member (my professor), gave me a dataset and here’s what I did (bit of nerdy stuff):
+
+1.  **Fitted a linear model**
+    -   Checked **summary stats** to see which specs actually matter.
+    -   Looked at **plots of residuals** to make sure we weren’t completely off base.
+    -   Used **AIC and ANOVA** to keep the model neither too stupid nor too complicated.
+2.  **Transformed the response**
+    -   Prices are a little skewed, so I used a **power transformation** (it’s like a magic math wand that makes the numbers better)
+    -   This makes our predicted prices more realistic and less wild.![](car4sale_plots.png)
+    -   I used a stepwise regression to figure out which of the variables really matter for predicting car prices. Turns out, **almost everything was useful, except for x1 (Hybrid) and x7 (WheelBase), which didn’t add much predictive power,** so the model ignored them.
+3.  **Made a function**
+    -   I wrote a function, `predict_price()`. You just feed it a car’s specs, and it spits out the **average suggested retail price**.
+
+```{r}
+#| label: Function to make a predicted price
+#PART A PREDICTION
+predict_price <- function(hybrid = 0,
+                          engineSize = 2.9,
+                          cylinders = 6,
+                          horsepower = 200,
+                          highwayMPG = 29,
+                          weight = 3300,
+                          wheelBase = 107) {
+  # Create a new data frame for prediction
+  new_car <- data.frame(
+    x1 = hybrid,
+    x2 = engineSize,
+    x3 = cylinders,
+    x4 = horsepower,
+    x5 = highwayMPG,
+    x6 = weight,
+    x7 = wheelBase
+  )
+  
+  # Predict on the transformed scale (same as model3’s Y)
+  predicted_trans <- predict(model_new, newdata = new_car)
+  
+  # Back-transform using your power transformation lambda
+  if (lambda != 0) {
+    predicted_price <- ((predicted_trans * lambda) + 1)^(1 / lambda)
+  } else {
+    predicted_price <- exp(predicted_trans)  # special case if λ ≈ 0
+  }
+  
+  # Print a clean output
+  cat("Estimated Suggested Retail Price: $", round(predicted_price, 2), "\n")
+}
+
+predict_price(0, 3.0, 6, 382, 29, 3400, 97.2)
+
+```
+
+Boom! A 2026 Toyota GR Supra 3.0 (base) priced without even leaving your chair.
+
+![](2026GRSUPRA.png)
+
+Okay... so the model’s off by a couple grand, but hey, for just looking at engine size, horsepower, weight, and MPG, it’s not too bad!
+
+## Part B: Pricing for Fancy Folks (80th Percentile)
+
+Now, since our Newport, Anaheim Hills, and Tustin customers are fancy, we don’t want to sell at the average prices. We want top of the line, but not insane. That’s where bootstrapping comes in:
+
+-   Bootstrapping lets us simulate what the 80th percentile price would be by resampling the data and the residuals many times.
+
+Take a Cadillac we might show: 3.6L engine, 6 cylinders, 225 horsepower, 24 highway MPG, weighing 3,237 lbs, a 107-inch wheelbase, and not a hybrid. Bootstrapping it, our model suggests pricing it at about **\$27,490**.
+
+```{r}
+# Histogram of bootstrap predictions
+hist(BS.ystar,
+     breaks = 50,
+     main = "Bootstrap Distribution of Predicted Cadillac Prices",
+     xlab = "Transformed Price",
+     col = "lightblue")
+
+# Add a vertical line for the 80th percentile
+abline(v = pred_trans, col = "red", lwd = 2, lty = 2)
+```
+
+This histogram shows all the different prices our bootstrap model imagined for the Cadillac. The red line is the 80th percentile. Basically the price we’d want to aim for if we want to look fancy.
+
+Fingers crossed this helps, Tron and Frank! Maybe after Thanksgiving break I’ll whip up a sick little calculator website for you guys but for now, midterms are taking over my life. :)

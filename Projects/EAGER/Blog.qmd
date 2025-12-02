@@ -1,0 +1,174 @@
+---
+title: "Heat Shock, Cancer Style"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    self-contained: true
+bibliography: references.bib
+csl: https://www.zotero.org/styles/apa
+---
+
+```{=html}
+<style>
+
+  /* ---------- BASE BODY STYLING ---------- */
+  body {
+    font-family: 'Playfair Display', serif;
+    background-color: white;
+    color: #780116;
+  }
+
+  /* ---------- HEADINGS ---------- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #c32f27;
+  }
+
+  .title {
+    font-size: 2.5em;
+    color: #780116;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ---------- HORIZONTAL RULE ---------- */
+  hr {
+    border: none;
+    border-top: 3px solid #780116;
+    margin: 2em 0;
+  }
+
+  /* ---------- TIP BLOCK ---------- */
+  .callout-tip {
+    background-color: white;
+    border-left: 5px solid #db7c26;
+    color: #780116;
+  }
+
+  /* ---------- IMPORTANT BLOCK ---------- */
+  .callout-important {
+    background-color: white;
+    border-left: 5px solid #c32f27;
+    color: #780116;
+  }
+
+  .callout-title-container {
+    color: #780116;
+    font-weight: bold;
+  }
+
+  /* ---------- REFERENCES BLOCK ---------- */
+  .references {
+    background-color:white;
+    border-left: 4px solid #c32f27;
+    padding: 1em;
+    color: #780116;
+    font-size: 0.95em;
+  }
+
+  #references {
+    color: #c32f27;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 2em;
+  }
+
+  /* ---------- CUSTOM HIGHLIGHT BOX (OPTIONAL) ---------- */
+  .highlight-box {
+    background-color: #f7b538;
+    padding: 1em;
+    border-left: 6px solid #db7c26;
+    border-radius: 8px;
+    margin: 1em 0;
+    color: #780116;
+  }
+    .important {
+    background-color: #db7c26;
+    color: #780116;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+  #TOC, .toc {
+  background-color: #fceeea; /* soft background */
+  border-left: 4px solid #c32f27;
+  padding: 1em;
+  color: #780116;
+}
+
+.toc a {
+  color: #780116 !important;
+  font-family: 'Playfair Display', serif;
+}
+
+.toc a:hover {
+  color: #db7c26 !important;
+}
+
+/* Reference heading and list */
+#references, .references {
+  background-color: #fceeea;
+  border-left: 4px solid #c32f27;
+  padding: 1em;
+  color: #780116;
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+}
+
+</style>
+```
+
+![](images/heatwave.png){width="80%"}
+
+In a study from CSU Fullerton, scientists used **transcriptomic data** to explore how human cells respond to heat shock at the molecular level. Their findings revealed both expected and unexpected stress responses, offering new insight into how cells cope under pressure [@reinschmidt2023].
+
+------------------------------------------------------------------------
+
+# What is Heat Shock Response?
+
+::: {.callout-important title="Recall the time you were sick?"}
+You might have a had fever. This caused your body to undergo alot of stress, but instead of shutting down, it activates protective systems to help you recover and keep going.
+:::
+
+All cells experience some form of stress, whether from heat, toxins, or infections. Heat stress, in particular, can cause proteins inside cells to misfold. When this happens, cells activate the **Heat Shock Response (HSR),** their built-in survival system.
+
+------------------------------------------------------------------------
+
+# What are Heat Shock Proteins?
+
+Once the HSR is triggered, cells begin producing special proteins called **heat shock proteins (HSPs)**. Their job includes:
+
+-   Help proteins fold correctly
+
+-   Repair damaged ones
+
+-   Prevent future protein misfolding
+
+::: {.callout-tip title="How is this Relevant?"}
+In the CSU Fullerton study, researchers observed the *expected* activation of classic heat shock proteins like **HSP70 and HSP90**. But they also found activation of **non-canonical responses** which are genes not traditionally associated with heat shock [@reinschmidt2023].
+:::
+
+This suggests the HSR is **more complex and far-reaching than we previously thought**, with variations depending on the cell type.
+
+------------------------------------------------------------------------
+
+# Cancer Cells Survival Strategy
+
+::: {.callout-important title="The Problem with Cancer Cells"}
+Cancer cells are under constant stress. Low oxygen, exposure to radiation, and chemotherapy are just a few. But instead of dying under this pressure (as treatments intend), cancer cells ramp up their production of HSPs. **Cancer cells hijack the heat shock response** **to avoid death.**
+:::
+
+By overactivating the HSR, cancer cells become **practically immune**, withstanding chemotherapy, radiation, and other treatments that would normally kill them. This ability to exploit the heat shock response is part of what makes cancer so difficult to treat.
+
+------------------------------------------------------------------------
+
+# Our Offense to Cancers Defense
+
+The discovery of **non-canonical HSR pathways** opens new possibilities for cancer treatment. If we can figure out how to **selectively block the amplified heat shock response in cancer cells**, we could make them more vulnerable to therapy.
+
+In other words, disabling cancer’s stress-coping tricks could **improve the effects of chemotherapy** and other treatment outcomes. Understanding how cancer cells produce HSPs differently than normal cells is key to reaching the full potential of cancer therapy.
+
+::: {.callout-tip title="Takeaway"}
+This research shows how **basic cell biology** is important to **real-world medicine.** By uncovering new information on heat shock response, scientists have identified new targets to research that could be used to outsmart cancer and possibly other diseases that exploit stress responses
+:::
+
+![Infographic Recap](images/HSRinfographic.png){width="100%"}

@@ -1,0 +1,20 @@
+---
+title: "DataScience"
+format: html
+---
+
+# Data Science (Math 237)
+
+This course introduced the foundations of data science through hands-on work with real datasets. We learned how to collect, clean, and visualize data; build introductory statistical models; make predictions; and communicate results using reproducible coding practices.
+
+## Projects
+
+### SoCal Rent Project
+
+In this project, I analyzed rental prices across several Southern California counties to understand how factors like square footage, number of bedrooms/bathrooms, and regional differences influence price.\
+➡[View Project](../Projects/DataScience/SoCalRentProject.qmd)
+
+### Encelia Flower Project
+
+For this project, I collected data from the **Fullerton Arboretum** on two native California species—*Encelia californica* and *Encelia farinosa*. I performed exploratory analysis and built simple linear regression models to compare characteristics between the two species.\
+➡ [View Project](../Projects/DataScience/FlowerProject.qmd)
