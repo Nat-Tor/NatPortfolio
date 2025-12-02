@@ -26,7 +26,7 @@ library(purrr)
 
 # this code should work if you put this file in your Projects subfolder of Math 337
 # you may need to open it inside your Math 337 R project
-here::i_am("project_2/project-2.qmd")
+here::i_am("LongCOVID.qmd")
 
 ## the data from Maier, Kowalski-Dobson, et al.
 long_covid <- data.frame(

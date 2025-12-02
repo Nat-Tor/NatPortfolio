@@ -1,9 +1,7 @@
 ---
-title: "CompStats"
+title: "Computational Statistics (Math 337)"
 format: html
 ---
-
-# Computational Statistics (Math 337)
 
 Math 337 serves as a bridge between introductory data science and advanced applied statistics courses. The class focuses on computational and conceptual tools used in modern statistics, including simulation, bootstrap methods, Bayesian inference, confidence intervals, and hypothesis testing. We also explored optimization techniques and reviewed the mathematical properties of random variables, skills that support more advanced modeling work in later courses.
 

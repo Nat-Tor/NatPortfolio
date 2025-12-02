@@ -22,8 +22,8 @@ library(janitor)
 library(gt)
 library(scales)
 library(broom)
-here::i_am("NatsPortfolio/SoCalRentProject.qmd")
-SoCalRent <- read_csv(here::here("NatsPortfolio/ProjectData/SoCalDataRaw_2025.csv"))
+here::i_am("SoCalRentProject.qmd")
+SoCalRent <- read_csv(here::here("ProjectData/SoCalDataRaw_2025.csv"))
 ```
 
 # Data Collection

@@ -1,9 +1,7 @@
 ---
-title: "IntDataAnalysis"
+title: "Intermediate Data Analysis (Math 439)"
 format: html
 ---
-
-# Intermediate Data Analysis (Math 439)
 
 Math 439 focuses on building a deeper understanding of statistical modeling, with an emphasis on regression, model diagnostics, ANOVA, and modern computational techniques. The course covers the mathematical foundations of least squares, simple and multiple regression, variable selection, model checking, bootstrapping, and introductory Bayesian treatments of regression models. Throughout the semester, we applied these methods to real datasets using R and developed practical skills in evaluating and improving statistical models.
 

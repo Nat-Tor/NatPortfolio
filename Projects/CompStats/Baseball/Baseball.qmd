@@ -31,10 +31,10 @@ library(ggplot2)
 
 # this code should work if you put this file in your Projects subfolder of Math 337
 # you may need to open it inside your Math 337 R project
-here::i_am("Project_3/project-3.qmd")
+here::i_am("Baseball.qmd")
 
 # this code should work if you make a folder called Data in your Math 337 folder and put the data in it
-judge <- readr::read_csv(here::here("Project_3/judge.csv"))
+judge <- readr::read_csv(here::here("Instruction_Data/judge.csv"))
 ```
 
 The data for this project comes from [Baseball Savant](https://baseballsavant.mlb.com/) and was obtained primarily using the [baseballr](https://billpetti.github.io/baseballr/) package (Dr. Wynne did a bit of data wrangling with the originally obtained data). It contains launch speed data about the 55 baseballs Aaron Judge hit into play in the month before his injury and the 62 baseballs he hit into play in the month after returning from injury.

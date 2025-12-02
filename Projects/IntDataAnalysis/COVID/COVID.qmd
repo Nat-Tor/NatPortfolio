@@ -17,7 +17,7 @@ In the data given, lung capacity is measured on a scale from 0–100. The contro
 
 ```{r}
 #| label: Loading in data
-covid <- read.csv("datasets/covid.csv")
+covid <- read.csv("Instruction_Data/covid.csv")
 control <- covid$control
 vaccinated <- covid$vaccinated
 # control: individuals who contracted virus and no vaccine

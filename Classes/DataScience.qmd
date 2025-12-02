@@ -1,9 +1,7 @@
 ---
-title: "DataScience"
+title: "Foundations of Data Science (Math 237)"
 format: html
 ---
-
-# Data Science (Math 237)
 
 This course introduced the foundations of data science through hands-on work with real datasets. We learned how to collect, clean, and visualize data; build introductory statistical models; make predictions; and communicate results using reproducible coding practices.
 

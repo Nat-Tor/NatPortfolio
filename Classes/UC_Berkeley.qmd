@@ -3,8 +3,6 @@ title: "Modeling the Role of Selfing Plants in Assisted Gene Flow"
 format: html
 ---
 
-# Modeling the Role of Selfing Plants in Assisted Gene Flow
-
 This ongoing research project, conducted during my Summer 2025 appointment at UC Berkeley, explores how self-fertilizing plant populations respond to assisted gene flow (AGF) interventions under climate-driven selection pressures. I work with the [MOI Lab](https://www.moisesexpositoalonso.org/) at UC Berkeley, and this page documents the project’s motivation, modeling framework, early visuals, and research communication materials. Here, you can find my poster, conceptual diagrams, and links to presentations. The modeling workflow is ongoing, and outputs will be updated as simulations and analyses are completed.
 
 ## Background & Motivation

@@ -3,35 +3,34 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - EAGER.qmd
-    - Projects/EAGER/blog.qmd  
-    - UC_Berkeley.qmd
-    - SoCalRentProject.qmd
-    - FlowerProject.qmd
-    - Projects/CompStats/Fornite_MicroTransactions.qmd
-    - Projects/CompStats/Baseball.qmd
-    - Projects/CompStats/LongCOVID.qmd
+    - Classes/EAGER.qmd
+    - Classes/UC_Berkeley.qmd
+    - Classes/IntDataAnalysis.qmd
+    - Classes/DataScience.qmd
+    - Classes/CompStats.qmd
+    - Projects/EAGER/Blog.qmd  
+    - Projects/DataScience/SoCalRentProject.qmd
+    - Projects/DataScience/FlowerProject.qmd
+    - Projects/CompStats/Fornite_MicroTransactions/Fornite_MicroTransactions.qmd
+    - Projects/CompStats/Baseball/Baseball.qmd
+    - Projects/CompStats/LongCOVID/LongCOVID.qmd
     - Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd
     - Projects/IntDataAnalysis/COVID/COVID.qmd
     - Projects/IntDataAnalysis/Earthquakes/Earthquake.qmd
 
 website:
-  title: "Natalie Torres Portfolio"
+  title: "Natalie Torres"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: EAGER.qmd
+      - href: Classes/EAGER.html
         text: EAGER
-      - href: UC_Berkeley.qmd
-        text: "UC Berkeley"
-      - href: SoCalRentProject.qmd
-        text: "Data Science"
-      - href: FlowerProject.qmd
-        text: "Data Science"
-      - href: Projects/CompStats/Fornite_MicroTransactions.qmd
-        text: "Comp Stats"
-      - href: Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd
+      - href: Classes/UC_Berkeley.html
+        text: "UC Berkeley Research"
+      - href: Classes/DataScience.html
+        text: "Foundations of Data Science"
+      - href: Classes/CompStats.html
+        text: "Computational Statistics"
+      - href: Classes/IntDataAnalysis.html
         text: "Intermediate Data Analysis"
 
 format:

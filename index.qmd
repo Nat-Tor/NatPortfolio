@@ -13,42 +13,37 @@ I'm **Natalie Torres**, a Statistics major at Cal State Fullerton. This is my po
 
 You can also find me online:
 
--   GitHub: [\@Nat-Tor](https://github.com/Nat-Tor)
--   LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)
+- GitHub: [\@Nat-Tor](https://github.com/Nat-Tor)
+- LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)
 
-------------------------------------------------------------------------
+---
 
 ## Research Programs
 
 ### EAGER
-
--   [EAGER Blog](Projects/EAGER/blog.qmd) — Working on transcriptomics research about heat stress in cancer cells and building analysis pipelines.
+- [EAGER Blog](Projects/EAGER/Blog.html) — Working on transcriptomics research about heat stress in cancer cells and building analysis pipelines.
 
 ### UC Berkeley
+- [UC Berkeley Project](Classes/UC_Berkeley.html) — Modeling how self-fertilizing plants respond to assisted gene flow with the [MOI Lab](https://www.moisesexpositoalonso.org/).
 
--   [UC Berkeley Project](UC_Berkeley.qmd) — Modeling how self-fertilizing plants respond to assisted gene flow with the [MOI Lab](https://www.moisesexpositoalonso.org/).
-
-------------------------------------------------------------------------
+---
 
 ## Classes & Projects
 
-### Data Science (Math 237)
-
--   [SoCalRent Analysis](SoCalRentProject.qmd) — Exploring Southern California rent prices across counties.
--   [Encelia Flower Project](FlowerProject.qmd) — Collected and analyzed flowers from the **CSUF Arboretum** and tried simple linear regression.
+### Foundations of Data Science (Math 237)
+- [SoCalRent Analysis](Projects/DataScience/SoCalRentProject.html) — Exploring Southern California rent prices across counties.
+- [Encelia Flower Project](Projects/DataScience/FlowerProject.html) — Collected and analyzed flowers from the **CSUF Arboretum** and tried simple linear regression.
 
 ### Computational Statistics (Math 337)
-
--   [Fortnite Microtransactions](Projects/CompStats/Fornite_MicroTransactions.qmd) — Confidence interval project.
--   [Baseball Project](Projects/CompStats/Baseball.qmd) — Bayesian inference applied to player data.
--   [Long COVID Project](Projects/CompStats/LongCOVID.qmd) — Practiced hypothesis testing using bootstrapping.
+- [Fortnite Microtransactions](Projects/CompStats/Fornite_MicroTransactions/Fornite_MicroTransactions.html) — Confidence interval project.
+- [Baseball Project](Projects/CompStats/Baseball/Baseball.html) — Bayesian inference applied to player data.
+- [Long COVID Project](Projects/CompStats/LongCOVID/LongCOVID.html) — Practiced hypothesis testing using bootstrapping.
 
 ### Intermediate Data Analysis (Math 439)
+- [Car Prices Project](Projects/IntDataAnalysis/CarPrices/Cars4Sale.html) — Predicted used car prices based on dealership data.
+- [COVID Lung Capacity](Projects/IntDataAnalysis/COVID/COVID.html) — Compared lung capacity in vaccinated vs. unvaccinated individuals.
+- [Earthquake Project](Projects/IntDataAnalysis/Earthquakes/Earthquake.html) — Looked at mainshock-aftershock relationships using regression and transformations.
 
--   [Car Prices Project](Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd) — Predicted used car prices based on dealership data.
--   [COVID Lung Capacity](Projects/IntDataAnalysis/COVID/COVID.qmd) — Compared lung capacity in vaccinated vs. unvaccinated individuals.
--   [Earthquake Project](Projects/IntDataAnalysis/Earthquakes/Earthquake.qmd) — Looked at mainshock-aftershock relationships using regression and transformations.
+---
 
-------------------------------------------------------------------------
-
-> This portfolio is a work in progress, so more projects, updates, and results will be added over time. \<3
+> This portfolio is a work in progress — more projects, updates, and results will be added over time. \<3
