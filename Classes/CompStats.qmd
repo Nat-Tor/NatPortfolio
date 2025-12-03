@@ -15,7 +15,7 @@ In this project, I used bootstrap simulation and computational methods to constr
 ### Baseball Project (Bayesian Inference)
 
 This project applied Bayesian methods to baseball performance data, exploring how prior beliefs combine with observed data to produce posterior distributions and predictions.\
-➡ [View Project](../Projects/CompStats/Baseball/Baseball.html)
+➡ [View Project](../Projects/CompStats/Baseball/Baseball.qmd)
 ### Long COVID Project (Hypothesis Testing)
 
 In this analysis, I conducted hypothesis testing using permutation and bootstrap-based methods to investigate questions related to Long COVID and differences across groups.\
