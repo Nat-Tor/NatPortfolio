@@ -41,6 +41,6 @@ SLiM outputs data that I then analyze in R. This includes things like how allele
 
 ## Poster & Lightning Talk
 
-A PDF of my research poster will be inserted here. [Download Poster](Projects/UC_Berkeley/poster.pdf)
+A PDF of my research poster will be inserted here. [Download Poster](../Projects/UC_Berkeley/Poster.pdf)
 
 Add short slides linked here: [Lightning Talk – Google Slides](https://docs.google.com/presentation/d/1IpeqF3SY2DGTSTJqpQtYLLeX-Teg9d4Gq7EnUfrYb6Q/edit?usp=sharing)

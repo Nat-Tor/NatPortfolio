@@ -177,23 +177,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Natalie Torres Portfolio",
+    "title": "About Me",
     "section": "",
-    "text": "I’m Natalie Torres, a Statistics major at Cal State Fullerton. This is my portfolio, where I share projects from research programs and classes. Most of my work comes from programs like EAGER at CSUF and summer research at UC Berkeley, along with my coursework in data science and statistics.\nYou can also find me online:\n\nGitHub: @Nat-Tor\nLinkedIn: Natalie Torres\n\n\n\n\n\n\n\nEAGER Blog — Working on transcriptomics research about heat stress in cancer cells and building analysis pipelines.\n\n\n\n\n\nUC Berkeley Project — Modeling how self-fertilizing plants respond to assisted gene flow with the MOI Lab.\n\n\n\n\n\n\n\n\n\nSoCalRent Analysis — Exploring Southern California rent prices across counties.\nEncelia Flower Project — Collected and analyzed flowers from the CSUF Arboretum and tried simple linear regression.\n\n\n\n\n\nFortnite Microtransactions — Confidence interval project.\nBaseball Project — Bayesian inference applied to player data.\nLong COVID Project — Practiced hypothesis testing using bootstrapping.\n\n\n\n\n\nCar Prices Project — Predicted used car prices based on dealership data.\nCOVID Lung Capacity — Compared lung capacity in vaccinated vs. unvaccinated individuals.\nEarthquake Project — Looked at mainshock-aftershock relationships using regression and transformations.\n\n\n\nThis portfolio is a work in progress — more projects, updates, and results will be added over time. &lt;3"
+    "text": "Hi! I’m Natalie Torres, a math major at Cal State Fullerton, graduating in Spring 2026. I’m especially drawn to data science as I love working with messy data, finding patterns, and turning analyses into clean, meaningful visualizations.\nI’m currently part of Project EAGER, where I’ve been exploring genomics, computational analysis, and research communication. This year, I presented my first research poster at SCCUR, which made me excited about pursuing graduate school in statistics or data science.\nOutside of academics, I’m all about gaming (Stardew Valley, Minecraft, and recently Balatro) and collecting way too many stickers.\nI’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next."
   },
   {
-    "objectID": "index.html#research-programs",
-    "href": "index.html#research-programs",
-    "title": "Natalie Torres Portfolio",
-    "section": "",
-    "text": "EAGER Blog — Working on transcriptomics research about heat stress in cancer cells and building analysis pipelines.\n\n\n\n\n\nUC Berkeley Project — Modeling how self-fertilizing plants respond to assisted gene flow with the MOI Lab."
-  },
-  {
-    "objectID": "index.html#classes-projects",
-    "href": "index.html#classes-projects",
-    "title": "Natalie Torres Portfolio",
-    "section": "",
-    "text": "SoCalRent Analysis — Exploring Southern California rent prices across counties.\nEncelia Flower Project — Collected and analyzed flowers from the CSUF Arboretum and tried simple linear regression.\n\n\n\n\n\nFortnite Microtransactions — Confidence interval project.\nBaseball Project — Bayesian inference applied to player data.\nLong COVID Project — Practiced hypothesis testing using bootstrapping.\n\n\n\n\n\nCar Prices Project — Predicted used car prices based on dealership data.\nCOVID Lung Capacity — Compared lung capacity in vaccinated vs. unvaccinated individuals.\nEarthquake Project — Looked at mainshock-aftershock relationships using regression and transformations.\n\n\n\nThis portfolio is a work in progress — more projects, updates, and results will be added over time. &lt;3"
+    "objectID": "index.html#find-me-online",
+    "href": "index.html#find-me-online",
+    "title": "About Me",
+    "section": "Find Me Online",
+    "text": "Find Me Online\n\nGitHub: @Nat-Tor\n\nLinkedIn: Natalie Torres\n\nEmail: natalietor@csu.fullerton.edu\n\n\nThis portfolio is a work in progress so things are a little messy but more projects, updates, and results will be added over time. &lt;3"
   },
   {
     "objectID": "Classes/EAGER.html",

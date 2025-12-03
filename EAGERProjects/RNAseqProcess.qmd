@@ -1,0 +1,83 @@
+---
+title: "RNAseqProcess"
+format: html
+---
+
+This project documents my attempt to replicate and understand the RNA-seq analysis pipeline used in the study *“Transcriptomics Unveil Canonical and Non-Canonical Heat Shock-Induced Pathways in Human Cell Lines”* by Reinschmidt, Solano, Chavez, Hulsy, and Nikolaidis. The original publication explored how human cells respond to heat stress at the transcriptomic level, identifying both well-known (canonical) heat shock genes such as **HSP70** and **HSP90**, as well as uncovering lesser-known (non-canonical) pathways related to oxidative stress, protein folding, and DNA repair.
+
+Inspired by this work, I conducted a parallel analysis using publicly available RNA-seq data comparing heat-treated and control samples. This Quarto document outlines the workflow I recreated, including quality control and trimming, alignment using **STAR**, gene quantification with **HTSeq**, and differential expression analysis with **DESeq2** in R. Through this process, I was able to observe patterns of gene activation consistent with heat stress responses and gained a deeper understanding of how environmental stress can impact gene expression. This write-up serves as both a personal learning record and a reproducible template for others interested in RNA-seq analysis.
+
+# Setup
+
+I am working on windows computer and had to download ubuntu to ensure the bioinformatics tools run safetly. With the help of my cohort, we figured out the easiest way to download it is just thru the windows store and download the app.
+
+![](NatsPortfolio/images/ubuntu.png)
+
+# Downloading Data
+
+I first off started by making a directory called **rnaseq** to keep everything organized.
+
+This script downloads the raw FASTQ files provided by the professor for RNA-seq analysis. The data consist of 18 paired-end `.fq.gz` files hosted on Dropbox, organized into three experimental conditions for **HeLa cells**:
+
+-   **HeLa 0 hr recovery (0R)**
+
+-   **HeLa 8 hr recovery (8R)**
+
+-   **HeLa control (cnt)**
+
+For each condition, there are **three biological replicates** (1, 2, and 3), and for each replicate, there are **two paired-end reads** (R1 and R2), totaling 18 files.
+
+The script:
+
+1.  Creates a `raw_data/` directory if it doesn’t already exist.
+
+2.  Stores the Dropbox URLs in an array.
+
+3.  Loops through the array and uses `wget` to download each file into the `raw_data/` folder.
+
+This ensures all the raw sequencing data is organized and available locally for downstream processing (like trimming, alignment, and counting).
+
+```{bash eval=FALSE}
+#!/bin/bash
+
+# Make sure the output directory exists
+mkdir -p raw_data
+
+# Array of URLs
+urls=( "https://www.dropbox.com/scl/fi/2fvs1kv37vymo8pio0c1l/HeLa1_0R_1_B1.fq.gz?rlkey=9mx1lotyk3cd2kxzcp2peawbk&st=xyzybcxl&dl=0"
+"https://www.dropbox.com/scl/fi/a7pysjbaf3vfby8mlqfc1/HeLa1_0R_2_B1.fq.gz?rlkey=191zix9kqil9dt1tibm9v4zql&st=703yfqfs&dl=0"
+"https://www.dropbox.com/scl/fi/ybq46jcgpkxa77m3xwxvw/HeLa1_8R_1_B1.fq.gz?rlkey=l2swnkluadhzu3945hhlckgxt&st=1gre7lpw&dl=0"
+"https://www.dropbox.com/scl/fi/zhowds8sbkfjfynpw0atj/HeLa1_8R_2_B1.fq.gz?rlkey=eu7yfl4kqs5zg9kjaa8u2txz2&st=gcobu0wr&dl=0"
+"https://www.dropbox.com/scl/fi/vrret5glefhokhy3i8dya/HeLa1_cnt_1_B1.fq.gz?rlkey=4fn1n370qb60hf55vh8fde988&st=7b44fhet&dl=0"
+"https://www.dropbox.com/scl/fi/5029043b3fte3f1pxq6ss/HeLa1_cnt_2_B1.fq.gz?rlkey=wxq7qyk6h9z44ojbnz2sxmhig&st=js3cvxq4&dl=0"
+"https://www.dropbox.com/scl/fi/8bm0m23sfn07o435hgaxs/HeLa2_0R_1_B1.fq.gz?rlkey=xysfahwdbih8dih9bb0xeilgo&st=kff4n2z5&dl=0"
+"https://www.dropbox.com/scl/fi/xs0qhg29ys7zlmlya7i8e/HeLa2_0R_2_B1.fq.gz?rlkey=jzdo5ulpivqh0eq86z3rekz8y&st=t9gqfewz&dl=0"
+"https://www.dropbox.com/scl/fi/erhjrnk4k64h7x5j1hvtq/HeLa2_8R_1_B1.fq.gz?rlkey=isgie3vknx3rs4uiyxnpkpc2w&st=rqf27jwo&dl=0"
+"https://www.dropbox.com/scl/fi/rin60v4d9lifm4djc1g2p/HeLa2_8R_2_B1.fq.gz?rlkey=8zrz5yykxyz1gvjt8yrruhf3h&st=k31pt8g0&dl=0"
+"https://www.dropbox.com/scl/fi/t5nxn63xhwh2hlcf8wuxb/HeLa2_cnt_1_B1.fq.gz?rlkey=w0o68t1jui2v3k3nk7ybqni2t&st=93i4tlek&dl=0"
+"https://www.dropbox.com/scl/fi/c8p7l8px0kju6kk08h8sg/HeLa2_cnt_2_B1.fq.gz?rlkey=mt2hwpzztvcqabfjp9j9tictu&st=o04o4zkk&dl=0"
+"https://www.dropbox.com/scl/fi/kgggzmtw408nptas4xaet/HeLa3_0R_1_B1.fq.gz?rlkey=tnel8codu33apadnwyj569fin&st=slac6xtl&dl=0"
+"https://www.dropbox.com/scl/fi/773can0gblcux2psur99n/HeLa3_0R_2_B1.fq.gz?rlkey=v2ph4yf9ndxhyff9otdwc6up7&st=f3ol73sn&dl=0"
+"https://www.dropbox.com/scl/fi/xsqxiox8mv23m025bp8hb/HeLa3_8R_1_B1.fq.gz?rlkey=tw421yct7tcuyes3i5sl2shy7&st=id27t759&dl=0"
+"https://www.dropbox.com/scl/fi/7jt2lonllxirkshmrdif6/HeLa3_8R_2_B1.fq.gz?rlkey=wni8kw4ixppcqp679phxiv5uk&st=02voyusr&dl=0"
+"https://www.dropbox.com/scl/fi/h9xgc7n05pxo19f6cso66/HeLa3_cnt_1_B1.fq.gz?rlkey=u2m8ub7r9q73bi1s100zbe72j&st=8g4kctbz&dl=0"
+"https://www.dropbox.com/scl/fi/zdszsizw2zx07r7k39yb0/HeLa3_cnt_2_B1.fq.gz?rlkey=t5smn58dprtf4wzs0be70x7n7&st=wyddo7xe&dl=0"
+
+# Add more URLs here
+)
+
+# Corresponding output filenames
+filenames=(
+  "sample_R1.fastq.gz"
+  # Add more filenames here
+)
+
+# Loop through the URLs and download each
+for i in "${!urls[@]}"; do
+  echo "Downloading ${filenames[$i]}..."
+  curl -L -o "raw_data/${filenames[$i]}" "${urls[$i]}"
+done
+
+echo "All downloads complete!"
+
+```

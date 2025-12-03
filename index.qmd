@@ -1,49 +1,33 @@
 ---
-title: "Natalie Torres Portfolio"
+title: "About Me"
 format:
   html:
     theme: minty
     toc: false
-    code-fold: true
 ---
 
-# Hi! :D
+::::: columns
+::: {.column width="50%"}
+![](ImNatalie.jpg){width=100% style="padding-right:20px;"}
+:::
 
-I'm **Natalie Torres**, a Statistics major at Cal State Fullerton. This is my portfolio, where I share projects from research programs and classes. Most of my work comes from programs like **EAGER** at CSUF and summer research at **UC Berkeley**, along with my coursework in data science and statistics.
+::: {.column width="50%"}
+Hi! I’m Natalie Torres, a math major at Cal State Fullerton, graduating in Spring 2026. I’m especially drawn to data science as I love working with messy data, finding patterns, and turning analyses into clean, meaningful visualizations.
 
-You can also find me online:
+I’m currently part of Project EAGER, where I’ve been exploring genomics, computational analysis, and research communication. This year, I presented my first research poster at SCCUR, which made me excited about pursuing graduate school in statistics or data science.
 
-- GitHub: [\@Nat-Tor](https://github.com/Nat-Tor)
-- LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)
+Outside of academics, I’m all about gaming (Stardew Valley, Minecraft, and recently Balatro) and collecting way too many stickers.
 
----
+I’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next.
+:::
+:::::
 
-## Research Programs
+------------------------------------------------------------------------
 
-### EAGER
-- [EAGER Blog](Projects/EAGER/Blog.html) — Working on transcriptomics research about heat stress in cancer cells and building analysis pipelines.
+## Find Me Online
 
-### UC Berkeley
-- [UC Berkeley Project](Classes/UC_Berkeley.html) — Modeling how self-fertilizing plants respond to assisted gene flow with the [MOI Lab](https://www.moisesexpositoalonso.org/).
+-   GitHub: [\@Nat-Tor](https://github.com/Nat-Tor)\
+-   LinkedIn: [Natalie Torres](https://www.linkedin.com/in/natalietorres-o7/)\
+-   Email: natalietor\@csu.fullerton.edu
 
----
-
-## Classes & Projects
-
-### Foundations of Data Science (Math 237)
-- [SoCalRent Analysis](Projects/DataScience/SoCalRentProject.html) — Exploring Southern California rent prices across counties.
-- [Encelia Flower Project](Projects/DataScience/FlowerProject.html) — Collected and analyzed flowers from the **CSUF Arboretum** and tried simple linear regression.
-
-### Computational Statistics (Math 337)
-- [Fortnite Microtransactions](Projects/CompStats/ForniteMicroTransactions/Fornite_MicroTransactions.html) — Confidence interval project.
-- [Baseball Project](Projects/CompStats/Baseball/Baseball.html) — Bayesian inference applied to player data.
-- [Long COVID Project](Projects/CompStats/LongCOVID/LongCOVID.html) — Practiced hypothesis testing using bootstrapping.
-
-### Intermediate Data Analysis (Math 439)
-- [Car Prices Project](Projects/IntDataAnalysis/CarPrices/Cars4Sale.html) — Predicted used car prices based on dealership data.
-- [COVID Lung Capacity](Projects/IntDataAnalysis/COVID/COVID.html) — Compared lung capacity in vaccinated vs. unvaccinated individuals.
-- [Earthquake Project](Projects/IntDataAnalysis/Earthquakes/Earthquake.html) — Looked at mainshock-aftershock relationships using regression and transformations.
-
----
-
-> This portfolio is a work in progress — more projects, updates, and results will be added over time. \<3
+> This portfolio is a work in progress so things are a little messy but more projects, updates, and results will be added over time. \<3
