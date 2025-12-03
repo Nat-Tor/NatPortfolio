@@ -36,7 +36,6 @@ website:
 format:
   html:
     theme: minty
-    css: tabs.css
     toc: true
     code-fold: true
     code-summary: "Show code"
