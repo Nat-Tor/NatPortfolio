@@ -28,6 +28,7 @@ I used **SLiM**, a population genetics simulation program, to model how self-fer
 -   Introducing new, beneficial alleles into the population
 -   Different rates of self-fertilization versus outcrossing
 -   Possible negative effects from mixing populations (outbreeding depression)
+![](Images/Model.png){width=100%}
 
 ### Planned Components
 
@@ -41,6 +42,6 @@ SLiM outputs data that I then analyze in R. This includes things like how allele
 
 ## Poster & Lightning Talk
 
-A PDF of my research poster will be inserted here. [Download Poster](../Projects/UC_Berkeley/Poster.pdf)
+A PDF of my research poster will be inserted here. [Download Poster](../Projects/UC_Berekley/Poster.pdf)
 
 Add short slides linked here: [Lightning Talk – Google Slides](https://docs.google.com/presentation/d/1IpeqF3SY2DGTSTJqpQtYLLeX-Teg9d4Gq7EnUfrYb6Q/edit?usp=sharing)

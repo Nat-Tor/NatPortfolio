@@ -5,6 +5,8 @@ format: html
 
 The NIH-funded **Project EAGER** at CSU Fullerton provides undergraduate students with hands-on experience in genomics, bioinformatics, and research communication. Through workshops, seminars, and mentored research, we explored how computational tools can be used to study biological systems and big data in modern biology.
 
+![](Images/EAGERatSCCUR.jpg){width=100%}
+
 Learn more about the program [here](https://sites.google.com/view/projecteager/about)
 
 As part of this program, I conducted summer research at **UC Berkeley**, where I worked with genomic data and developed bioinformatics workflows.  
