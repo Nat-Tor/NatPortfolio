@@ -11,7 +11,7 @@ project:
     - Projects/EAGER/Blog.qmd  
     - Projects/DataScience/SoCalRentProject.qmd
     - Projects/DataScience/FlowerProject.qmd
-    - Projects/CompStats/Fornite_MicroTransactions/Fornite_MicroTransactions.qmd
+    - Projects/CompStats/ForniteMicroTransactions/Fornite_MicroTransactions.qmd
     - Projects/CompStats/Baseball/Baseball.qmd
     - Projects/CompStats/LongCOVID/LongCOVID.qmd
     - Projects/IntDataAnalysis/CarPrices/Cars4Sale.qmd

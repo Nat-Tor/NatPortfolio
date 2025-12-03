@@ -35,7 +35,7 @@ You can also find me online:
 - [Encelia Flower Project](Projects/DataScience/FlowerProject.html) — Collected and analyzed flowers from the **CSUF Arboretum** and tried simple linear regression.
 
 ### Computational Statistics (Math 337)
-- [Fortnite Microtransactions](Projects/CompStats/Fornite_MicroTransactions/Fornite_MicroTransactions.html) — Confidence interval project.
+- [Fortnite Microtransactions](Projects/CompStats/ForniteMicroTransactions/Fornite_MicroTransactions.html) — Confidence interval project.
 - [Baseball Project](Projects/CompStats/Baseball/Baseball.html) — Bayesian inference applied to player data.
 - [Long COVID Project](Projects/CompStats/LongCOVID/LongCOVID.html) — Practiced hypothesis testing using bootstrapping.
 
