@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2cd88b842f3556f70e7132508a5c4eca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-49a824ff064150fa59632921ab93e189.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-af79d34236920a5c364fa2e377a89c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9fe073547ce625c256ace396990acbaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,6 +114,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><b>Natalie Torres</b></span>
     </a>
@@ -205,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -214,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">i_am</span>(<span class="st">"SoCalRentProject.qmd"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>SoCalRent <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"ProjectData/SoCalDataRaw_2025.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>SoCalRent <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"ProjectData/SoCalDataRaw_2025.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -224,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SoCalRent <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SoCalRent <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
@@ -243,26 +246,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="pfndqjznui" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pfndqjznui table {
+<div id="lqmrxxtnhs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lqmrxxtnhs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pfndqjznui thead, #pfndqjznui tbody, #pfndqjznui tfoot, #pfndqjznui tr, #pfndqjznui td, #pfndqjznui th {
+#lqmrxxtnhs thead, #lqmrxxtnhs tbody, #lqmrxxtnhs tfoot, #lqmrxxtnhs tr, #lqmrxxtnhs td, #lqmrxxtnhs th {
   border-style: none;
 }
 
-#pfndqjznui p {
+#lqmrxxtnhs p {
   margin: 0;
   padding: 0;
 }
 
-#pfndqjznui .gt_table {
+#lqmrxxtnhs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -288,12 +291,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#pfndqjznui .gt_caption {
+#lqmrxxtnhs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pfndqjznui .gt_title {
+#lqmrxxtnhs .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -305,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#pfndqjznui .gt_subtitle {
+#lqmrxxtnhs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -317,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#pfndqjznui .gt_heading {
+#lqmrxxtnhs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -329,13 +332,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pfndqjznui .gt_bottom_border {
+#lqmrxxtnhs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_col_headings {
+#lqmrxxtnhs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -350,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pfndqjznui .gt_col_heading {
+#lqmrxxtnhs .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -370,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#pfndqjznui .gt_column_spanner_outer {
+#lqmrxxtnhs .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -382,15 +385,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#pfndqjznui .gt_column_spanner_outer:first-child {
+#lqmrxxtnhs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pfndqjznui .gt_column_spanner_outer:last-child {
+#lqmrxxtnhs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pfndqjznui .gt_column_spanner {
+#lqmrxxtnhs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -402,11 +405,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#pfndqjznui .gt_spanner_row {
+#lqmrxxtnhs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pfndqjznui .gt_group_heading {
+#lqmrxxtnhs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -432,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#pfndqjznui .gt_empty_group_heading {
+#lqmrxxtnhs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -447,15 +450,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#pfndqjznui .gt_from_md > :first-child {
+#lqmrxxtnhs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pfndqjznui .gt_from_md > :last-child {
+#lqmrxxtnhs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pfndqjznui .gt_row {
+#lqmrxxtnhs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -474,7 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#pfndqjznui .gt_stub {
+#lqmrxxtnhs .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -487,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pfndqjznui .gt_stub_row_group {
+#lqmrxxtnhs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -501,15 +504,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#pfndqjznui .gt_row_group_first td {
+#lqmrxxtnhs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pfndqjznui .gt_row_group_first th {
+#lqmrxxtnhs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pfndqjznui .gt_summary_row {
+#lqmrxxtnhs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -519,16 +522,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pfndqjznui .gt_first_summary_row {
+#lqmrxxtnhs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_first_summary_row.thick {
+#lqmrxxtnhs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pfndqjznui .gt_last_summary_row {
+#lqmrxxtnhs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -538,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_grand_summary_row {
+#lqmrxxtnhs .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -548,7 +551,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pfndqjznui .gt_first_grand_summary_row {
+#lqmrxxtnhs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -558,7 +561,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_last_grand_summary_row_top {
+#lqmrxxtnhs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -568,11 +571,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_striped {
+#lqmrxxtnhs .gt_striped {
   background-color: #EBFBF9;
 }
 
-#pfndqjznui .gt_table_body {
+#lqmrxxtnhs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -581,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#pfndqjznui .gt_footnotes {
+#lqmrxxtnhs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -595,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pfndqjznui .gt_footnote {
+#lqmrxxtnhs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -604,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pfndqjznui .gt_sourcenotes {
+#lqmrxxtnhs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -618,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pfndqjznui .gt_sourcenote {
+#lqmrxxtnhs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -626,80 +629,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pfndqjznui .gt_left {
+#lqmrxxtnhs .gt_left {
   text-align: left;
 }
 
-#pfndqjznui .gt_center {
+#lqmrxxtnhs .gt_center {
   text-align: center;
 }
 
-#pfndqjznui .gt_right {
+#lqmrxxtnhs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pfndqjznui .gt_font_normal {
+#lqmrxxtnhs .gt_font_normal {
   font-weight: normal;
 }
 
-#pfndqjznui .gt_font_bold {
+#lqmrxxtnhs .gt_font_bold {
   font-weight: bold;
 }
 
-#pfndqjznui .gt_font_italic {
+#lqmrxxtnhs .gt_font_italic {
   font-style: italic;
 }
 
-#pfndqjznui .gt_super {
+#lqmrxxtnhs .gt_super {
   font-size: 65%;
 }
 
-#pfndqjznui .gt_footnote_marks {
+#lqmrxxtnhs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pfndqjznui .gt_asterisk {
+#lqmrxxtnhs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pfndqjznui .gt_indent_1 {
+#lqmrxxtnhs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pfndqjznui .gt_indent_2 {
+#lqmrxxtnhs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pfndqjznui .gt_indent_3 {
+#lqmrxxtnhs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pfndqjznui .gt_indent_4 {
+#lqmrxxtnhs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pfndqjznui .gt_indent_5 {
+#lqmrxxtnhs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pfndqjznui .katex-display {
+#lqmrxxtnhs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pfndqjznui div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lqmrxxtnhs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Rent Listings Data</th>
+<td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Rent Listings Data</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="Price" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Rent ($)</th>
@@ -785,7 +788,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="ot">&lt;-</span> SoCalRent <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="ot">&lt;-</span> SoCalRent <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cleaning out any listings that have any empty data for the sake of my sanity</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Price), <span class="sc">!</span><span class="fu">is.na</span>(Beds), <span class="sc">!</span><span class="fu">is.na</span>(Baths), <span class="sc">!</span><span class="fu">is.na</span>(SqFt), <span class="sc">!</span><span class="fu">is.na</span>(Address), <span class="sc">!</span><span class="fu">str_starts</span>(SqFt, <span class="st">"—"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -805,13 +808,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">City =</span> <span class="fu">str_split_fixed</span>(Address, <span class="st">","</span>, <span class="dv">3</span>)[, <span class="dv">2</span>]</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If beds or baths is 0, remove the row</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Beds <span class="sc">!=</span> <span class="dv">0</span>, Baths <span class="sc">!=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Beds <span class="sc">!=</span> <span class="dv">0</span>, Baths <span class="sc">!=</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
@@ -831,26 +834,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="xnyqldyuus" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xnyqldyuus table {
+<div id="wohxyaybsp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wohxyaybsp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xnyqldyuus thead, #xnyqldyuus tbody, #xnyqldyuus tfoot, #xnyqldyuus tr, #xnyqldyuus td, #xnyqldyuus th {
+#wohxyaybsp thead, #wohxyaybsp tbody, #wohxyaybsp tfoot, #wohxyaybsp tr, #wohxyaybsp td, #wohxyaybsp th {
   border-style: none;
 }
 
-#xnyqldyuus p {
+#wohxyaybsp p {
   margin: 0;
   padding: 0;
 }
 
-#xnyqldyuus .gt_table {
+#wohxyaybsp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -876,12 +879,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#xnyqldyuus .gt_caption {
+#wohxyaybsp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xnyqldyuus .gt_title {
+#wohxyaybsp .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -893,7 +896,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#xnyqldyuus .gt_subtitle {
+#wohxyaybsp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -905,7 +908,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#xnyqldyuus .gt_heading {
+#wohxyaybsp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -917,13 +920,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xnyqldyuus .gt_bottom_border {
+#wohxyaybsp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_col_headings {
+#wohxyaybsp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -938,7 +941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xnyqldyuus .gt_col_heading {
+#wohxyaybsp .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -958,7 +961,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xnyqldyuus .gt_column_spanner_outer {
+#wohxyaybsp .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -970,15 +973,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#xnyqldyuus .gt_column_spanner_outer:first-child {
+#wohxyaybsp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xnyqldyuus .gt_column_spanner_outer:last-child {
+#wohxyaybsp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xnyqldyuus .gt_column_spanner {
+#wohxyaybsp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -990,11 +993,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#xnyqldyuus .gt_spanner_row {
+#wohxyaybsp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xnyqldyuus .gt_group_heading {
+#wohxyaybsp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1020,7 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#xnyqldyuus .gt_empty_group_heading {
+#wohxyaybsp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1035,15 +1038,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#xnyqldyuus .gt_from_md > :first-child {
+#wohxyaybsp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xnyqldyuus .gt_from_md > :last-child {
+#wohxyaybsp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xnyqldyuus .gt_row {
+#wohxyaybsp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1062,7 +1065,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xnyqldyuus .gt_stub {
+#wohxyaybsp .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -1075,7 +1078,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xnyqldyuus .gt_stub_row_group {
+#wohxyaybsp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1089,15 +1092,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#xnyqldyuus .gt_row_group_first td {
+#wohxyaybsp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xnyqldyuus .gt_row_group_first th {
+#wohxyaybsp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xnyqldyuus .gt_summary_row {
+#wohxyaybsp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1107,16 +1110,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xnyqldyuus .gt_first_summary_row {
+#wohxyaybsp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_first_summary_row.thick {
+#wohxyaybsp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xnyqldyuus .gt_last_summary_row {
+#wohxyaybsp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1126,7 +1129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_grand_summary_row {
+#wohxyaybsp .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1136,7 +1139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xnyqldyuus .gt_first_grand_summary_row {
+#wohxyaybsp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1146,7 +1149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_last_grand_summary_row_top {
+#wohxyaybsp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1156,11 +1159,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_striped {
+#wohxyaybsp .gt_striped {
   background-color: #EBFBF9;
 }
 
-#xnyqldyuus .gt_table_body {
+#wohxyaybsp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1169,7 +1172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#xnyqldyuus .gt_footnotes {
+#wohxyaybsp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1183,7 +1186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xnyqldyuus .gt_footnote {
+#wohxyaybsp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1192,7 +1195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xnyqldyuus .gt_sourcenotes {
+#wohxyaybsp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1206,7 +1209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xnyqldyuus .gt_sourcenote {
+#wohxyaybsp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1214,80 +1217,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xnyqldyuus .gt_left {
+#wohxyaybsp .gt_left {
   text-align: left;
 }
 
-#xnyqldyuus .gt_center {
+#wohxyaybsp .gt_center {
   text-align: center;
 }
 
-#xnyqldyuus .gt_right {
+#wohxyaybsp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xnyqldyuus .gt_font_normal {
+#wohxyaybsp .gt_font_normal {
   font-weight: normal;
 }
 
-#xnyqldyuus .gt_font_bold {
+#wohxyaybsp .gt_font_bold {
   font-weight: bold;
 }
 
-#xnyqldyuus .gt_font_italic {
+#wohxyaybsp .gt_font_italic {
   font-style: italic;
 }
 
-#xnyqldyuus .gt_super {
+#wohxyaybsp .gt_super {
   font-size: 65%;
 }
 
-#xnyqldyuus .gt_footnote_marks {
+#wohxyaybsp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xnyqldyuus .gt_asterisk {
+#wohxyaybsp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xnyqldyuus .gt_indent_1 {
+#wohxyaybsp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xnyqldyuus .gt_indent_2 {
+#wohxyaybsp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xnyqldyuus .gt_indent_3 {
+#wohxyaybsp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xnyqldyuus .gt_indent_4 {
+#wohxyaybsp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xnyqldyuus .gt_indent_5 {
+#wohxyaybsp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xnyqldyuus .katex-display {
+#wohxyaybsp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xnyqldyuus div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wohxyaybsp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Clean Rent Listings Data</th>
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Clean Rent Listings Data</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="Price" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Rent ($)</th>
@@ -1375,7 +1378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Type, County) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type, <span class="at">y =</span> n, <span class="at">fill =</span> County)) <span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
@@ -1399,7 +1402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1414,7 +1417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(County, Type)<span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean.price =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Price, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">median.price =</span> <span class="fu">median</span>(Price, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
@@ -1447,26 +1450,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">20</span>),</span>
 <span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">14</span>),</span>
 <span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">3</span>),</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="uhuxifkykz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uhuxifkykz table {
+<div id="dmhydluzlz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dmhydluzlz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uhuxifkykz thead, #uhuxifkykz tbody, #uhuxifkykz tfoot, #uhuxifkykz tr, #uhuxifkykz td, #uhuxifkykz th {
+#dmhydluzlz thead, #dmhydluzlz tbody, #dmhydluzlz tfoot, #dmhydluzlz tr, #dmhydluzlz td, #dmhydluzlz th {
   border-style: none;
 }
 
-#uhuxifkykz p {
+#dmhydluzlz p {
   margin: 0;
   padding: 0;
 }
 
-#uhuxifkykz .gt_table {
+#dmhydluzlz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1492,12 +1495,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#uhuxifkykz .gt_caption {
+#dmhydluzlz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uhuxifkykz .gt_title {
+#dmhydluzlz .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -1509,7 +1512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#uhuxifkykz .gt_subtitle {
+#dmhydluzlz .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -1521,7 +1524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#uhuxifkykz .gt_heading {
+#dmhydluzlz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1533,13 +1536,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhuxifkykz .gt_bottom_border {
+#dmhydluzlz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_col_headings {
+#dmhydluzlz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1554,7 +1557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhuxifkykz .gt_col_heading {
+#dmhydluzlz .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1574,7 +1577,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#uhuxifkykz .gt_column_spanner_outer {
+#dmhydluzlz .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1586,15 +1589,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#uhuxifkykz .gt_column_spanner_outer:first-child {
+#dmhydluzlz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uhuxifkykz .gt_column_spanner_outer:last-child {
+#dmhydluzlz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uhuxifkykz .gt_column_spanner {
+#dmhydluzlz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1606,11 +1609,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#uhuxifkykz .gt_spanner_row {
+#dmhydluzlz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uhuxifkykz .gt_group_heading {
+#dmhydluzlz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1636,7 +1639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#uhuxifkykz .gt_empty_group_heading {
+#dmhydluzlz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1651,15 +1654,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#uhuxifkykz .gt_from_md > :first-child {
+#dmhydluzlz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uhuxifkykz .gt_from_md > :last-child {
+#dmhydluzlz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uhuxifkykz .gt_row {
+#dmhydluzlz .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -1678,7 +1681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#uhuxifkykz .gt_stub {
+#dmhydluzlz .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1691,7 +1694,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhuxifkykz .gt_stub_row_group {
+#dmhydluzlz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1705,15 +1708,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#uhuxifkykz .gt_row_group_first td {
+#dmhydluzlz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uhuxifkykz .gt_row_group_first th {
+#dmhydluzlz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uhuxifkykz .gt_summary_row {
+#dmhydluzlz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1723,16 +1726,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhuxifkykz .gt_first_summary_row {
+#dmhydluzlz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_first_summary_row.thick {
+#dmhydluzlz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uhuxifkykz .gt_last_summary_row {
+#dmhydluzlz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1742,7 +1745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_grand_summary_row {
+#dmhydluzlz .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1752,7 +1755,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhuxifkykz .gt_first_grand_summary_row {
+#dmhydluzlz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1762,7 +1765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_last_grand_summary_row_top {
+#dmhydluzlz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1772,11 +1775,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_striped {
+#dmhydluzlz .gt_striped {
   background-color: #F4F4F4;
 }
 
-#uhuxifkykz .gt_table_body {
+#dmhydluzlz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1785,7 +1788,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#uhuxifkykz .gt_footnotes {
+#dmhydluzlz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1799,7 +1802,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhuxifkykz .gt_footnote {
+#dmhydluzlz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1808,7 +1811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhuxifkykz .gt_sourcenotes {
+#dmhydluzlz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1822,7 +1825,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhuxifkykz .gt_sourcenote {
+#dmhydluzlz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1830,80 +1833,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhuxifkykz .gt_left {
+#dmhydluzlz .gt_left {
   text-align: left;
 }
 
-#uhuxifkykz .gt_center {
+#dmhydluzlz .gt_center {
   text-align: center;
 }
 
-#uhuxifkykz .gt_right {
+#dmhydluzlz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uhuxifkykz .gt_font_normal {
+#dmhydluzlz .gt_font_normal {
   font-weight: normal;
 }
 
-#uhuxifkykz .gt_font_bold {
+#dmhydluzlz .gt_font_bold {
   font-weight: bold;
 }
 
-#uhuxifkykz .gt_font_italic {
+#dmhydluzlz .gt_font_italic {
   font-style: italic;
 }
 
-#uhuxifkykz .gt_super {
+#dmhydluzlz .gt_super {
   font-size: 65%;
 }
 
-#uhuxifkykz .gt_footnote_marks {
+#dmhydluzlz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uhuxifkykz .gt_asterisk {
+#dmhydluzlz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uhuxifkykz .gt_indent_1 {
+#dmhydluzlz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uhuxifkykz .gt_indent_2 {
+#dmhydluzlz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uhuxifkykz .gt_indent_3 {
+#dmhydluzlz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uhuxifkykz .gt_indent_4 {
+#dmhydluzlz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uhuxifkykz .gt_indent_5 {
+#dmhydluzlz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uhuxifkykz .katex-display {
+#dmhydluzlz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uhuxifkykz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dmhydluzlz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Average Rent Price by County and Type</th>
+<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Average Rent Price by County and Type</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="County" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">County</th>
@@ -1978,7 +1981,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type, <span class="at">y =</span> Price, <span class="at">fill =</span> County)) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="dv">16</span>, <span class="at">outlier.colour =</span> <span class="st">"#e74c3c"</span>, <span class="at">outlier.size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
@@ -1999,7 +2002,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2019,7 +2022,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>salary <span class="ot">&lt;-</span> <span class="dv">60000</span>  <span class="co"># random yearly salary</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>salary <span class="ot">&lt;-</span> <span class="dv">60000</span>  <span class="co"># random yearly salary</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>monthly_income <span class="ot">&lt;-</span> salary <span class="sc">/</span> <span class="dv">12</span> <span class="co">#calculating monthly paycheck assuming monthly rent payments</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>max_rent <span class="ot">&lt;-</span> (monthly_income <span class="sc">*</span> <span class="fl">0.30</span>) <span class="co">#only 30% of income to be used for rent</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Rent_Clean_Affordable <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span> <span class="co">#filter out to only include the affordable listings</span></span>
@@ -2061,26 +2064,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">20</span>),</span>
 <span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.subtitle.font.size =</span> <span class="fu">px</span>(<span class="dv">14</span>),</span>
 <span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">3</span>),</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="fqqvxulfzn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fqqvxulfzn table {
+<div id="dcnjkkdvaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dcnjkkdvaz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fqqvxulfzn thead, #fqqvxulfzn tbody, #fqqvxulfzn tfoot, #fqqvxulfzn tr, #fqqvxulfzn td, #fqqvxulfzn th {
+#dcnjkkdvaz thead, #dcnjkkdvaz tbody, #dcnjkkdvaz tfoot, #dcnjkkdvaz tr, #dcnjkkdvaz td, #dcnjkkdvaz th {
   border-style: none;
 }
 
-#fqqvxulfzn p {
+#dcnjkkdvaz p {
   margin: 0;
   padding: 0;
 }
 
-#fqqvxulfzn .gt_table {
+#dcnjkkdvaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2106,12 +2109,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#fqqvxulfzn .gt_caption {
+#dcnjkkdvaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fqqvxulfzn .gt_title {
+#dcnjkkdvaz .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -2123,7 +2126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#fqqvxulfzn .gt_subtitle {
+#dcnjkkdvaz .gt_subtitle {
   color: #333333;
   font-size: 14px;
   font-weight: initial;
@@ -2135,7 +2138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#fqqvxulfzn .gt_heading {
+#dcnjkkdvaz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2147,13 +2150,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fqqvxulfzn .gt_bottom_border {
+#dcnjkkdvaz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_col_headings {
+#dcnjkkdvaz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2168,7 +2171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fqqvxulfzn .gt_col_heading {
+#dcnjkkdvaz .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2188,7 +2191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fqqvxulfzn .gt_column_spanner_outer {
+#dcnjkkdvaz .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2200,15 +2203,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#fqqvxulfzn .gt_column_spanner_outer:first-child {
+#dcnjkkdvaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fqqvxulfzn .gt_column_spanner_outer:last-child {
+#dcnjkkdvaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fqqvxulfzn .gt_column_spanner {
+#dcnjkkdvaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -2220,11 +2223,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#fqqvxulfzn .gt_spanner_row {
+#dcnjkkdvaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fqqvxulfzn .gt_group_heading {
+#dcnjkkdvaz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2250,7 +2253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#fqqvxulfzn .gt_empty_group_heading {
+#dcnjkkdvaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2265,15 +2268,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#fqqvxulfzn .gt_from_md > :first-child {
+#dcnjkkdvaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fqqvxulfzn .gt_from_md > :last-child {
+#dcnjkkdvaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fqqvxulfzn .gt_row {
+#dcnjkkdvaz .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -2292,7 +2295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fqqvxulfzn .gt_stub {
+#dcnjkkdvaz .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -2305,7 +2308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fqqvxulfzn .gt_stub_row_group {
+#dcnjkkdvaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2319,15 +2322,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#fqqvxulfzn .gt_row_group_first td {
+#dcnjkkdvaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fqqvxulfzn .gt_row_group_first th {
+#dcnjkkdvaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fqqvxulfzn .gt_summary_row {
+#dcnjkkdvaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2337,16 +2340,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fqqvxulfzn .gt_first_summary_row {
+#dcnjkkdvaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_first_summary_row.thick {
+#dcnjkkdvaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fqqvxulfzn .gt_last_summary_row {
+#dcnjkkdvaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2356,7 +2359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_grand_summary_row {
+#dcnjkkdvaz .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2366,7 +2369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fqqvxulfzn .gt_first_grand_summary_row {
+#dcnjkkdvaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2376,7 +2379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_last_grand_summary_row_top {
+#dcnjkkdvaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2386,11 +2389,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_striped {
+#dcnjkkdvaz .gt_striped {
   background-color: #F4F4F4;
 }
 
-#fqqvxulfzn .gt_table_body {
+#dcnjkkdvaz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2399,7 +2402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#fqqvxulfzn .gt_footnotes {
+#dcnjkkdvaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2413,7 +2416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fqqvxulfzn .gt_footnote {
+#dcnjkkdvaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2422,7 +2425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fqqvxulfzn .gt_sourcenotes {
+#dcnjkkdvaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2436,7 +2439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fqqvxulfzn .gt_sourcenote {
+#dcnjkkdvaz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2444,80 +2447,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fqqvxulfzn .gt_left {
+#dcnjkkdvaz .gt_left {
   text-align: left;
 }
 
-#fqqvxulfzn .gt_center {
+#dcnjkkdvaz .gt_center {
   text-align: center;
 }
 
-#fqqvxulfzn .gt_right {
+#dcnjkkdvaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fqqvxulfzn .gt_font_normal {
+#dcnjkkdvaz .gt_font_normal {
   font-weight: normal;
 }
 
-#fqqvxulfzn .gt_font_bold {
+#dcnjkkdvaz .gt_font_bold {
   font-weight: bold;
 }
 
-#fqqvxulfzn .gt_font_italic {
+#dcnjkkdvaz .gt_font_italic {
   font-style: italic;
 }
 
-#fqqvxulfzn .gt_super {
+#dcnjkkdvaz .gt_super {
   font-size: 65%;
 }
 
-#fqqvxulfzn .gt_footnote_marks {
+#dcnjkkdvaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fqqvxulfzn .gt_asterisk {
+#dcnjkkdvaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fqqvxulfzn .gt_indent_1 {
+#dcnjkkdvaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fqqvxulfzn .gt_indent_2 {
+#dcnjkkdvaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fqqvxulfzn .gt_indent_3 {
+#dcnjkkdvaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fqqvxulfzn .gt_indent_4 {
+#dcnjkkdvaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fqqvxulfzn .gt_indent_5 {
+#dcnjkkdvaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fqqvxulfzn .katex-display {
+#dcnjkkdvaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fqqvxulfzn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dcnjkkdvaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Average Rent Price by County and Type</th>
+<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Average Rent Price by County and Type</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="County" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">County</th>
@@ -2596,7 +2599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rent_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> County <span class="sc">+</span> Type <span class="sc">+</span> SqFt <span class="sc">+</span> Beds <span class="sc">+</span> Baths, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rent_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> County <span class="sc">+</span> Type <span class="sc">+</span> SqFt <span class="sc">+</span> Beds <span class="sc">+</span> Baths, </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> Rent_Clean_Affordable) <span class="co">#the model :D</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>rent_model_table <span class="ot">&lt;-</span> rent_model <span class="sc">|&gt;</span> <span class="fu">tidy</span>() <span class="co">#the model into table</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -2654,26 +2657,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
 <span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
 <span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="oealfwgtpp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oealfwgtpp table {
+<div id="byxdfxcqny" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#byxdfxcqny table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oealfwgtpp thead, #oealfwgtpp tbody, #oealfwgtpp tfoot, #oealfwgtpp tr, #oealfwgtpp td, #oealfwgtpp th {
+#byxdfxcqny thead, #byxdfxcqny tbody, #byxdfxcqny tfoot, #byxdfxcqny tr, #byxdfxcqny td, #byxdfxcqny th {
   border-style: none;
 }
 
-#oealfwgtpp p {
+#byxdfxcqny p {
   margin: 0;
   padding: 0;
 }
 
-#oealfwgtpp .gt_table {
+#byxdfxcqny .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2699,12 +2702,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#oealfwgtpp .gt_caption {
+#byxdfxcqny .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oealfwgtpp .gt_title {
+#byxdfxcqny .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -2716,7 +2719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#oealfwgtpp .gt_subtitle {
+#byxdfxcqny .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2728,7 +2731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#oealfwgtpp .gt_heading {
+#byxdfxcqny .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2740,13 +2743,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oealfwgtpp .gt_bottom_border {
+#byxdfxcqny .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_col_headings {
+#byxdfxcqny .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2761,7 +2764,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oealfwgtpp .gt_col_heading {
+#byxdfxcqny .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2781,7 +2784,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oealfwgtpp .gt_column_spanner_outer {
+#byxdfxcqny .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2793,15 +2796,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#oealfwgtpp .gt_column_spanner_outer:first-child {
+#byxdfxcqny .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oealfwgtpp .gt_column_spanner_outer:last-child {
+#byxdfxcqny .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oealfwgtpp .gt_column_spanner {
+#byxdfxcqny .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -2813,11 +2816,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#oealfwgtpp .gt_spanner_row {
+#byxdfxcqny .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oealfwgtpp .gt_group_heading {
+#byxdfxcqny .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2843,7 +2846,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#oealfwgtpp .gt_empty_group_heading {
+#byxdfxcqny .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2858,15 +2861,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#oealfwgtpp .gt_from_md > :first-child {
+#byxdfxcqny .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oealfwgtpp .gt_from_md > :last-child {
+#byxdfxcqny .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oealfwgtpp .gt_row {
+#byxdfxcqny .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2885,7 +2888,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oealfwgtpp .gt_stub {
+#byxdfxcqny .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -2898,7 +2901,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oealfwgtpp .gt_stub_row_group {
+#byxdfxcqny .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2912,15 +2915,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#oealfwgtpp .gt_row_group_first td {
+#byxdfxcqny .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oealfwgtpp .gt_row_group_first th {
+#byxdfxcqny .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oealfwgtpp .gt_summary_row {
+#byxdfxcqny .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2930,16 +2933,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oealfwgtpp .gt_first_summary_row {
+#byxdfxcqny .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_first_summary_row.thick {
+#byxdfxcqny .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oealfwgtpp .gt_last_summary_row {
+#byxdfxcqny .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2949,7 +2952,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_grand_summary_row {
+#byxdfxcqny .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2959,7 +2962,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oealfwgtpp .gt_first_grand_summary_row {
+#byxdfxcqny .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2969,7 +2972,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_last_grand_summary_row_top {
+#byxdfxcqny .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2979,11 +2982,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_striped {
+#byxdfxcqny .gt_striped {
   background-color: #F4F4F4;
 }
 
-#oealfwgtpp .gt_table_body {
+#byxdfxcqny .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2992,7 +2995,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #5F5F5F;
 }
 
-#oealfwgtpp .gt_footnotes {
+#byxdfxcqny .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3006,7 +3009,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oealfwgtpp .gt_footnote {
+#byxdfxcqny .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3015,7 +3018,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oealfwgtpp .gt_sourcenotes {
+#byxdfxcqny .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3029,7 +3032,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oealfwgtpp .gt_sourcenote {
+#byxdfxcqny .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3037,77 +3040,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oealfwgtpp .gt_left {
+#byxdfxcqny .gt_left {
   text-align: left;
 }
 
-#oealfwgtpp .gt_center {
+#byxdfxcqny .gt_center {
   text-align: center;
 }
 
-#oealfwgtpp .gt_right {
+#byxdfxcqny .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oealfwgtpp .gt_font_normal {
+#byxdfxcqny .gt_font_normal {
   font-weight: normal;
 }
 
-#oealfwgtpp .gt_font_bold {
+#byxdfxcqny .gt_font_bold {
   font-weight: bold;
 }
 
-#oealfwgtpp .gt_font_italic {
+#byxdfxcqny .gt_font_italic {
   font-style: italic;
 }
 
-#oealfwgtpp .gt_super {
+#byxdfxcqny .gt_super {
   font-size: 65%;
 }
 
-#oealfwgtpp .gt_footnote_marks {
+#byxdfxcqny .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oealfwgtpp .gt_asterisk {
+#byxdfxcqny .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oealfwgtpp .gt_indent_1 {
+#byxdfxcqny .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oealfwgtpp .gt_indent_2 {
+#byxdfxcqny .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oealfwgtpp .gt_indent_3 {
+#byxdfxcqny .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oealfwgtpp .gt_indent_4 {
+#byxdfxcqny .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oealfwgtpp .gt_indent_5 {
+#byxdfxcqny .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oealfwgtpp .katex-display {
+#byxdfxcqny .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oealfwgtpp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#byxdfxcqny div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -3118,7 +3121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Regression Results for Rent Model</th>
+<td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Regression Results for Rent Model</td>
 </tr>
 <tr class="gt_col_headings gt_spanner_row even">
 <th rowspan="2" id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
@@ -3212,7 +3215,7 @@ Coefficients
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Prediction <span class="ot">&lt;-</span> rent_model<span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Prediction <span class="ot">&lt;-</span> rent_model<span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>( <span class="at">newdata=</span> Rent_Clean_Affordable)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the residuals</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Prediction, <span class="fu">aes</span>(<span class="at">x =</span> .resid)) <span class="sc">+</span></span>
@@ -3229,7 +3232,7 @@ Coefficients
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -3253,7 +3256,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>correlation_table <span class="ot">&lt;-</span> Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(County) <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bed_cor =</span> <span class="fu">cor</span>(Price, Beds), </span>
@@ -3280,26 +3283,26 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">16</span>),</span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">18</span>),</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="fbuahkutzj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fbuahkutzj table {
+<div id="gdnwuaahjr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gdnwuaahjr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fbuahkutzj thead, #fbuahkutzj tbody, #fbuahkutzj tfoot, #fbuahkutzj tr, #fbuahkutzj td, #fbuahkutzj th {
+#gdnwuaahjr thead, #gdnwuaahjr tbody, #gdnwuaahjr tfoot, #gdnwuaahjr tr, #gdnwuaahjr td, #gdnwuaahjr th {
   border-style: none;
 }
 
-#fbuahkutzj p {
+#gdnwuaahjr p {
   margin: 0;
   padding: 0;
 }
 
-#fbuahkutzj .gt_table {
+#gdnwuaahjr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3325,12 +3328,12 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-left-color: #D3D3D3;
 }
 
-#fbuahkutzj .gt_caption {
+#gdnwuaahjr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fbuahkutzj .gt_title {
+#gdnwuaahjr .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: initial;
@@ -3342,7 +3345,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-width: 0;
 }
 
-#fbuahkutzj .gt_subtitle {
+#gdnwuaahjr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3354,7 +3357,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-top-width: 0;
 }
 
-#fbuahkutzj .gt_heading {
+#gdnwuaahjr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3366,13 +3369,13 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fbuahkutzj .gt_bottom_border {
+#gdnwuaahjr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_col_headings {
+#gdnwuaahjr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -3387,7 +3390,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fbuahkutzj .gt_col_heading {
+#gdnwuaahjr .gt_col_heading {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -3407,7 +3410,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   overflow-x: hidden;
 }
 
-#fbuahkutzj .gt_column_spanner_outer {
+#gdnwuaahjr .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -3419,15 +3422,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 4px;
 }
 
-#fbuahkutzj .gt_column_spanner_outer:first-child {
+#gdnwuaahjr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fbuahkutzj .gt_column_spanner_outer:last-child {
+#gdnwuaahjr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fbuahkutzj .gt_column_spanner {
+#gdnwuaahjr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -3439,11 +3442,11 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   width: 100%;
 }
 
-#fbuahkutzj .gt_spanner_row {
+#gdnwuaahjr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fbuahkutzj .gt_group_heading {
+#gdnwuaahjr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3469,7 +3472,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   text-align: left;
 }
 
-#fbuahkutzj .gt_empty_group_heading {
+#gdnwuaahjr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3484,15 +3487,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   vertical-align: middle;
 }
 
-#fbuahkutzj .gt_from_md > :first-child {
+#gdnwuaahjr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fbuahkutzj .gt_from_md > :last-child {
+#gdnwuaahjr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fbuahkutzj .gt_row {
+#gdnwuaahjr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3511,7 +3514,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   overflow-x: hidden;
 }
 
-#fbuahkutzj .gt_stub {
+#gdnwuaahjr .gt_stub {
   color: #333333;
   background-color: #A5FEF2;
   font-size: 100%;
@@ -3524,7 +3527,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fbuahkutzj .gt_stub_row_group {
+#gdnwuaahjr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3538,15 +3541,15 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   vertical-align: top;
 }
 
-#fbuahkutzj .gt_row_group_first td {
+#gdnwuaahjr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fbuahkutzj .gt_row_group_first th {
+#gdnwuaahjr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fbuahkutzj .gt_summary_row {
+#gdnwuaahjr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3556,16 +3559,16 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fbuahkutzj .gt_first_summary_row {
+#gdnwuaahjr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_first_summary_row.thick {
+#gdnwuaahjr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fbuahkutzj .gt_last_summary_row {
+#gdnwuaahjr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3575,7 +3578,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_grand_summary_row {
+#gdnwuaahjr .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -3585,7 +3588,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fbuahkutzj .gt_first_grand_summary_row {
+#gdnwuaahjr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3595,7 +3598,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-top-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_last_grand_summary_row_top {
+#gdnwuaahjr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3605,11 +3608,11 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_striped {
+#gdnwuaahjr .gt_striped {
   background-color: #EBFBF9;
 }
 
-#fbuahkutzj .gt_table_body {
+#gdnwuaahjr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -3618,7 +3621,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-bottom-color: #5F5F5F;
 }
 
-#fbuahkutzj .gt_footnotes {
+#gdnwuaahjr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3632,7 +3635,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fbuahkutzj .gt_footnote {
+#gdnwuaahjr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3641,7 +3644,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fbuahkutzj .gt_sourcenotes {
+#gdnwuaahjr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3655,7 +3658,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   border-right-color: #D3D3D3;
 }
 
-#fbuahkutzj .gt_sourcenote {
+#gdnwuaahjr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3663,80 +3666,80 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
   padding-right: 5px;
 }
 
-#fbuahkutzj .gt_left {
+#gdnwuaahjr .gt_left {
   text-align: left;
 }
 
-#fbuahkutzj .gt_center {
+#gdnwuaahjr .gt_center {
   text-align: center;
 }
 
-#fbuahkutzj .gt_right {
+#gdnwuaahjr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fbuahkutzj .gt_font_normal {
+#gdnwuaahjr .gt_font_normal {
   font-weight: normal;
 }
 
-#fbuahkutzj .gt_font_bold {
+#gdnwuaahjr .gt_font_bold {
   font-weight: bold;
 }
 
-#fbuahkutzj .gt_font_italic {
+#gdnwuaahjr .gt_font_italic {
   font-style: italic;
 }
 
-#fbuahkutzj .gt_super {
+#gdnwuaahjr .gt_super {
   font-size: 65%;
 }
 
-#fbuahkutzj .gt_footnote_marks {
+#gdnwuaahjr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fbuahkutzj .gt_asterisk {
+#gdnwuaahjr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fbuahkutzj .gt_indent_1 {
+#gdnwuaahjr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fbuahkutzj .gt_indent_2 {
+#gdnwuaahjr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fbuahkutzj .gt_indent_3 {
+#gdnwuaahjr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fbuahkutzj .gt_indent_4 {
+#gdnwuaahjr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fbuahkutzj .gt_indent_5 {
+#gdnwuaahjr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fbuahkutzj .katex-display {
+#gdnwuaahjr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fbuahkutzj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gdnwuaahjr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Correlation of Rent Price with Features by County</th>
+<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Correlation of Rent Price with Features by County</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="County" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">County</th>
@@ -3773,7 +3776,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Rent_Clean <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Price <span class="sc">&lt;</span> <span class="dv">10000</span>)<span class="sc">|&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">County =</span> <span class="fu">as.character</span>(County)) <span class="sc">|&gt;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
@@ -3801,7 +3804,7 @@ Unlike LA and Riverside, Orange County’s histogram doesn’t show a clear skew
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),     </span>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)   </span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -3896,13 +3899,14 @@ I used a linear regression model, which assumes a straight-line relationship bet
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
