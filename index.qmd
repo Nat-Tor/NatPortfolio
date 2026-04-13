@@ -16,7 +16,7 @@ Hi! I’m Natalie Torres, a math major at Cal State Fullerton graduating in Spri
 
 I’m part of Project EAGER, where I study assisted gene flow in selfing plant populations using statistical modeling and simulation in R. My work focuses on modeling how introducing genetic variation can influence population fitness over time.
 
-I’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next.
+I’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next!
 :::
 :::::
 
