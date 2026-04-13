@@ -22,16 +22,20 @@ website:
   title: "<b>Natalie Torres</b>"
   navbar:
     left:
-      - href: Classes/EAGER.html
+      - href: index.qmd
+        text: Home
+      - href: Classes/EAGER.qmd
         text: EAGER
-      - href: Classes/UC_Berkeley.html
-        text: "Berkeley Research"
-      - href: Classes/DataScience.html
-        text: "Data Science"
-      - href: Classes/CompStats.html
-        text: "Comp Stats"
-      - href: Classes/IntDataAnalysis.html
-        text: "Int Data Analysis"
+      - text: Classes
+        menu:
+          - href: Classes/DataScience.qmd
+            text: Data Science
+          - href: Classes/CompStats.qmd
+            text: Comp Stats
+          - href: Classes/IntDataAnalysis.qmd
+            text: Int Data Analysis
+      - href: Classes/UC_Berkeley.qmd
+        text: Research
 
 format:
   html:
