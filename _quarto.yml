@@ -8,6 +8,7 @@ project:
     - Classes/IntDataAnalysis.qmd
     - Classes/DataScience.qmd
     - Classes/CompStats.qmd
+    - Classes/DataAnalysis.qmd
     - Projects/EAGER/Blog.qmd  
     - Projects/DataScience/SoCalRentProject.qmd
     - Projects/DataScience/FlowerProject.qmd
@@ -24,6 +25,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: Classes/UC_Berkeley.qmd
+        text: Research
       - href: Classes/EAGER.qmd
         text: EAGER
       - text: Classes
@@ -31,11 +34,11 @@ website:
           - href: Classes/DataScience.qmd
             text: Data Science
           - href: Classes/CompStats.qmd
-            text: Comp Stats
+            text: Computational Statistics
           - href: Classes/IntDataAnalysis.qmd
-            text: Int Data Analysis
-      - href: Classes/UC_Berkeley.qmd
-        text: Research
+            text: Intermediate Data Analysis
+          - href: Classes/DataAnalysis.qmd
+            text: Modern Data Analysis Project
 
 format:
   html:

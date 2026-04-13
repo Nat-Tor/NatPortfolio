@@ -126,18 +126,60 @@
     "text": "In a study from CSU Fullerton, scientists used transcriptomic data to explore how human cells respond to heat shock at the molecular level. Their findings revealed both expected and unexpected stress responses, offering new insight into how cells cope under pressure (Reinschmidt et al., 2023).\n\n\nWhat is Heat Shock Response?\n\n\n\n\n\n\nImportantRecall the time you were sick?\n\n\n\nYou might have a had fever. This caused your body to undergo alot of stress, but instead of shutting down, it activates protective systems to help you recover and keep going.\n\n\nAll cells experience some form of stress, whether from heat, toxins, or infections. Heat stress, in particular, can cause proteins inside cells to misfold. When this happens, cells activate the Heat Shock Response (HSR), their built-in survival system.\n\n\n\nWhat are Heat Shock Proteins?\nOnce the HSR is triggered, cells begin producing special proteins called heat shock proteins (HSPs). Their job includes:\n\nHelp proteins fold correctly\nRepair damaged ones\nPrevent future protein misfolding\n\n\n\n\n\n\n\nTipHow is this Relevant?\n\n\n\nIn the CSU Fullerton study, researchers observed the expected activation of classic heat shock proteins like HSP70 and HSP90. But they also found activation of non-canonical responses which are genes not traditionally associated with heat shock (Reinschmidt et al., 2023).\n\n\nThis suggests the HSR is more complex and far-reaching than we previously thought, with variations depending on the cell type.\n\n\n\nCancer Cells Survival Strategy\n\n\n\n\n\n\nImportantThe Problem with Cancer Cells\n\n\n\nCancer cells are under constant stress. Low oxygen, exposure to radiation, and chemotherapy are just a few. But instead of dying under this pressure (as treatments intend), cancer cells ramp up their production of HSPs. Cancer cells hijack the heat shock response to avoid death.\n\n\nBy overactivating the HSR, cancer cells become practically immune, withstanding chemotherapy, radiation, and other treatments that would normally kill them. This ability to exploit the heat shock response is part of what makes cancer so difficult to treat.\n\n\n\nOur Offense to Cancers Defense\nThe discovery of non-canonical HSR pathways opens new possibilities for cancer treatment. If we can figure out how to selectively block the amplified heat shock response in cancer cells, we could make them more vulnerable to therapy.\nIn other words, disabling cancer’s stress-coping tricks could improve the effects of chemotherapy and other treatment outcomes. Understanding how cancer cells produce HSPs differently than normal cells is key to reaching the full potential of cancer therapy.\n\n\n\n\n\n\nTipTakeaway\n\n\n\nThis research shows how basic cell biology is important to real-world medicine. By uncovering new information on heat shock response, scientists have identified new targets to research that could be used to outsmart cancer and possibly other diseases that exploit stress responses\n\n\n\n\n\nInfographic Recap\n\n\n\n\n\n\n\nReferences\n\nReinschmidt, A., Solano, L., Chavez, Y., Hulsy, W. D., & Nikolaidis, N. (2023). Transcriptomics unveil canonical and non-canonical heat shock-induced pathways in human cell lines. International Journal of Molecular Sciences, 26(3), 1057. https://doi.org/10.3390/ijms26031057"
   },
   {
-    "objectID": "Classes/DataScience.html",
-    "href": "Classes/DataScience.html",
-    "title": "Foundations of Data Science (Math 237)",
+    "objectID": "Classes/CompStats.html",
+    "href": "Classes/CompStats.html",
+    "title": "Computational Statistics (Math 337)",
     "section": "",
-    "text": "This course introduced the foundations of data science through hands-on work with real datasets. We learned how to collect, clean, and visualize data; build introductory statistical models; make predictions; and communicate results using reproducible coding practices."
+    "text": "Math 337 serves as a bridge between introductory data science and advanced applied statistics courses. The class focuses on computational and conceptual tools used in modern statistics, including simulation, bootstrap methods, Bayesian inference, confidence intervals, and hypothesis testing. We also explored optimization techniques and reviewed the mathematical properties of random variables, skills that support more advanced modeling work in later courses."
   },
   {
-    "objectID": "Classes/DataScience.html#projects",
-    "href": "Classes/DataScience.html#projects",
-    "title": "Foundations of Data Science (Math 237)",
+    "objectID": "Classes/CompStats.html#projects",
+    "href": "Classes/CompStats.html#projects",
+    "title": "Computational Statistics (Math 337)",
     "section": "Projects",
-    "text": "Projects\n\nSoCal Rent Project\nIn this project, I analyzed rental prices across several Southern California counties to understand how factors like square footage, number of bedrooms/bathrooms, and regional differences influence price.\n➡View Project\n\n\nEncelia Flower Project\nFor this project, I collected data from the Fullerton Arboretum on two native California species—Encelia californica and Encelia farinosa. I performed exploratory analysis and built simple linear regression models to compare characteristics between the two species.\n➡ View Project"
+    "text": "Projects\n\nFortnite Microtransactions Project (Confidence Intervals)\nIn this project, I used bootstrap simulation and computational methods to construct and interpret confidence intervals related to Fortnite player microtransaction behavior.\n➡View Project\n\n\nBaseball Project (Bayesian Inference)\nThis project applied Bayesian methods to baseball performance data, exploring how prior beliefs combine with observed data to produce posterior distributions and predictions.\n➡ View Project\n\n\nLong COVID Project (Hypothesis Testing)\nIn this analysis, I conducted hypothesis testing using permutation and bootstrap-based methods to investigate questions related to Long COVID and differences across groups.\n➡View Project"
+  },
+  {
+    "objectID": "Classes/IntDataAnalysis.html",
+    "href": "Classes/IntDataAnalysis.html",
+    "title": "Intermediate Data Analysis (Math 439)",
+    "section": "",
+    "text": "Math 439 focuses on building a deeper understanding of statistical modeling, with an emphasis on regression, model diagnostics, ANOVA, and modern computational techniques. The course covers the mathematical foundations of least squares, simple and multiple regression, variable selection, model checking, bootstrapping, and introductory Bayesian treatments of regression models. Throughout the semester, we applied these methods to real datasets using R and developed practical skills in evaluating and improving statistical models."
+  },
+  {
+    "objectID": "Classes/IntDataAnalysis.html#projects",
+    "href": "Classes/IntDataAnalysis.html#projects",
+    "title": "Intermediate Data Analysis (Math 439)",
+    "section": "Projects",
+    "text": "Projects\n\nCar Prices Project\nIn this project, I used regression modeling to predict used car prices based on dealership data. I compared multiple predictors, assessed model fit, and evaluated which factors most strongly influenced hypothetical sale prices.\n➡View Project\n\n\nCOVID Lung Capacity Project\nThis analysis investigated whether individuals who were vaccinated had higher post-COVID lung capacity compared to unvaccinated individuals. Using bootstrapping and model diagnostics, I examined differences between groups and evaluated the strength of the evidence.\n➡View Project\n\n\nEarthquake Project\nThis project analyzed mainshock–aftershock pairs from the Atacama Fault Zone using regression techniques. I applied transformations and model diagnostics to address issues such as nonlinearity while studying how the magnitude of a mainshock influences its aftershock.\n➡View Project"
+  },
+  {
+    "objectID": "Classes/EAGER.html",
+    "href": "Classes/EAGER.html",
+    "title": "EAGER",
+    "section": "",
+    "text": "The NIH-funded Project EAGER at CSU Fullerton provides undergraduate students with hands-on experience in genomics, bioinformatics, and research communication. Through workshops, seminars, and mentored research, we explored how computational tools can be used to study biological systems and big data in modern biology.\nLearn more about the program here\nAs part of this program, I conducted summer research at UC Berkeley, where I worked with genomic data and developed bioinformatics workflows.\n➡ UC Berkeley Research Page"
+  },
+  {
+    "objectID": "Classes/EAGER.html#projects",
+    "href": "Classes/EAGER.html#projects",
+    "title": "EAGER",
+    "section": "Projects",
+    "text": "Projects\n\nHeat Stress & Cancer Cells — Research Blog\nThis blog post summarizes my exploration of how heat stress influences protein expression pathways in cancer cells. I reviewed findings from transcriptomic studies and discussed the biological mechanisms linking heat shock responses to cancer progression.\n➡ View Blog\n\n\nRNA-seq Pipeline (Work in Progress)\nI am currently developing an R-based pipeline to reproduce the analysis used to examine protein and gene expression under heat stress conditions. This pipeline includes data preprocessing, quality control, normalization, and exploratory analysis steps, and will be updated as I complete more of the workflow. I hope for it to be useful to give future EAGER cohorts a base of genomic tools in R ➡ (Page coming soon!)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hi! I’m Natalie Torres, a math major at Cal State Fullerton graduating in Spring 2026. I’m especially interested in data science, where I enjoy working with messy data, identifying patterns, and turning analyses into clear, meaningful visualizations.\nI’m part of Project EAGER, where I study assisted gene flow in selfing plant populations using statistical modeling and simulation in R. My work focuses on modeling how introducing genetic variation can influence population fitness over time.\nI’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next!"
+  },
+  {
+    "objectID": "index.html#find-me-online",
+    "href": "index.html#find-me-online",
+    "title": "About Me",
+    "section": "Find Me Online",
+    "text": "Find Me Online\n\nGitHub: @Nat-Tor\n\nLinkedIn: Natalie Torres\n\nEmail: natalietor@csu.fullerton.edu\n\n\nThis portfolio is a work in progress so things are a little messy but more projects, updates, and results will be added over time. &lt;3"
   },
   {
     "objectID": "Classes/UC_Berkeley.html",
@@ -175,60 +217,25 @@
     "text": "Poster & Lightning Talk\nA PDF of my research poster will be inserted here. Download Poster\nAdd short slides linked here: Lightning Talk – Google Slides"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About Me",
+    "objectID": "Classes/DataScience.html",
+    "href": "Classes/DataScience.html",
+    "title": "Foundations of Data Science (Math 237)",
     "section": "",
-    "text": "Hi! I’m Natalie Torres, a math major at Cal State Fullerton graduating in Spring 2026. I’m especially interested in data science, where I enjoy working with messy data, identifying patterns, and turning analyses into clear, meaningful visualizations.\nI’m part of Project EAGER, where I study assisted gene flow in selfing plant populations using statistical modeling and simulation in R. My work focuses on modeling how introducing genetic variation can influence population fitness over time.\nI’m building this portfolio to share what I’ve learned, what I’m working on, and where I’m hoping to grow next!"
+    "text": "This course introduced the foundations of data science through hands-on work with real datasets. We learned how to collect, clean, and visualize data; build introductory statistical models; make predictions; and communicate results using reproducible coding practices."
   },
   {
-    "objectID": "index.html#find-me-online",
-    "href": "index.html#find-me-online",
-    "title": "About Me",
-    "section": "Find Me Online",
-    "text": "Find Me Online\n\nGitHub: @Nat-Tor\n\nLinkedIn: Natalie Torres\n\nEmail: natalietor@csu.fullerton.edu\n\n\nThis portfolio is a work in progress so things are a little messy but more projects, updates, and results will be added over time. &lt;3"
-  },
-  {
-    "objectID": "Classes/EAGER.html",
-    "href": "Classes/EAGER.html",
-    "title": "EAGER",
-    "section": "",
-    "text": "The NIH-funded Project EAGER at CSU Fullerton provides undergraduate students with hands-on experience in genomics, bioinformatics, and research communication. Through workshops, seminars, and mentored research, we explored how computational tools can be used to study biological systems and big data in modern biology.\nLearn more about the program here\nAs part of this program, I conducted summer research at UC Berkeley, where I worked with genomic data and developed bioinformatics workflows.\n➡ UC Berkeley Research Page"
-  },
-  {
-    "objectID": "Classes/EAGER.html#projects",
-    "href": "Classes/EAGER.html#projects",
-    "title": "EAGER",
+    "objectID": "Classes/DataScience.html#projects",
+    "href": "Classes/DataScience.html#projects",
+    "title": "Foundations of Data Science (Math 237)",
     "section": "Projects",
-    "text": "Projects\n\nHeat Stress & Cancer Cells — Research Blog\nThis blog post summarizes my exploration of how heat stress influences protein expression pathways in cancer cells. I reviewed findings from transcriptomic studies and discussed the biological mechanisms linking heat shock responses to cancer progression.\n➡ View Blog\n\n\nRNA-seq Pipeline (Work in Progress)\nI am currently developing an R-based pipeline to reproduce the analysis used to examine protein and gene expression under heat stress conditions. This pipeline includes data preprocessing, quality control, normalization, and exploratory analysis steps, and will be updated as I complete more of the workflow. I hope for it to be useful to give future EAGER cohorts a base of genomic tools in R ➡ (Page coming soon!)"
+    "text": "Projects\n\nSoCal Rent Project\nIn this project, I analyzed rental prices across several Southern California counties to understand how factors like square footage, number of bedrooms/bathrooms, and regional differences influence price.\n➡View Project\n\n\nEncelia Flower Project\nFor this project, I collected data from the Fullerton Arboretum on two native California species—Encelia californica and Encelia farinosa. I performed exploratory analysis and built simple linear regression models to compare characteristics between the two species.\n➡ View Project"
   },
   {
-    "objectID": "Classes/IntDataAnalysis.html",
-    "href": "Classes/IntDataAnalysis.html",
-    "title": "Intermediate Data Analysis (Math 439)",
+    "objectID": "Classes/DataAnalysis.html",
+    "href": "Classes/DataAnalysis.html",
+    "title": "DataAnalysis",
     "section": "",
-    "text": "Math 439 focuses on building a deeper understanding of statistical modeling, with an emphasis on regression, model diagnostics, ANOVA, and modern computational techniques. The course covers the mathematical foundations of least squares, simple and multiple regression, variable selection, model checking, bootstrapping, and introductory Bayesian treatments of regression models. Throughout the semester, we applied these methods to real datasets using R and developed practical skills in evaluating and improving statistical models."
-  },
-  {
-    "objectID": "Classes/IntDataAnalysis.html#projects",
-    "href": "Classes/IntDataAnalysis.html#projects",
-    "title": "Intermediate Data Analysis (Math 439)",
-    "section": "Projects",
-    "text": "Projects\n\nCar Prices Project\nIn this project, I used regression modeling to predict used car prices based on dealership data. I compared multiple predictors, assessed model fit, and evaluated which factors most strongly influenced hypothetical sale prices.\n➡View Project\n\n\nCOVID Lung Capacity Project\nThis analysis investigated whether individuals who were vaccinated had higher post-COVID lung capacity compared to unvaccinated individuals. Using bootstrapping and model diagnostics, I examined differences between groups and evaluated the strength of the evidence.\n➡View Project\n\n\nEarthquake Project\nThis project analyzed mainshock–aftershock pairs from the Atacama Fault Zone using regression techniques. I applied transformations and model diagnostics to address issues such as nonlinearity while studying how the magnitude of a mainshock influences its aftershock.\n➡View Project"
-  },
-  {
-    "objectID": "Classes/CompStats.html",
-    "href": "Classes/CompStats.html",
-    "title": "Computational Statistics (Math 337)",
-    "section": "",
-    "text": "Math 337 serves as a bridge between introductory data science and advanced applied statistics courses. The class focuses on computational and conceptual tools used in modern statistics, including simulation, bootstrap methods, Bayesian inference, confidence intervals, and hypothesis testing. We also explored optimization techniques and reviewed the mathematical properties of random variables, skills that support more advanced modeling work in later courses."
-  },
-  {
-    "objectID": "Classes/CompStats.html#projects",
-    "href": "Classes/CompStats.html#projects",
-    "title": "Computational Statistics (Math 337)",
-    "section": "Projects",
-    "text": "Projects\n\nFortnite Microtransactions Project (Confidence Intervals)\nIn this project, I used bootstrap simulation and computational methods to construct and interpret confidence intervals related to Fortnite player microtransaction behavior.\n➡View Project\n\n\nBaseball Project (Bayesian Inference)\nThis project applied Bayesian methods to baseball performance data, exploring how prior beliefs combine with observed data to produce posterior distributions and predictions.\n➡ View Project\n\n\nLong COVID Project (Hypothesis Testing)\nIn this analysis, I conducted hypothesis testing using permutation and bootstrap-based methods to investigate questions related to Long COVID and differences across groups.\n➡View Project"
+    "text": "This page will contain my Math 437 final project."
   },
   {
     "objectID": "Projects/DataScience/SoCalRentProject.html",
