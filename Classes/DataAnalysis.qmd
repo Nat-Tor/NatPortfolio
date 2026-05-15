@@ -3,10 +3,10 @@ title: "DataAnalysis"
 format: html
 ---
 
-<div style="height: 60vh; display: flex; align-items: center; justify-content: center;">
-
+::: {style="height: 60vh; display: flex; align-items: center; justify-content: center;"}
 <p style="text-align: center; font-size: 1.3rem; max-width: 600px;">
-This page will contain my Math 437 final project.
-</p>
 
-</div>
+This page will contain my Math 437 final project.
+
+</p>
+:::

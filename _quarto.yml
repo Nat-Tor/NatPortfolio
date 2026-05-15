@@ -8,7 +8,7 @@ project:
     - Classes/IntDataAnalysis.qmd
     - Classes/DataScience.qmd
     - Classes/CompStats.qmd
-    - Classes/DataAnalysis.qmd
+    - Classes/SoilCarbonAnalysis.qmd
     - Projects/EAGER/Blog.qmd  
     - Projects/DataScience/SoCalRentProject.qmd
     - Projects/DataScience/FlowerProject.qmd
@@ -37,7 +37,7 @@ website:
             text: Computational Statistics
           - href: Classes/IntDataAnalysis.qmd
             text: Intermediate Data Analysis
-          - href: Classes/DataAnalysis.qmd
+          - href: Classes/SoilCarbonAnalysis.qmd
             text: Modern Data Analysis Project
 
 format:
